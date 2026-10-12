@@ -732,6 +732,13 @@ const UI = {
   },
 
   switchView(viewName) {
+    // Close a lesson overlay before revealing another top-level page.
+    const lessonModal = document.getElementById("lesson-modal");
+    if (lessonModal?.classList.contains("active")) {
+      lessonModal.classList.remove("active");
+      document.body.style.overflow = "";
+    }
+
     const views = {
       lessons: document.getElementById("view-lessons"),
       rig: document.getElementById("view-rig"),
