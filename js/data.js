@@ -42,7 +42,7 @@ const BLENDER_DATA = {
       name: "Lighting, Cameras & Render",
       icon: "💡",
       color: "#FFD600",
-      description: "Cycles vs Eevee Next, 3-point lighting setups, photorealistic HDRIs, depth of field, color management.",
+      description: "Cycles and Eevee, 3-point lighting setups, photorealistic HDRIs, depth of field, color management.",
       badge: "Render Maestro"
     },
     {
@@ -66,7 +66,7 @@ const BLENDER_DATA = {
       name: "Physics, Cloth & VFX",
       icon: "🌊",
       color: "#00BCD4",
-      description: "Rigid body destruction, realistic cloth simulation, Mantaflow smoke, fire, and liquid physics.",
+      description: "Rigid body destruction, realistic cloth simulation, smoke, fire, and liquid physics.",
       badge: "Simulation Wizard"
     }
   ],
@@ -76,13 +76,13 @@ const BLENDER_DATA = {
     {
       id: "fund-1",
       trackId: "fundamentals",
-      title: "Blender Interface & 3D Viewport Navigation",
-      author: "Blender Guru & CG Cookie",
+      title: "Blender Interface & 3D Viewport Navigation (Blender 5)",
+      author: "Blender Guru",
       duration: "22 mins",
       level: "Absolute Beginner",
-      youtubeId: "TPrnSACiTJ4",
-      videoUrl: "https://www.youtube.com/watch?v=TPrnSACiTJ4",
-      overview: `Getting started with Blender can feel overwhelming with all the panels, menus, and buttons. In this foundational lesson, you'll master how to move around the 3D viewport without thinking, learn the primary layout workspaces, and understand how Blender organizes 3D space with the XYZ coordinate system. Navigation must become second nature so you never fight the camera while modeling.`,
+      youtubeId: "-tbSCMbJA6o",
+      videoUrl: "https://www.youtube.com/watch?v=-tbSCMbJA6o",
+      overview: `Start with the interface and navigation chapter from Blender Guru's current Blender 5 beginner donut course. The controls and core concepts apply in Blender 5.2; use the linked 5.2 manual when labels or panels differ.`,
       summary: [
         "Orbit with Middle Mouse Button (MMB), Pan with Shift + MMB, Zoom with Mouse Scroll.",
         "Snap to orthographic views using Numpad 1 (Front), 3 (Right), 7 (Top), and 0 (Active Camera).",
@@ -148,30 +148,30 @@ const BLENDER_DATA = {
     {
       id: "fund-3",
       trackId: "fundamentals",
-      title: "The Donut Rite of Passage: Modeling & Proportional Editing",
+      title: "Complete Beginner Donut Course (Blender 5)",
       author: "Blender Guru",
-      duration: "25 mins",
+      duration: "Full course",
       level: "Beginner",
-      youtubeId: "TPrnSACiTJ4",
-      videoUrl: "https://www.youtube.com/watch?v=TPrnSACiTJ4",
-      overview: `The iconic Donut tutorial by Andrew Price (Blender Guru) is the global rite of passage for millions of 3D creators. In this lesson, you will create the donut dough base using a Torus primitive, switch to Edit Mode to pull vertices with Proportional Editing (O) for realistic organic lumpy imperfections, and duplicate faces to generate the icing layer with face snapping.`,
+      youtubeId: "z-Xl9tGqH14",
+      videoUrl: "https://www.youtube.com/watch?v=z-Xl9tGqH14",
+      resourceUrl: "https://www.blenderguru.com/posts/blender-donut-v5-tutorial",
+      overview: `Follow Blender Guru's complete beginner donut course made for Blender 5.0 (published in 2026). It is a full start-to-finish course covering the basics, modeling, organic forms, materials, texturing, UVs, Geometry Nodes sprinkles, lighting, and rendering. Blender 5.2 is the current LTS release; the core workflows still apply, and use the official 5.2 manual linked below if a control has moved.`,
       summary: [
-        "Tab toggles between Object Mode (treating object as a whole) and Edit Mode (manipulating mesh parts).",
-        "Use 1, 2, 3 on the top keyboard row in Edit Mode to switch between Vertex, Edge, and Face selection.",
-        "Turn on Proportional Editing with 'O'. Use Mouse Scroll Wheel up/down to adjust the sphere of influence.",
-        "Duplicate geometry in Edit Mode with Shift + D, then press 'P' -> 'Separate Selection' to split into a new object.",
-        "Enable Snapping (Shift + Tab) and set target to 'Face Project' to make dripping icing stick to the donut surface."
+        "The course is split into eight chapters: basics, modeling, organic modeling, materials, texturing, UV unwrapping, sprinkles with Geometry Nodes, and final lighting/rendering.",
+        "Save incremental versions of the .blend file as you go, especially before modifiers, UV edits, and simulation or node setup.",
+        "Treat provided textures and assets as optional learning aids; the course page lists downloadable resources and setup steps.",
+        "If a Blender 5.0 menu or panel differs in 5.2, search the versioned manual linked below for the feature name."
       ],
       troubleshooting: [
         {
-          problem: "When I move one vertex, the ENTIRE donut moves with it!",
-          cause: "Proportional Editing (O) is active with its radius sphere set way too huge.",
-          solution: "Press 'G' to move, and immediately scroll your Mouse Wheel DOWN repeatedly until the circle of influence shrinks down to your desired radius."
+          problem: "The tutorial's interface doesn't exactly match Blender 5.2.",
+          cause: "The course was recorded for Blender 5.0 and some UI details may have changed in 5.2.",
+          solution: "Look up the tool name in the linked Blender 5.2 manual. The course page also includes current chapter links and project resources."
         },
         {
-          problem: "The icing drips are clipping inside the donut dough and disappearing.",
-          cause: "The icing faces are occupying the exact same 3D coordinates as the donut mesh or sinking underneath.",
-          solution: "Add a 'Solidify' modifier to the icing object to give it thickness, and adjust the Offset to 1 so thickness pushes outward."
+          problem: "The course's texture or asset is missing.",
+          cause: "Some course assets are provided as separate downloads and are not embedded in the video.",
+          solution: "Open the Blender Guru course page linked above and download the relevant project resources. Reconnect missing files through File -> External Data -> Find Missing Files."
         },
         {
           problem: "I can't see vertices behind the front faces in Edit Mode.",
@@ -179,7 +179,7 @@ const BLENDER_DATA = {
           solution: "Press Alt + Z to toggle X-Ray mode. Now you can select both front and back vertices effortlessly with box select (B)."
         }
       ],
-      tags: ["donut", "proportional editing", "blender guru", "edit mode", "snapping"]
+      tags: ["donut", "blender 5", "blender guru", "beginner", "modeling", "materials", "geometry nodes"]
     },
     {
       id: "fund-4",
@@ -243,7 +243,7 @@ const BLENDER_DATA = {
         {
           problem: "My flat surface shows weird pinching and wavy shadows after shading smooth.",
           cause: "Smooth shading is trying to interpolate across sharp 90-degree geometric edges.",
-          solution: "Right-click the mesh -> select 'Shade Auto Smooth' (in Blender 4.x, add the 'Smooth by Angle' modifier from the Normals category)."
+          solution: "Use Object -> Shade Auto Smooth. In current Blender versions, smooth-by-angle behavior is available through the Smooth by Angle geometry-nodes modifier; consult the Blender 5.2 manual for the current workflow."
         },
         {
           problem: "Extrude created a weird crease that I can't smooth out.",
@@ -588,13 +588,13 @@ const BLENDER_DATA = {
     {
       id: "light-1",
       trackId: "lighting",
-      title: "Cycles vs EEVEE Next: Choosing Your Render Engine",
+      title: "Cycles vs Eevee: Choosing Your Render Engine",
       author: "CG Geek",
       duration: "22 mins",
       level: "Beginner",
       youtubeId: "QzVzXF395Zg",
       videoUrl: "https://www.youtube.com/watch?v=QzVzXF395Zg",
-      overview: `Understanding render engines is the key to turning good models into breathtaking art. Cycles is Blender's path-tracer (delivering physically accurate light bounces, caustics, and global illumination), while EEVEE Next is a cutting-edge real-time rasterizer (rendering in seconds). Learn when to pick each engine and how to optimize render settings for speed and quality.`,
+      overview: `Cycles is Blender's path tracer, while Eevee is its real-time render engine. Learn when to pick each engine and how to optimize render settings for speed and quality. In Blender 5.2, the engine is named Eevee in the interface; older videos may call it Eevee Next.`,
       summary: [
         "Switch Render Engine in Render Properties: Cycles for photorealism, EEVEE for instant real-time speed.",
         "In Cycles, enable GPU Compute in Render Properties and configure CUDA / OptiX / HIP in System Preferences.",
@@ -616,7 +616,7 @@ const BLENDER_DATA = {
         {
           problem: "Bright highlights look flat, washed out, and have zero color vibrancy.",
           cause: "View Transform is set to 'Standard', which clips high-dynamic-range highlights to pure white.",
-          solution: "Go to Render Properties -> Color Management -> Set 'View Transform' to 'AgX' (in Blender 4.x) or 'Filmic'."
+          solution: "Go to Render Properties -> Color Management and choose a view transform such as AgX. Follow the linked Blender 5.2 manual for current names and controls."
         }
       ],
       tags: ["cycles", "eevee", "denoising", "render", "agx", "color management"]
@@ -1389,3 +1389,4 @@ const BLENDER_DATA = {
     }
   ]
 };
+

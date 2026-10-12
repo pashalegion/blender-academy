@@ -481,6 +481,14 @@ const UI = {
           </div>
         </div>
 
+        <div class="flex flex-wrap items-center gap-2 text-xs">
+          <span class="text-zinc-400">Using Blender 5.2 LTS?</span>
+          <a href="https://docs.blender.org/manual/en/5.2/" target="_blank" rel="noopener noreferrer" class="btn-secondary text-xs py-1 px-3 text-cyan-300 hover:text-cyan-200">↗ Blender 5.2 Manual</a>
+          <a href="https://www.blender.org/releases/5-2/" target="_blank" rel="noopener noreferrer" class="btn-secondary text-xs py-1 px-3 text-cyan-300 hover:text-cyan-200">↗ What's New in 5.2</a>
+          ${lesson.resourceUrl ? `<a href="${lesson.resourceUrl}" target="_blank" rel="noopener noreferrer" class="btn-secondary text-xs py-1 px-3 text-orange-300 hover:text-orange-200">↗ Course notes & resources</a>` : ""}
+          <span class="text-zinc-500">Older lessons may use earlier UI labels; the manual is versioned for 5.2.</span>
+        </div>
+
         <!-- Lesson Text Overview -->
         <div>
           <h3 class="text-lg font-bold text-white mb-2 flex items-center gap-2">
@@ -718,7 +726,7 @@ const UI = {
 
     // Check hash on load
     const hash = window.location.hash.replace("#", "");
-    if (hash && ["lessons", "rig", "plugins", "vault", "glossary"].includes(hash)) {
+    if (hash && ["lessons", "rig", "plugins", "vault", "glossary", "shortcuts"].includes(hash)) {
       this.switchView(hash);
     }
   },
@@ -729,7 +737,8 @@ const UI = {
       rig: document.getElementById("view-rig"),
       plugins: document.getElementById("view-plugins"),
       vault: document.getElementById("view-vault"),
-      glossary: document.getElementById("view-glossary")
+      glossary: document.getElementById("view-glossary"),
+      shortcuts: document.getElementById("view-shortcuts")
     };
 
     // Update active tab buttons
@@ -755,6 +764,7 @@ const UI = {
     // Trigger achievements for viewing tools
     if (viewName === "vault") AppState.unlockAchievement("vault-looter");
     if (viewName === "glossary") AppState.unlockAchievement("glossary-scholar");
+    if (viewName === "shortcuts") AppState.unlockAchievement("shortcut-master");
     if (viewName === "rig") AppState.unlockAchievement("hardware-tester");
     if (viewName === "plugins") AppState.unlockAchievement("tool-collector");
 
@@ -1163,29 +1173,7 @@ const UI = {
       });
     }
 
-    // ── 4. ⌨️ Hotkeys Button → Shortcuts Modal ────────────────────────
-    const shortcutsNavBtn = document.getElementById("open-shortcuts-nav-btn");
-    const shortcutsModal = document.getElementById("shortcuts-modal");
-    const closeShortcutsBtn = document.getElementById("close-shortcuts-modal-btn");
-
-    shortcutsNavBtn?.addEventListener("click", () => {
-      if (shortcutsModal) {
-        shortcutsModal.classList.add("active");
-        document.body.style.overflow = "hidden";
-        AppState.unlockAchievement("shortcut-master");
-      }
-    });
-
-    const closeShortcuts = () => {
-      shortcutsModal?.classList.remove("active");
-      document.body.style.overflow = "";
-    };
-    closeShortcutsBtn?.addEventListener("click", closeShortcuts);
-    shortcutsModal?.addEventListener("click", (e) => {
-      if (e.target === shortcutsModal) closeShortcuts();
-    });
-
-    // ── 5. Achievements Rollout Toggle (click) ────────────────────────
+    // ── 4. Achievements Rollout Toggle (click) ────────────────────────
     const rolloutBtn = document.getElementById("achievements-rollout-btn");
     const rolloutPopover = document.getElementById("achievements-rollout-popover");
 
@@ -1502,3 +1490,4 @@ window.addEventListener("DOMContentLoaded", () => {
   AppState.init();
   UI.init();
 });
+

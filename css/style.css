@@ -1,6 +1,6 @@
 /* ==========================================================================
    Blender Academy Design System & Theme
-   Inspired by Blender 4.x Dark Interface with Vibrant Orange/Cyan Accents
+   Inspired by Blender's dark interface with vibrant orange/cyan accents
    ========================================================================== */
 
 :root {
@@ -436,3 +436,4 @@ kbd {
 .suzanne-fab:active {
   transform: scale(0.95);
 }
+
