@@ -1,20 +1,22 @@
 # 🎨 Blender Academy — Free 3D Modeling & Animation Learning Hub
 
-A modern, comprehensive web platform dedicated to learning **Blender 4.x** and 3D modeling from scratch completely for free.
+A free learning hub for Blender 5.2 LTS and 3D modeling, with version-aware lesson notes and references.
 
 ---
 
 ## 🌟 What's Included
 
 ### 🛣️ 8 Structured Learning Tracks
-1. **🧭 Blender Fundamentals**: Viewport navigation, 3D space, transforms (G/R/S), the Donut rite of passage, Modifiers 101, and clean topology.
+1. **🧭 Blender Fundamentals**: Viewport navigation, 3D space, transforms (G/R/S), the complete Blender 5 donut course, Modifiers 101, and clean topology.
 2. **📐 Hard Surface & 3D Environment Modeling**: Low-poly game asset modeling (The Medieval Well), Boolean cuts & Bevel workflows, ArchViz millimeter precision, and modular design.
 3. **🗿 Digital Sculpting & Anatomy**: Core sculpt brushes (Draw, Clay Strips, Snake Hook), Dyntopo vs Voxel Remesher, stylized facial anatomy, and manual retopology with Shrinkwrap.
 4. **🎨 Materials, Shading & UV Unwrapping**: Principled BSDF, PBR workflows (Albedo, Roughness, Metallic, Normal), Seam placement & Texel density, procedural node shading, and direct mesh painting.
-5. **💡 Lighting, Cameras & Rendering**: Cycles (path-tracing) vs EEVEE Next (realtime), 3-point cinematic lighting, photorealistic Poly Haven HDRIs, depth of field, and AgX color management.
+5. **💡 Lighting, Cameras & Rendering**: Cycles (path-tracing) vs Eevee (realtime), 3-point cinematic lighting, photorealistic Poly Haven HDRIs, depth of field, and AgX color management.
 6. **🦴 Rigging & Character Animation**: Bones & armatures, automatic weights & bone heat error fixes, Rigify auto-rigging, Graph Editor bezier curves, and bouncing ball principles.
 7. **🔮 Geometry Nodes & Procedural Power**: Modern node-based scattering, instances on points, procedural cables, and exposed parameters.
-8. **🌊 Physics, Cloth & VFX**: Rigid body destruction, domino chains, realistic cloth simulation with pillows/folds, and Mantaflow physics.
+8. **🌊 Physics, Cloth & VFX**: Rigid body destruction, domino chains, realistic cloth simulation with pillows/folds, smoke, fire, and liquid physics.
+
+The donut lesson now points to Blender Guru's complete Blender 5 beginner course, rather than reusing the older interface video. Lesson dialogs also link to the official Blender 5.2 manual and release notes. Blender 5.2 LTS is the current version target; tutorials recorded for earlier Blender versions may show different menus, while their core concepts remain useful.
 
 ---
 
@@ -58,7 +60,7 @@ Right-click `start-server.ps1` and select **Run with PowerShell** (or run `power
 blender-academy/
 ├── index.html            # Main web application interface
 ├── css/
-│   └── style.css         # Blender 4.x dark UI theme & styling
+│   └── style.css         # Blender-inspired dark UI theme & styling
 ├── js/
 │   ├── data.js           # Curated lessons, troubleshooting, plugins, badges, shortcuts
 │   └── app.js            # Gamification, progress tracking, filters, modals

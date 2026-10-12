@@ -58,7 +58,7 @@
         <button class="nav-tab-btn" data-view="plugins">🔌 Plugins</button>
         <button class="nav-tab-btn" data-view="vault">📦 Free Vault</button>
         <button class="nav-tab-btn" data-view="glossary">📖 3D Glossary</button>
-        <button id="open-shortcuts-nav-btn" class="nav-tab-btn hidden xl:inline-flex">⌨️ Hotkeys</button>
+        <button class="nav-tab-btn" data-view="shortcuts">⌨️ Shortcuts</button>
       </nav>
 
       <!-- Right Controls: Achievements Rollout & Settings -->
@@ -347,6 +347,19 @@
       </div>
     </div>
 
+    <!-- ================= VIEW 6: KEYBOARD SHORTCUTS ================= -->
+    <div id="view-shortcuts" class="hidden space-y-4">
+      <div>
+        <h2 class="text-lg font-bold text-white flex items-center gap-2">
+          <span>⌨️</span> Blender Keyboard Shortcuts Reference
+        </h2>
+        <p class="text-xs text-zinc-400">A quick reference for navigation, modeling, editing, and common Blender actions.</p>
+      </div>
+      <div id="shortcuts-container" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <!-- Rendered dynamically -->
+      </div>
+    </div>
+
   </main>
 
   <!-- ================= MODALS & POPUPS ================= -->
@@ -355,21 +368,6 @@
   <div id="lesson-modal" class="modal-overlay">
     <div class="modal-window" id="lesson-modal-content">
       <!-- Full detailed lesson view rendered dynamically -->
-    </div>
-  </div>
-
-  <!-- Keyboard Shortcuts Modal -->
-  <div id="shortcuts-modal" class="modal-overlay">
-    <div class="modal-window max-w-3xl p-6 space-y-4">
-      <div class="flex items-center justify-between border-b border-white/10 pb-3">
-        <h3 class="text-base font-bold text-white flex items-center gap-2">
-          <span>⌨️</span> Blender Keyboard Shortcuts Reference
-        </h3>
-        <button id="close-shortcuts-modal-btn" class="text-zinc-400 hover:text-white p-1 rounded-lg bg-zinc-800">✕</button>
-      </div>
-      <div id="shortcuts-container" class="grid grid-cols-1 sm:grid-cols-2 gap-4 max-h-[70vh] overflow-y-auto pr-1">
-        <!-- Rendered dynamically -->
-      </div>
     </div>
   </div>
 
