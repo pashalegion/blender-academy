@@ -10,7 +10,7 @@ const BLENDER_DATA = {
       name: "Blender Fundamentals",
       icon: "🧭",
       color: "#EA7600",
-      description: "Interface, 3D navigation, core transformations, object vs edit mode, and essential topology.",
+      description: "Interface and navigation, core transforms, focused modifier and topology lessons, followed by the Blender 5 donut project as a capstone.",
       badge: "Donut Apprentice"
     },
     {
@@ -26,7 +26,7 @@ const BLENDER_DATA = {
       name: "Digital Sculpting & Anatomy",
       icon: "🗿",
       color: "#E040FB",
-      description: "Dynamic topology (Dyntopo), voxel remesher, brush mechanics, stylized character heads, retopology.",
+      description: "Sculpting brush fundamentals, Dyntopo vs voxel remesh, and manual retopology.",
       badge: "Sculpt Titan"
     },
     {
@@ -34,7 +34,7 @@ const BLENDER_DATA = {
       name: "Materials, Shading & UVs",
       icon: "🎨",
       color: "#00E676",
-      description: "Principled BSDF, PBR textures, procedural shader nodes, UV unwrapping, and direct texture painting.",
+      description: "Principled BSDF and PBR fundamentals, UV seam strategy, and procedural node materials.",
       badge: "Shader Alchemist"
     },
     {
@@ -42,7 +42,7 @@ const BLENDER_DATA = {
       name: "Lighting, Cameras & Render",
       icon: "💡",
       color: "#FFD600",
-      description: "Cycles and Eevee, 3-point lighting setups, photorealistic HDRIs, depth of field, color management.",
+      description: "Cycles vs Eevee, three-point studio lighting, and HDRI world lighting with Poly Haven.",
       badge: "Render Maestro"
     },
     {
@@ -50,7 +50,7 @@ const BLENDER_DATA = {
       name: "Rigging & Character Animation",
       icon: "🦴",
       color: "#FF5252",
-      description: "Bones & armatures, weight painting, Rigify auto-rigging, Graph Editor, bouncing ball principles.",
+      description: "Armature basics, automatic skinning and weights, and the 12 animation principles with a bouncing ball.",
       badge: "Keyframe Virtuoso"
     },
     {
@@ -66,7 +66,7 @@ const BLENDER_DATA = {
       name: "Physics, Cloth & VFX",
       icon: "🌊",
       color: "#00BCD4",
-      description: "Rigid body destruction, realistic cloth simulation, smoke, fire, and liquid physics.",
+      description: "Rigid body dynamics and cloth simulation workflows.",
       badge: "Simulation Wizard"
     }
   ],
@@ -76,110 +76,38 @@ const BLENDER_DATA = {
     {
       id: "fund-1",
       trackId: "fundamentals",
-      title: "Blender Interface & 3D Viewport Navigation (Blender 5)",
-      author: "Blender Guru",
-      duration: "22 mins",
-      level: "Absolute Beginner",
-      youtubeId: "-tbSCMbJA6o",
-      videoUrl: "https://www.youtube.com/watch?v=-tbSCMbJA6o",
-      overview: `Start with the interface and navigation chapter from Blender Guru's current Blender 5 beginner donut course. The controls and core concepts apply in Blender 5.2; use the linked 5.2 manual when labels or panels differ.`,
-      summary: [
-        "Orbit with Middle Mouse Button (MMB), Pan with Shift + MMB, Zoom with Mouse Scroll.",
-        "Snap to orthographic views using Numpad 1 (Front), 3 (Right), 7 (Top), and 0 (Active Camera).",
-        "Press 'Numpad .' (period) to instantly center and focus your view on any selected object.",
-        "Toggle the Left Toolbar with 'T' and the Right Properties/Sidebar with 'N'.",
-        "Switch between Viewport Shading modes (Wireframe, Solid, Material Preview, Rendered) using 'Z'."
-      ],
-      troubleshooting: [
-        {
-          problem: "I got lost in infinite empty space and can't find my objects!",
-          cause: "Your viewport camera panned or zoomed far away from world center (0,0,0).",
-          solution: "Select your object in the top-right Outliner hierarchy, hover your mouse over the 3D viewport, and press Numpad . (Period). Alternatively, press Home to view all objects in the scene."
-        },
-        {
-          problem: "The viewport starts clipping and cutting through my object when I zoom close.",
-          cause: "The Viewport Camera's 'Clip Start' distance is set too high or your object scale is tiny.",
-          solution: "Press 'N' to open the Sidebar -> click the 'View' tab -> under 'View', lower 'Clip Start' to 0.01m (or 1mm). Don't set it to 0, or you will get depth-fighting artifacts!"
-        },
-        {
-          problem: "I don't have a Numpad on my keyboard! How do I switch views?",
-          cause: "Tenkeyless or laptop keyboards lack the dedicated numpad cluster.",
-          solution: "Go to Edit -> Preferences -> Input -> Check 'Emulate Numpad'. Now the top number keys 1-9 will act as Numpad keys. Alternatively, use the Grave Accent key (`) for the View Pie Menu."
-        }
-      ],
-      tags: ["navigation", "interface", "viewport", "orbit", "basics", "shortcuts"]
-    },
-    {
-      id: "fund-2",
-      trackId: "fundamentals",
-      title: "The Holy Trinity: Move, Rotate, Scale (Transforms)",
+      title: "Blender 5 Beginner Course: Interface & Navigation",
       author: "Grant Abbitt",
-      duration: "18 mins",
+      duration: "13 mins",
       level: "Absolute Beginner",
-      youtubeId: "il6_26k4lFk",
-      videoUrl: "https://www.youtube.com/watch?v=il6_26k4lFk",
-      overview: `Every 3D artist lives and breathes the transform hotkeys: G (Grab/Move), R (Rotate), and S (Scale). In this lesson, you will learn how to constrain transformations to specific axes (X, Y, Z), switch between Global and Local coordinates, use precision numeric input, and learn the single most important rule in Blender: ALWAYS apply your object scale!`,
+      youtubeId: "kVcY7K-JA1Y",
+      videoUrl: "https://www.youtube.com/watch?v=kVcY7K-JA1Y",
+      overview: `Start with the first lesson in Grant Abbitt's separate Blender 5 beginner course. It introduces the interface, navigation, views, selecting and adding objects, and the first move, rotate, and scale operations. Use it as a short orientation before the focused modeling lessons and the separate donut project.`,
       summary: [
-        "G = Grab/Move, R = Rotate, S = Scale. Confirm with Left Click, Cancel with Right Click or Esc.",
-        "Lock to an axis by pressing X, Y, or Z after G/R/S (e.g., G then Z to move purely vertically).",
-        "Exclude an axis with Shift (e.g., S then Shift + Z scales horizontally while keeping height constant).",
-        "Hold Shift while transforming for ultra-precise micro-adjustments.",
-        "The golden rule: Press Ctrl + A -> 'Apply Scale' whenever you resize an object in Object Mode before adding modifiers or texturing!"
+        "Learn the main Blender editors and how to navigate the interface.",
+        "Orbit the viewport with MMB, inspect orthographic views, and understand perspective vs. orthographic views.",
+        "Add and select objects, then practice moving, rotating, and scaling with G, R, and S.",
+        "Try the end-of-lesson challenge by adding and positioning objects in the scene.",
+        "Save your project with Ctrl + S as you practice."
       ],
       troubleshooting: [
         {
-          problem: "My Bevel modifier or Inset tool is squished or unevenly stretched!",
-          cause: "The object was scaled in Object Mode without applying the scale (Scale is e.g. 1.0, 0.2, 3.5 instead of 1.0, 1.0, 1.0).",
-          solution: "In Object Mode, select the object and press Ctrl + A -> click 'Scale'. This resets the object's transform matrix to 1.0 without changing its physical shape."
+          problem: "I cannot orbit or pan the viewport comfortably.",
+          cause: "Viewport navigation depends on mouse input and can feel unfamiliar at first.",
+          solution: "Use MMB to orbit, Shift + MMB to pan, and the scroll wheel to zoom. Use the view controls or the Grave Accent view pie when you need a preset angle."
         },
         {
-          problem: "Rotating an object rotates it around an empty space instead of its center.",
-          cause: "The Object Origin point (the tiny yellow dot) is separated from the mesh geometry.",
-          solution: "Right-click the object -> Set Origin -> 'Origin to Geometry'. To move the origin to the 3D Cursor, position the cursor and choose 'Origin to 3D Cursor'."
+          problem: "My object moves along the wrong direction.",
+          cause: "A transform is unconstrained or locked to a different axis than intended.",
+          solution: "Start the transform with G, R, or S, then press X, Y, or Z to constrain it. Type a number for a precise value, then confirm with Enter."
         },
         {
-          problem: "Accidentally moved an object and now it's off-center.",
-          cause: "Transform values are no longer zero.",
-          solution: "Press Alt + G to clear position back to (0,0,0), Alt + R to clear rotation, and Alt + S to reset scale to 1.0."
+          problem: "I get lost after changing editors or workspaces.",
+          cause: "Blender workspaces rearrange editor areas for different tasks.",
+          solution: "Use the workspace tabs across the top to return to Layout. You can change an editor type from its top-left editor selector."
         }
       ],
-      tags: ["transforms", "grab", "rotate", "scale", "apply scale", "origin"]
-    },
-    {
-      id: "fund-3",
-      trackId: "fundamentals",
-      title: "Complete Beginner Donut Course (Blender 5)",
-      author: "Blender Guru",
-      duration: "Full course",
-      level: "Beginner",
-      youtubeId: "z-Xl9tGqH14",
-      videoUrl: "https://www.youtube.com/watch?v=z-Xl9tGqH14",
-      resourceUrl: "https://www.blenderguru.com/posts/blender-donut-v5-tutorial",
-      overview: `Follow Blender Guru's complete beginner donut course made for Blender 5.0 (published in 2026). It is a full start-to-finish course covering the basics, modeling, organic forms, materials, texturing, UVs, Geometry Nodes sprinkles, lighting, and rendering. Blender 5.2 is the current LTS release; the core workflows still apply, and use the official 5.2 manual linked below if a control has moved.`,
-      summary: [
-        "The course is split into eight chapters: basics, modeling, organic modeling, materials, texturing, UV unwrapping, sprinkles with Geometry Nodes, and final lighting/rendering.",
-        "Save incremental versions of the .blend file as you go, especially before modifiers, UV edits, and simulation or node setup.",
-        "Treat provided textures and assets as optional learning aids; the course page lists downloadable resources and setup steps.",
-        "If a Blender 5.0 menu or panel differs in 5.2, search the versioned manual linked below for the feature name."
-      ],
-      troubleshooting: [
-        {
-          problem: "The tutorial's interface doesn't exactly match Blender 5.2.",
-          cause: "The course was recorded for Blender 5.0 and some UI details may have changed in 5.2.",
-          solution: "Look up the tool name in the linked Blender 5.2 manual. The course page also includes current chapter links and project resources."
-        },
-        {
-          problem: "The course's texture or asset is missing.",
-          cause: "Some course assets are provided as separate downloads and are not embedded in the video.",
-          solution: "Open the Blender Guru course page linked above and download the relevant project resources. Reconnect missing files through File -> External Data -> Find Missing Files."
-        },
-        {
-          problem: "I can't see vertices behind the front faces in Edit Mode.",
-          cause: "Solid shading blocks occluded geometry.",
-          solution: "Press Alt + Z to toggle X-Ray mode. Now you can select both front and back vertices effortlessly with box select (B)."
-        }
-      ],
-      tags: ["donut", "blender 5", "blender guru", "beginner", "modeling", "materials", "geometry nodes"]
+      tags: ["blender 5", "interface", "navigation", "viewport", "beginner", "transforms"]
     },
     {
       id: "fund-4",
@@ -255,6 +183,42 @@ const BLENDER_DATA = {
     },
 
     /* ---------------- TRACK 2: HARD SURFACE & MODELING ---------------- */
+    {
+      id: "fund-3",
+      trackId: "fundamentals",
+      title: "Complete Beginner Donut Course (Blender 5)",
+      author: "Blender Guru",
+      duration: "Full course",
+      level: "Beginner",
+      youtubeId: "z-Xl9tGqH14",
+      videoUrl: "https://www.youtube.com/watch?v=z-Xl9tGqH14",
+      resourceUrl: "https://www.blenderguru.com/posts/blender-donut-v5-tutorial",
+      overview: `Follow Blender Guru's complete beginner donut course made for Blender 5.0 (published in 2026). It is a full start-to-finish course covering the basics, modeling, organic forms, materials, texturing, UVs, Geometry Nodes sprinkles, lighting, and rendering. Blender 5.2 is the current LTS release; the core workflows still apply, and use the official 5.2 manual linked below if a control has moved.`,
+      summary: [
+        "The course is split into eight chapters: basics, modeling, organic modeling, materials, texturing, UV unwrapping, sprinkles with Geometry Nodes, and final lighting/rendering.",
+        "Save incremental versions of the .blend file as you go, especially before modifiers, UV edits, and simulation or node setup.",
+        "Treat provided textures and assets as optional learning aids; the course page lists downloadable resources and setup steps.",
+        "If a Blender 5.0 menu or panel differs in 5.2, search the versioned manual linked below for the feature name."
+      ],
+      troubleshooting: [
+        {
+          problem: "The tutorial's interface doesn't exactly match Blender 5.2.",
+          cause: "The course was recorded for Blender 5.0 and some UI details may have changed in 5.2.",
+          solution: "Look up the tool name in the linked Blender 5.2 manual. The course page also includes current chapter links and project resources."
+        },
+        {
+          problem: "The course's texture or asset is missing.",
+          cause: "Some course assets are provided as separate downloads and are not embedded in the video.",
+          solution: "Open the Blender Guru course page linked above and download the relevant project resources. Reconnect missing files through File -> External Data -> Find Missing Files."
+        },
+        {
+          problem: "I can't see vertices behind the front faces in Edit Mode.",
+          cause: "Solid shading blocks occluded geometry.",
+          solution: "Press Alt + Z to toggle X-Ray mode. Now you can select both front and back vertices effortlessly with box select (B)."
+        }
+      ],
+      tags: ["donut", "blender 5", "blender guru", "beginner", "modeling", "materials", "geometry nodes"]
+    },
     {
       id: "hard-1",
       trackId: "hardsurface",

@@ -1,70 +1,40 @@
-# 🎨 Blender Academy — Free 3D Modeling & Animation Learning Hub
+# Blender Academy
 
-A free learning hub for Blender 5.2 LTS and 3D modeling, with version-aware lesson notes and references.
+A free learning hub for Blender and 3D art, with 8 focused learning tracks, version-aware lesson notes, troubleshooting, shortcuts, a hardware checker, a resource vault, and a glossary.
 
----
+## Learning program
 
-## 🌟 What's Included
+The 23 lessons are organized as focused tracks. Fundamentals now progresses from a current Blender 5 interface orientation through modifier and topology deep dives, then uses the complete Blender Guru donut course as a project capstone. The old separate Donut Part 1 card was removed because it duplicated the opening section of that full course.
 
-### 🛣️ 8 Structured Learning Tracks
-1. **🧭 Blender Fundamentals**: Viewport navigation, 3D space, transforms (G/R/S), the complete Blender 5 donut course, Modifiers 101, and clean topology.
-2. **📐 Hard Surface & 3D Environment Modeling**: Low-poly game asset modeling (The Medieval Well), Boolean cuts & Bevel workflows, ArchViz millimeter precision, and modular design.
-3. **🗿 Digital Sculpting & Anatomy**: Core sculpt brushes (Draw, Clay Strips, Snake Hook), Dyntopo vs Voxel Remesher, stylized facial anatomy, and manual retopology with Shrinkwrap.
-4. **🎨 Materials, Shading & UV Unwrapping**: Principled BSDF, PBR workflows (Albedo, Roughness, Metallic, Normal), Seam placement & Texel density, procedural node shading, and direct mesh painting.
-5. **💡 Lighting, Cameras & Rendering**: Cycles (path-tracing) vs Eevee (realtime), 3-point cinematic lighting, photorealistic Poly Haven HDRIs, depth of field, and AgX color management.
-6. **🦴 Rigging & Character Animation**: Bones & armatures, automatic weights & bone heat error fixes, Rigify auto-rigging, Graph Editor bezier curves, and bouncing ball principles.
-7. **🔮 Geometry Nodes & Procedural Power**: Modern node-based scattering, instances on points, procedural cables, and exposed parameters.
-8. **🌊 Physics, Cloth & VFX**: Rigid body destruction, domino chains, realistic cloth simulation with pillows/folds, smoke, fire, and liquid physics.
+1. **Blender Fundamentals (4 lessons):** interface and navigation, modifiers, clean topology, then the full donut project.
+2. **Hard Surface & Modeling (3):** a low-poly environment asset, Boolean and bevel workflows, and precision modeling and snapping.
+3. **Digital Sculpting & Anatomy (3):** core sculpting brushes, Dyntopo vs. voxel remesh, and manual retopology.
+4. **Materials, Shading & UVs (3):** Principled BSDF and PBR, UV seams, and procedural materials.
+5. **Lighting, Cameras & Render (3):** Cycles vs. Eevee, three-point studio lighting, and HDRI world lighting.
+6. **Rigging & Character Animation (3):** armature basics, automatic weights, and animation principles using a bouncing ball.
+7. **Geometry Nodes & Procedural (2):** Geometry Nodes fundamentals, then procedural curves and cables.
+8. **Physics, Cloth & VFX (2):** rigid body dynamics, then cloth simulation.
 
-The donut lesson now points to Blender Guru's complete Blender 5 beginner course, rather than reusing the older interface video. Lesson dialogs also link to the official Blender 5.2 manual and release notes. Blender 5.2 LTS is the current version target; tutorials recorded for earlier Blender versions may show different menus, while their core concepts remain useful.
+### Version guidance
 
----
+The refreshed interface lesson and donut capstone use Blender 5-era instruction. Other community lessons may have been recorded for earlier versions; their lesson notes identify version-sensitive steps where known and link to the official Blender manual. Check the lesson card and its notes before following version-specific UI instructions.
 
-### 🚨 Detailed Troubleshooting for Every Lesson
-No more getting stuck on weird bugs! Every lesson features a **"Common Gotchas & Fixes"** section detailing:
-- **The Problem**: Exact symptoms (e.g. inverted dark shading, squished bevels, pink render backgrounds, bone heat weighting errors).
-- **Why it happens**: Clear explanation of underlying 3D concepts (flipped normals, unapplied object scale, missing textures, non-manifold geometry).
-- **Quick Fix**: 1-2 click step-by-step hotkeys and UI settings.
+## Study tools
 
----
+- Troubleshooting notes on every lesson.
+- A keyboard shortcuts reference page.
+- Local lesson completion, bookmarks, XP, achievements, and a per-lesson notepad.
+- Blender rig checker, free resource vault, plugin directory, and 3D glossary.
+- Browser-local progress backup and restore.
 
-### 🔌 Beginner Add-ons & Plugins Directory
-Comprehensive catalog of essential tools with activation guides and hotkeys:
-- **Built-in Addons**: Node Wrangler, LoopTools, BoolTool, Images as Planes, Extra Objects, Rigify.
-- **Free Community Addons**: BlenderKit (free 10k+ asset library), Poly Haven (instant HDRIs & textures), fSpy (photo perspective matcher), Screencast Keys.
+## Run locally
 
----
+Open `index.html` in a browser, or use the included `start.bat` / `start-server.ps1` launchers.
 
-### 🏆 Gamification & Achievements System
-- **Leveling & XP Engine**: Earn +100 XP per lesson, +15 XP per troubleshooting guide explored, and badge bonuses.
-- **Ranks**: From *Default Cube Survivor* to *3D Grandmaster*.
-- **Interactive Easter Egg**: Interactive 3D spinning cube in the header with a "Delete Default Cube (Press X)" button that explodes into particles and unlocks your first achievement!
-- **14 Unlockable Badges**: Visual and audio/toast celebration upon reaching milestones.
-- **Personal Study Notepad**: Auto-saved study notes per lesson.
-- **Backup & Restore**: Export your progress as JSON and import anytime.
+## Project structure
 
----
-
-## 🚀 How to Run
-
-### Method 1: Instant Launch (No installation needed)
-Double-click `start.bat` or open `index.html` directly in any web browser (Google Chrome, Microsoft Edge, Firefox, Brave).
-
-### Method 2: Local HTTP Server (PowerShell)
-Right-click `start-server.ps1` and select **Run with PowerShell** (or run `powershell -ExecutionPolicy Bypass -File .\start-server.ps1`). It will serve the site at `http://localhost:5500`.
-
----
-
-## 📁 Directory Structure
-```
-blender-academy/
-├── index.html            # Main web application interface
-├── css/
-│   └── style.css         # Blender-inspired dark UI theme & styling
-├── js/
-│   ├── data.js           # Curated lessons, troubleshooting, plugins, badges, shortcuts
-│   └── app.js            # Gamification, progress tracking, filters, modals
-├── start.bat             # One-click Windows launcher
-├── start-server.ps1      # Native PowerShell local web server
-└── README.md             # Documentation
-```
+- `index.html` — single-page interface
+- `css/style.css` — application styling
+- `js/data.js` — lesson and reference data
+- `js/app.js` — navigation, lessons, progress, and interactions
+- `js/visuals.js`, `js/hardware.js`, `js/vault.js`, `js/glossary.js` — supporting views
