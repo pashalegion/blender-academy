@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Progress and backup — Blender Academy</title>
+  <meta name="description" content="Your progress, achievements, and backup export and import. Progress is stored in this browser only.">
+  <link rel="canonical" href="https://pashalegion.github.io/blender-academy/progress.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Blender Academy">
+  <meta property="og:title" content="Progress and backup — Blender Academy">
+  <meta property="og:description" content="Your progress, achievements, and backup export and import. Progress is stored in this browser only.">
+  <meta property="og:url" content="https://pashalegion.github.io/blender-academy/progress.html">
+  <meta property="og:image" content="https://pashalegion.github.io/blender-academy/assets/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="index.html" aria-label="Blender Academy home">
+        <span class="brand-logo" aria-hidden="true">B</span>
+        <span>Blender<span class="brand-accent">Academy</span></span>
+      </a>
+      <button class="nav-toggle" id="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+      <nav class="site-nav" id="site-nav" data-open="false" aria-label="Main">
+        <ul>
+          <li><a href="index.html" data-nav-href="index.html">Home</a></li>
+          <li><a href="lessons.html" data-nav-href="lessons.html">Lessons</a></li>
+          <li><a href="tracks.html" data-nav-href="tracks.html">Tracks</a></li>
+          <li><a href="rig.html" data-nav-href="rig.html">Rig checker</a></li>
+          <li><a href="plugins.html" data-nav-href="plugins.html">Add-ons</a></li>
+          <li><a href="vault.html" data-nav-href="vault.html">Free vault</a></li>
+          <li><a href="glossary.html" data-nav-href="glossary.html">Glossary</a></li>
+          <li><a href="shortcuts.html" data-nav-href="shortcuts.html">Shortcuts</a></li>
+          <li><a href="progress.html" data-nav-href="progress.html">Progress</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <div class="storage-banner" id="storage-banner" role="alert" hidden>
+    <p>Progress could not be saved in this browser, so your last change is not stored. Check that site data is allowed, or <a href="progress.html">export a backup</a> now.</p>
+  </div>
+
+  <main id="main" class="wrap" tabindex="-1">
+    <div class="page-head">
+      <h1>Progress and backup</h1>
+      <p class="lede">Progress is saved in this browser only. Export a backup to keep it safe or move it to another browser.</p>
+    </div>
+
+    <section class="stack" aria-labelledby="stats-title">
+      <h2 id="stats-title">Your progress</h2>
+      <div class="stat-row">
+        <div class="stat"><div class="stat-value" id="stat-done">0/23</div><div class="stat-label">Lessons done</div></div>
+        <div class="stat"><div class="stat-value" id="stat-xp">0</div><div class="stat-label" id="stat-level">Level 1</div></div>
+        <div class="stat"><div class="stat-value" id="stat-trophies">0/0</div><div class="stat-label">Achievements</div></div>
+        <div class="stat"><div class="stat-value" id="stat-notes">0</div><div class="stat-label">Lessons with notes</div></div>
+      </div>
+      <div class="progress" aria-hidden="true"><span id="stat-bar"></span></div>
+    </section>
+
+    <section class="section" aria-labelledby="backup-title">
+      <h2 id="backup-title">Backup and restore</h2>
+      <div class="card import-box">
+        <div>
+          <button class="btn btn-primary" id="export-btn" type="button">Export backup (.json)</button>
+        </div>
+        <div class="field">
+          <label for="import-file">Import a backup file</label>
+          <input class="input" id="import-file" type="file" accept="application/json,.json">
+          <p class="hint">Import shows a preview first. Nothing changes until you confirm.</p>
+        </div>
+        <div class="preview" id="import-preview" hidden aria-live="polite"></div>
+        <div class="dialog-actions" id="import-actions" hidden>
+          <button class="btn" id="import-cancel" type="button">Cancel import</button>
+          <button class="btn btn-primary" id="import-apply" type="button">Import these items</button>
+        </div>
+        <div class="alert" id="import-error" role="alert" hidden></div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="reset-title">
+      <h2 id="reset-title">Reset</h2>
+      <div class="card">
+        <p class="muted">Reset deletes progress, notes and achievements in this browser. Export a backup first if you want to keep them.</p>
+        <p style="margin-top:12px"><button class="btn btn-danger" id="reset-btn" type="button">Reset all progress</button></p>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="trophy-title">
+      <h2 id="trophy-title">Achievements</h2>
+      <p class="muted small" id="trophy-count" aria-live="polite"></p>
+      <ul class="badge-grid" id="trophy-list"></ul>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p><strong>Blender Academy</strong> · Free community learning guide for Blender 5.2 LTS.</p>
+      <p>Progress is saved in this browser only. Use <a href="progress.html">Progress</a> to export a backup.</p>
+      <ul>
+        <li><a href="https://docs.blender.org/manual/en/5.2/" rel="noopener noreferrer">Blender 5.2 manual ↗</a></li>
+        <li><a href="secrets.html">Secrets</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <div class="toasts" id="toasts" role="status" aria-live="polite"></div>
+
+  <script src="js/common.js"></script>
+  <script src="data/lessons-index.js"></script>
+  <script src="data/reference.js"></script>
+  <script src="js/progress.js"></script>
+</body>
+</html>
