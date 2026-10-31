@@ -4,16 +4,17 @@ A free learning hub for Blender and 3D art, with 8 focused learning tracks, vers
 
 ## Learning program
 
-The 23 lessons are organized as focused tracks. Fundamentals now progresses from a current Blender 5 interface orientation through modifier and topology deep dives, then uses the complete Blender Guru donut course as a project capstone. The old separate Donut Part 1 card was removed because it duplicated the opening section of that full course.
+The 45 lessons are organized as focused tracks. Fundamentals now progresses from a current Blender 5 interface orientation through modifier and topology deep dives, then uses the complete Blender Guru donut course as a project capstone. The old separate Donut Part 1 card was removed because it duplicated the opening section of that full course.
 
-1. **Blender Fundamentals (4 lessons):** interface and navigation, modifiers, clean topology, then the full donut project.
-2. **Hard Surface & Modeling (3):** a low-poly environment asset, Boolean and bevel workflows, and precision modeling and snapping.
-3. **Digital Sculpting & Anatomy (3):** core sculpting brushes, Dyntopo vs. voxel remesh, and manual retopology.
-4. **Materials, Shading & UVs (3):** Principled BSDF and PBR, UV seams, and procedural materials.
-5. **Lighting, Cameras & Render (3):** Cycles vs. Eevee, three-point studio lighting, and HDRI world lighting.
-6. **Rigging & Character Animation (3):** armature basics, automatic weights, and animation principles using a bouncing ball.
+1. **Blender Fundamentals (7 lessons):** interface and navigation, essential mesh tools, modifiers, clean topology, scene organization, the Asset Browser, then the full donut project.
+2. **Hard Surface & Modeling (4):** a low-poly environment asset, Boolean and bevel workflows, precision modeling and snapping, and designing for 3D printing.
+3. **Digital Sculpting & Anatomy (4):** core sculpting brushes, Dyntopo vs. voxel remesh, manual retopology, and hair grooming.
+4. **Materials, Shading & UVs (6):** Principled BSDF and PBR, UV seams and packing, procedural materials, texture painting, and baking.
+5. **Lighting, Cameras & Render (4):** Cycles vs. Eevee, three-point studio lighting, HDRI world lighting, and camera work.
+6. **Rigging & Character Animation (8):** armature basics, automatic weights, animation principles, constraints, shape keys, the NLA Editor, drivers, and Grease Pencil 2D animation.
 7. **Geometry Nodes & Procedural (2):** Geometry Nodes fundamentals, then procedural curves and cables.
-8. **Physics, Cloth & VFX (2):** rigid body dynamics, then cloth simulation.
+8. **Physics, Cloth & VFX (5):** rigid body dynamics, cloth, liquid, smoke and fire, then particles.
+9. **Post-Production & Pipeline (5):** compositing, video editing, motion tracking, exporting to game engines, and Python scripting.
 
 ### Version guidance
 

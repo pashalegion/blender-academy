@@ -130,6 +130,7 @@
         '<ul class="link-list">' +
           '<li><a href="https://docs.blender.org/manual/en/5.2/" target="_blank" rel="noopener noreferrer">Blender 5.2 manual ↗</a></li>' +
           '<li><a href="https://www.blender.org/releases/5-2/" target="_blank" rel="noopener noreferrer">What is new in Blender 5.2 ↗</a></li>' +
+          (lesson.manualUrl ? '<li><a href="' + esc(lesson.manualUrl) + '" target="_blank" rel="noopener noreferrer">Manual page for this topic ↗</a></li>' : '') +
           (lesson.resourceUrl ? '<li><a href="' + esc(lesson.resourceUrl) + '" target="_blank" rel="noopener noreferrer">Course notes and resources ↗</a></li>' : '') +
         '</ul>' +
       '</section>' +
