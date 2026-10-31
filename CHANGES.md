@@ -129,7 +129,7 @@ Audited all 45 English videos by views, likes, age, detected speech language and
 
 | Lesson | Old ID | New ID | Channel | Views | Year |
 |---|---|---|---|---|---|
-| fund-6 | LoyG3OjtpRU | KfSQh2dFCik | Brad Colbow | 1,250,746 | 2022 |
+| fund-6 | LoyG3OjtpRU | MKA6ks7C3Ec | Ghost Studios | 8,636 | 2024 |
 | sculpt-3 | CuQzPDs99yM | 1myOZaxtHes | Ryan King Art | 161,194 | 2024 |
 | sculpt-4 | FMWw6XEcY4Y | bIsJquzVsPY | Martin Klekner | 45,025 | 2024 |
 | light-1 | pn1SaFo3suQ | Enggo_nqDHs | The Blenderender | 61,144 | 2024 |

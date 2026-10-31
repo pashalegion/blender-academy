@@ -7,7 +7,7 @@ All 45 are working. The 16 unavailable videos were replaced on 2026-10-31, and 2
 | Lesson | YouTube ID | Status | oEmbed title | oEmbed author | Credit in the data |
 |---|---|---|---|---|---|
 | fund-1 | kVcY7K-JA1Y | working | Blender 5 Complete Beginners Guide - FREE COURSE - Part 1 - The Interface | Grant Abbitt (Gabbitt) | Grant Abbitt |
-| fund-6 | KfSQh2dFCik | working | 10 Tools Every Blender Noob Should Learn | Brad Colbow | Brad Colbow |
+| fund-6 | MKA6ks7C3Ec | working | Blender Modeling Tools: Everything You Need to Know | Ghost Studios | Ghost Studios |
 | fund-4 | F_f-O-W9lMU | working | Modifiers for Beginners (Blender Tutorial) | Ryan King Art | Ryan King Art |
 | fund-5 | HUjpeqpd53A | working | Absolute Beginner’s Guide to Topology in Blender +10 Easy Tips | SouthernShotty | SouthernShotty |
 | fund-7 | ph6QUXNq5aE | working | How to Use Blender's Outliner and Collections (Tutorial) | Ryan King Art | Ryan King Art |
