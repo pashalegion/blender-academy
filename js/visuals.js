@@ -7,7 +7,7 @@ const BLENDER_VISUALS = {
   // Lesson Visualizations
   lessons: {
     "fund-1": `
-      <svg viewBox="0 0 240 120" class="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+      <svg viewBox="0 0 240 120" class="art" xmlns="http://www.w3.org/2000/svg">
         <defs>
           <linearGradient id="bg-fund-1" x1="0" y1="0" x2="1" y2="1">
             <stop offset="0%" stop-color="#181a20"/>
@@ -34,12 +34,12 @@ const BLENDER_VISUALS = {
         <!-- Camera frustum icon -->
         <path d="M175 30 L205 20 L205 45 Z" fill="none" stroke="#ea7600" stroke-width="1.5"/>
         <rect x="160" y="26" width="15" height="13" rx="2" fill="#ea7600" opacity="0.3" stroke="#ea7600" stroke-width="1.5"/>
-        <circle x="120" y="65" r="3.5" fill="#ffffff"/>
+        <circle cx="120" cy="65" r="3.5" fill="#ffffff"/>
       </svg>
     `,
 
     "fund-2": `
-      <svg viewBox="0 0 240 120" class="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+      <svg viewBox="0 0 240 120" class="art" xmlns="http://www.w3.org/2000/svg">
         <rect width="240" height="120" fill="#15171c"/>
         <!-- Isometric Cube -->
         <g transform="translate(120, 68)">
@@ -63,7 +63,7 @@ const BLENDER_VISUALS = {
     `,
 
     "fund-3": `
-      <svg viewBox="0 0 240 120" class="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+      <svg viewBox="0 0 240 120" class="art" xmlns="http://www.w3.org/2000/svg">
         <rect width="240" height="120" fill="#17161b"/>
         <g transform="translate(120, 60)">
           <!-- Donut Dough Base (Torus) -->
@@ -85,7 +85,7 @@ const BLENDER_VISUALS = {
     `,
 
     "fund-4": `
-      <svg viewBox="0 0 240 120" class="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+      <svg viewBox="0 0 240 120" class="art" xmlns="http://www.w3.org/2000/svg">
         <rect width="240" height="120" fill="#15171c"/>
         <!-- Low poly vs Subdivided & Mirror Modifier -->
         <g transform="translate(70, 60)">
@@ -111,7 +111,7 @@ const BLENDER_VISUALS = {
     `,
 
     "fund-5": `
-      <svg viewBox="0 0 240 120" class="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+      <svg viewBox="0 0 240 120" class="art" xmlns="http://www.w3.org/2000/svg">
         <rect width="240" height="120" fill="#15171c"/>
         <!-- Clean Quad Mesh Grid Flow -->
         <g transform="translate(120, 60)">
@@ -139,7 +139,7 @@ const BLENDER_VISUALS = {
     `,
 
     "hard-1": `
-      <svg viewBox="0 0 240 120" class="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+      <svg viewBox="0 0 240 120" class="art" xmlns="http://www.w3.org/2000/svg">
         <rect width="240" height="120" fill="#16181e"/>
         <!-- Low Poly Medieval Well -->
         <g transform="translate(120, 65)">
@@ -163,7 +163,7 @@ const BLENDER_VISUALS = {
     `,
 
     "hard-2": `
-      <svg viewBox="0 0 240 120" class="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+      <svg viewBox="0 0 240 120" class="art" xmlns="http://www.w3.org/2000/svg">
         <rect width="240" height="120" fill="#15171c"/>
         <!-- Booleans & Bevels: Cylinder cut into cube -->
         <g transform="translate(120, 62)">
@@ -183,7 +183,7 @@ const BLENDER_VISUALS = {
     `,
 
     "hard-3": `
-      <svg viewBox="0 0 240 120" class="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+      <svg viewBox="0 0 240 120" class="art" xmlns="http://www.w3.org/2000/svg">
         <rect width="240" height="120" fill="#14171d"/>
         <!-- Precision Snapping & CAD Dimensions -->
         <g transform="translate(40, 25)">
@@ -207,7 +207,7 @@ const BLENDER_VISUALS = {
     `,
 
     "sculpt-1": `
-      <svg viewBox="0 0 240 120" class="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+      <svg viewBox="0 0 240 120" class="art" xmlns="http://www.w3.org/2000/svg">
         <rect width="240" height="120" fill="#17151a"/>
         <!-- Digital Clay Sphere with Sculpt Brush -->
         <g transform="translate(120, 60)">
@@ -227,7 +227,7 @@ const BLENDER_VISUALS = {
     `,
 
     "sculpt-2": `
-      <svg viewBox="0 0 240 120" class="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+      <svg viewBox="0 0 240 120" class="art" xmlns="http://www.w3.org/2000/svg">
         <rect width="240" height="120" fill="#16171c"/>
         <!-- Dyntopo Triangles (Left) vs Voxel Uniform Quads (Right) -->
         <g transform="translate(70, 60)">
@@ -253,7 +253,7 @@ const BLENDER_VISUALS = {
     `,
 
     "sculpt-3": `
-      <svg viewBox="0 0 240 120" class="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+      <svg viewBox="0 0 240 120" class="art" xmlns="http://www.w3.org/2000/svg">
         <rect width="240" height="120" fill="#15171c"/>
         <!-- Retopology: Low poly quad mesh projecting onto high-poly head -->
         <g transform="translate(120, 60)">
@@ -275,7 +275,7 @@ const BLENDER_VISUALS = {
     `,
 
     "shade-1": `
-      <svg viewBox="0 0 240 120" class="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+      <svg viewBox="0 0 240 120" class="art" xmlns="http://www.w3.org/2000/svg">
         <rect width="240" height="120" fill="#15171d"/>
         <!-- Principled BSDF PBR Material Sphere Split -->
         <g transform="translate(120, 60)">
@@ -300,7 +300,7 @@ const BLENDER_VISUALS = {
     `,
 
     "shade-2": `
-      <svg viewBox="0 0 240 120" class="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+      <svg viewBox="0 0 240 120" class="art" xmlns="http://www.w3.org/2000/svg">
         <rect width="240" height="120" fill="#14161b"/>
         <!-- 3D Cube unfolding into 2D UV Cross Layout -->
         <g transform="translate(65, 60)">
@@ -326,7 +326,7 @@ const BLENDER_VISUALS = {
     `,
 
     "shade-3": `
-      <svg viewBox="0 0 240 120" class="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+      <svg viewBox="0 0 240 120" class="art" xmlns="http://www.w3.org/2000/svg">
         <rect width="240" height="120" fill="#15171d"/>
         <!-- Procedural Shader Nodes Network -->
         <g transform="translate(25, 30)">
@@ -359,7 +359,7 @@ const BLENDER_VISUALS = {
     `,
 
     "light-1": `
-      <svg viewBox="0 0 240 120" class="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+      <svg viewBox="0 0 240 120" class="art" xmlns="http://www.w3.org/2000/svg">
         <rect width="240" height="120" fill="#14151a"/>
         <!-- Cycles (Ray Bounces) vs EEVEE -->
         <g transform="translate(120, 60)">
@@ -381,7 +381,7 @@ const BLENDER_VISUALS = {
     `,
 
     "light-2": `
-      <svg viewBox="0 0 240 120" class="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+      <svg viewBox="0 0 240 120" class="art" xmlns="http://www.w3.org/2000/svg">
         <rect width="240" height="120" fill="#14161c"/>
         <!-- Top-Down 3-Point Studio Lighting Diagram -->
         <g transform="translate(120, 60)">
@@ -408,7 +408,7 @@ const BLENDER_VISUALS = {
     `,
 
     "light-3": `
-      <svg viewBox="0 0 240 120" class="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+      <svg viewBox="0 0 240 120" class="art" xmlns="http://www.w3.org/2000/svg">
         <rect width="240" height="120" fill="#15171d"/>
         <!-- HDRI 360 World Dome Lighting -->
         <g transform="translate(120, 60)">
@@ -431,7 +431,7 @@ const BLENDER_VISUALS = {
     `,
 
     "anim-1": `
-      <svg viewBox="0 0 240 120" class="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+      <svg viewBox="0 0 240 120" class="art" xmlns="http://www.w3.org/2000/svg">
         <rect width="240" height="120" fill="#16171d"/>
         <!-- Armature & Bone Hierarchy -->
         <g transform="translate(120, 60)">
@@ -455,7 +455,7 @@ const BLENDER_VISUALS = {
     `,
 
     "anim-2": `
-      <svg viewBox="0 0 240 120" class="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+      <svg viewBox="0 0 240 120" class="art" xmlns="http://www.w3.org/2000/svg">
         <rect width="240" height="120" fill="#15171d"/>
         <!-- Weight Paint Heatmap Gradient on Arm Mesh -->
         <g transform="translate(120, 60)">
@@ -480,7 +480,7 @@ const BLENDER_VISUALS = {
     `,
 
     "anim-3": `
-      <svg viewBox="0 0 240 120" class="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+      <svg viewBox="0 0 240 120" class="art" xmlns="http://www.w3.org/2000/svg">
         <rect width="240" height="120" fill="#14161c"/>
         <!-- Bouncing Ball Arc & Graph Editor Handles -->
         <g transform="translate(120, 50)">
@@ -502,7 +502,7 @@ const BLENDER_VISUALS = {
     `,
 
     "geo-1": `
-      <svg viewBox="0 0 240 120" class="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+      <svg viewBox="0 0 240 120" class="art" xmlns="http://www.w3.org/2000/svg">
         <rect width="240" height="120" fill="#15161c"/>
         <!-- Geometry Nodes: Procedural Distribution -->
         <g transform="translate(120, 60)">
@@ -527,7 +527,7 @@ const BLENDER_VISUALS = {
     `,
 
     "geo-2": `
-      <svg viewBox="0 0 240 120" class="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+      <svg viewBox="0 0 240 120" class="art" xmlns="http://www.w3.org/2000/svg">
         <rect width="240" height="120" fill="#15171d"/>
         <!-- Procedural Cables & Sci-Fi Curves -->
         <g transform="translate(120, 55)">
@@ -544,7 +544,7 @@ const BLENDER_VISUALS = {
     `,
 
     "phys-1": `
-      <svg viewBox="0 0 240 120" class="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+      <svg viewBox="0 0 240 120" class="art" xmlns="http://www.w3.org/2000/svg">
         <rect width="240" height="120" fill="#14171d"/>
         <!-- Rigid Body Dominos Cascade -->
         <g transform="translate(120, 60)">
@@ -571,7 +571,7 @@ const BLENDER_VISUALS = {
     `,
 
     "phys-2": `
-      <svg viewBox="0 0 240 120" class="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+      <svg viewBox="0 0 240 120" class="art" xmlns="http://www.w3.org/2000/svg">
         <rect width="240" height="120" fill="#15171d"/>
         <!-- Cloth Simulation: Plush Cushion with Seams & Folds -->
         <g transform="translate(120, 60)">
@@ -595,7 +595,7 @@ const BLENDER_VISUALS = {
   // Addon / Plugin Visualizations
   addons: {
     "node-wrangler": `
-      <svg viewBox="0 0 80 80" class="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+      <svg viewBox="0 0 80 80" class="art" xmlns="http://www.w3.org/2000/svg">
         <rect width="80" height="80" rx="12" fill="#181a20"/>
         <!-- Node blocks connected by lightning wire -->
         <rect x="10" y="24" width="22" height="32" rx="3" fill="#2d3340" stroke="#00a2ff" stroke-width="1.5"/>
@@ -607,7 +607,7 @@ const BLENDER_VISUALS = {
     `,
 
     "loop-tools": `
-      <svg viewBox="0 0 80 80" class="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+      <svg viewBox="0 0 80 80" class="art" xmlns="http://www.w3.org/2000/svg">
         <rect width="80" height="80" rx="12" fill="#181a20"/>
         <!-- Irregular polygon turning into perfect circle -->
         <circle cx="40" cy="40" r="24" fill="none" stroke="#ea7600" stroke-width="2"/>
@@ -623,7 +623,7 @@ const BLENDER_VISUALS = {
     `,
 
     "bool-tool": `
-      <svg viewBox="0 0 80 80" class="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+      <svg viewBox="0 0 80 80" class="art" xmlns="http://www.w3.org/2000/svg">
         <rect width="80" height="80" rx="12" fill="#181a20"/>
         <!-- Intersecting Shapes Cut -->
         <rect x="18" y="22" width="30" height="30" rx="4" fill="#3b82f6" opacity="0.6"/>
@@ -634,7 +634,7 @@ const BLENDER_VISUALS = {
     `,
 
     "images-as-planes": `
-      <svg viewBox="0 0 80 80" class="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+      <svg viewBox="0 0 80 80" class="art" xmlns="http://www.w3.org/2000/svg">
         <rect width="80" height="80" rx="12" fill="#181a20"/>
         <!-- 3D Angled Picture Plane -->
         <polygon points="20,25 60,18 55,55 15,62" fill="#1e293b" stroke="#10b981" stroke-width="2"/>
@@ -645,7 +645,7 @@ const BLENDER_VISUALS = {
     `,
 
     "extra-objects": `
-      <svg viewBox="0 0 80 80" class="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+      <svg viewBox="0 0 80 80" class="art" xmlns="http://www.w3.org/2000/svg">
         <rect width="80" height="80" rx="12" fill="#181a20"/>
         <!-- Cogwheel Gear Primitive -->
         <circle cx="40" cy="40" r="15" fill="none" stroke="#f59e0b" stroke-width="4"/>
@@ -659,7 +659,7 @@ const BLENDER_VISUALS = {
     `,
 
     "rigify": `
-      <svg viewBox="0 0 80 80" class="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+      <svg viewBox="0 0 80 80" class="art" xmlns="http://www.w3.org/2000/svg">
         <rect width="80" height="80" rx="12" fill="#181a20"/>
         <!-- Human Rigging Controller Skeleton -->
         <circle cx="40" cy="20" r="7" fill="none" stroke="#ef4444" stroke-width="1.5"/>
@@ -679,7 +679,7 @@ const BLENDER_VISUALS = {
     `,
 
     "blenderkit": `
-      <svg viewBox="0 0 80 80" class="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+      <svg viewBox="0 0 80 80" class="art" xmlns="http://www.w3.org/2000/svg">
         <rect width="80" height="80" rx="12" fill="#181a20"/>
         <!-- 3D Box with Download Arrow -->
         <polygon points="40,20 62,30 40,40 18,30" fill="#3b82f6" stroke="#60a5fa" stroke-width="1.5"/>
@@ -691,7 +691,7 @@ const BLENDER_VISUALS = {
     `,
 
     "poly-haven": `
-      <svg viewBox="0 0 80 80" class="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+      <svg viewBox="0 0 80 80" class="art" xmlns="http://www.w3.org/2000/svg">
         <rect width="80" height="80" rx="12" fill="#181a20"/>
         <!-- HDRI World Sun Dome -->
         <circle cx="40" cy="40" r="24" fill="#0284c7" stroke="#38bdf8" stroke-width="1.5"/>
@@ -701,7 +701,7 @@ const BLENDER_VISUALS = {
     `,
 
     "fspy": `
-      <svg viewBox="0 0 80 80" class="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+      <svg viewBox="0 0 80 80" class="art" xmlns="http://www.w3.org/2000/svg">
         <rect width="80" height="80" rx="12" fill="#181a20"/>
         <!-- Vanishing Point Axes (Red X & Blue Z) -->
         <line x1="10" y1="20" x2="68" y2="60" stroke="#ef4444" stroke-width="2"/>
@@ -712,7 +712,7 @@ const BLENDER_VISUALS = {
     `,
 
     "screencast-keys": `
-      <svg viewBox="0 0 80 80" class="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+      <svg viewBox="0 0 80 80" class="art" xmlns="http://www.w3.org/2000/svg">
         <rect width="80" height="80" rx="12" fill="#181a20"/>
         <!-- Keycap with Shortcut Wave -->
         <rect x="20" y="24" width="40" height="32" rx="6" fill="#374151" stroke="#9ca3af" stroke-width="2"/>
@@ -726,7 +726,7 @@ const BLENDER_VISUALS = {
 
   getLessonSvg(id) {
     return this.lessons[id] || `
-      <svg viewBox="0 0 240 120" class="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+      <svg viewBox="0 0 240 120" class="art" xmlns="http://www.w3.org/2000/svg">
         <rect width="240" height="120" fill="#181a20"/>
         <polygon points="120,35 155,55 120,75 85,55" fill="#2d3340" stroke="#ea7600" stroke-width="1.5"/>
         <polygon points="120,75 155,55 155,85 120,105" fill="#1e232d" stroke="#ea7600" stroke-width="1.5"/>
@@ -737,7 +737,7 @@ const BLENDER_VISUALS = {
 
   getAddonSvg(id) {
     return this.addons[id] || `
-      <svg viewBox="0 0 80 80" class="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+      <svg viewBox="0 0 80 80" class="art" xmlns="http://www.w3.org/2000/svg">
         <rect width="80" height="80" rx="12" fill="#181a20"/>
         <circle cx="40" cy="40" r="16" fill="none" stroke="#ea7600" stroke-width="2"/>
       </svg>

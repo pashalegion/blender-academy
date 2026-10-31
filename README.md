@@ -25,16 +25,19 @@ The refreshed interface lesson and donut capstone use Blender 5-era instruction.
 - A keyboard shortcuts reference page.
 - Local lesson completion, bookmarks, XP, achievements, and a per-lesson notepad.
 - Blender rig checker, free resource vault, plugin directory, and 3D glossary.
-- Browser-local progress backup and restore.
+- Progress is saved in this browser; export a backup to keep or move it.
 
 ## Run locally
 
-Open `index.html` in a browser, or use the included `start.bat` / `start-server.ps1` launchers.
+Open `index.html` in a browser, or serve the folder with `start-server.ps1` or `python -m http.server`. There is no build step and nothing loads from a CDN.
 
 ## Project structure
 
-- `index.html` — single-page interface
-- `css/style.css` — application styling
-- `js/data.js` — lesson and reference data
-- `js/app.js` — navigation, lessons, progress, and interactions
-- `js/visuals.js`, `js/hardware.js`, `js/vault.js`, `js/glossary.js` — supporting views
+- `index.html`, `lessons.html`, `lesson.html`, `tracks.html`, `shortcuts.html`, `rig.html`, `plugins.html`, `vault.html`, `glossary.html`, `progress.html`, `secrets.html`, `404.html` — pages
+- `css/style.css` — styling
+- `js/common.js` — storage, navigation and toasts for every page; other files in `js/` belong to one page each
+- `data/lessons-index.js` — lesson metadata
+- `data/lessons/<id>.js` — lesson bodies, loaded only by `lesson.html`
+- `data/reference.js` — shortcuts, add-ons, vault, glossary, hardware, achievements
+- `tests/check-data.mjs` — run by hand to check lesson IDs
+- `CHANGES.md`, `VIDEOS.md` — content checks

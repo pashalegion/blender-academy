@@ -1,459 +1,146 @@
-<!DOCTYPE html>
-<html lang="en" class="dark">
+<!doctype html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Blender Academy — Free 3D Modeling Roadmap, Tools & Resources</title>
-  
-  <meta name="description" content="Clean, curated Blender learning tracks with troubleshooting, hardware rig checker, free asset vault, 3D glossary, and achievements.">
-
-  <!-- Tailwind CSS CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      darkMode: 'class',
-      theme: {
-        extend: {
-          colors: {
-            blender: {
-              orange: '#ea7600',
-              orangeHover: '#ff850a',
-              cyan: '#00a2ff',
-              dark: '#131417',
-              card: '#181a1f',
-              cardHover: '#20232a'
-            }
-          }
-        }
-      }
-    }
-  </script>
-
-  <!-- Canvas Confetti CDN -->
-  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
-
-  <!-- Custom Blender Theme Stylesheet -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Blender Academy — Free Blender 5.2 lessons</title>
+  <meta name="description" content="Free Blender 5.2 lessons in 8 tracks, with troubleshooting, a rig checker, a free asset list and a glossary. No account needed.">
+  <link rel="canonical" href="https://pashalegion.github.io/blender-academy/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Blender Academy">
+  <meta property="og:title" content="Blender Academy — Free Blender 5.2 lessons">
+  <meta property="og:description" content="Free Blender 5.2 lessons in 8 tracks, with troubleshooting, a rig checker, a free asset list and a glossary. No account needed.">
+  <meta property="og:url" content="https://pashalegion.github.io/blender-academy/">
+  <meta property="og:image" content="https://pashalegion.github.io/blender-academy/assets/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="css/style.css">
 </head>
-<body class="bg-[#131417] text-[#e8eaf0] min-h-screen flex flex-col antialiased selection:bg-orange-500 selection:text-white">
-
-  <!-- Header with Navigation Tabs & Rollout Trophy Cabinet -->
-  <header class="header-nav py-2.5 px-4 md:px-8 border-b border-white/5">
-    <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-3">
-      
-      <!-- Brand Logo -->
-      <a href="#" class="flex items-center gap-2.5 group">
-        <div class="w-8 h-8 rounded-lg bg-[#ea7600] flex items-center justify-center text-white font-black text-base shadow-md group-hover:scale-105 transition">
-          B
-        </div>
-        <span class="text-base font-extrabold tracking-tight text-white">
-          Blender<span class="text-[#ea7600]">Academy</span>
-        </span>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="index.html" aria-label="Blender Academy home">
+        <span class="brand-logo" aria-hidden="true">B</span>
+        <span>Blender<span class="brand-accent">Academy</span></span>
       </a>
-
-      <!-- View Navigation Tabs (Clean Single-Page Router) -->
-      <nav class="flex items-center gap-1 text-xs order-3 md:order-2 overflow-x-auto py-1 scrollbar-none w-full md:w-auto">
-        <button class="nav-tab-btn active" data-view="lessons">🎬 Lessons</button>
-        <button class="nav-tab-btn" data-view="rig">🖥️ Rig Checker</button>
-        <button class="nav-tab-btn" data-view="plugins">🔌 Plugins</button>
-        <button class="nav-tab-btn" data-view="vault">📦 Free Vault</button>
-        <button class="nav-tab-btn" data-view="glossary">📖 3D Glossary</button>
-        <button class="nav-tab-btn" data-view="shortcuts">⌨️ Shortcuts</button>
+      <button class="nav-toggle" id="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+      <nav class="site-nav" id="site-nav" data-open="false" aria-label="Main">
+        <ul>
+          <li><a href="index.html" data-nav-href="index.html">Home</a></li>
+          <li><a href="lessons.html" data-nav-href="lessons.html">Lessons</a></li>
+          <li><a href="tracks.html" data-nav-href="tracks.html">Tracks</a></li>
+          <li><a href="rig.html" data-nav-href="rig.html">Rig checker</a></li>
+          <li><a href="plugins.html" data-nav-href="plugins.html">Add-ons</a></li>
+          <li><a href="vault.html" data-nav-href="vault.html">Free vault</a></li>
+          <li><a href="glossary.html" data-nav-href="glossary.html">Glossary</a></li>
+          <li><a href="shortcuts.html" data-nav-href="shortcuts.html">Shortcuts</a></li>
+          <li><a href="progress.html" data-nav-href="progress.html">Progress</a></li>
+        </ul>
       </nav>
-
-      <!-- Right Controls: Achievements Rollout & Settings -->
-      <div class="flex items-center gap-2 order-2 md:order-3">
-        
-        <!-- Rollout Trigger: Achievements & XP -->
-        <div class="rollout-trigger relative" id="achievements-rollout-trigger">
-          <button id="achievements-rollout-btn" class="flex items-center gap-2.5 bg-zinc-900/90 hover:bg-zinc-800/90 border border-white/5 px-3 py-1.5 rounded-lg text-xs transition cursor-pointer">
-            <span class="text-amber-400">🏆</span>
-            <span class="font-bold text-amber-400 font-mono" id="header-level-number">Lvl 1</span>
-            <span class="text-zinc-300 hidden sm:inline" id="header-level-name">Default Cube Survivor</span>
-            <div class="w-16 sm:w-20 xp-track">
-              <div id="header-xp-fill" class="xp-fill" style="width: 0%;"></div>
-            </div>
-            <span id="header-xp-label" class="font-mono text-zinc-400 text-[11px]">0 XP</span>
-            <span class="text-[10px] text-zinc-500">▼</span>
-          </button>
-
-          <!-- Achievements Rollout Popover (Rolls out on hover or click!) -->
-          <div id="achievements-rollout-popover" class="rollout-popover absolute right-0 top-full mt-2 w-80 sm:w-96 bg-[#181a1f] border border-white/10 rounded-2xl shadow-2xl p-4 z-50 backdrop-blur-xl space-y-3">
-            <div class="flex items-center justify-between border-b border-white/5 pb-2.5">
-              <div>
-                <h3 class="font-bold text-sm text-white flex items-center gap-1.5">
-                  <span>🎖️</span> Trophy Cabinet
-                </h3>
-                <p class="text-[10px] text-zinc-400">Hover or click any badge to inspect requirements</p>
-              </div>
-              <span id="achievements-counter-label" class="text-xs font-mono font-bold text-amber-400 bg-amber-400/10 border border-amber-400/20 px-2 py-0.5 rounded">
-                0 / 26 Unlocked
-              </span>
-            </div>
-
-            <!-- Scrollable Badge Grid -->
-            <div id="achievements-grid" class="grid grid-cols-4 gap-2 max-h-72 overflow-y-auto pr-1">
-              <!-- Populated via app.js -->
-            </div>
-
-            <!-- Easter Egg Hint Strip -->
-            <div class="pt-2 border-t border-white/5 text-[10px] text-zinc-500 flex items-center gap-1.5">
-              <span>🕵️</span>
-              <span>Some badges are secret — explore to find them! <span class="text-zinc-600 italic">Hint: try ↑↑↓↓←→←→BA...</span></span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Manage Data Menu -->
-        <div class="relative group">
-          <button class="p-1.5 text-zinc-400 hover:text-white rounded hover:bg-zinc-800 transition" title="Data Backup & Reset">
-            ⚙️
-          </button>
-          <div class="absolute right-0 top-full mt-1.5 w-44 bg-zinc-900 border border-white/10 rounded-lg shadow-xl p-1.5 hidden group-hover:block z-50">
-            <button id="export-progress-btn" class="w-full text-left text-xs text-zinc-300 hover:text-white hover:bg-zinc-800 p-1.5 rounded transition">
-              💾 Export Backup
-            </button>
-            <button id="import-progress-btn" class="w-full text-left text-xs text-zinc-300 hover:text-white hover:bg-zinc-800 p-1.5 rounded transition">
-              📥 Import Backup
-            </button>
-            <input type="file" id="import-file-input" accept=".json" class="hidden">
-            <div class="h-px bg-white/10 my-1"></div>
-            <button id="reset-progress-btn" class="w-full text-left text-xs text-red-400 hover:text-red-300 hover:bg-red-950/40 p-1.5 rounded transition">
-              🗑️ Reset Data
-            </button>
-          </div>
-        </div>
-
-      </div>
-
     </div>
   </header>
 
-  <!-- Minimalist Hero Banner -->
-  <section class="py-6 md:py-8 px-4 md:px-8 border-b border-white/5 bg-[#16171b]/60">
-    <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-5">
-      
-      <!-- Headline & Progress -->
-      <div class="space-y-2 max-w-2xl">
-        <h1 class="text-xl sm:text-3xl font-extrabold text-white tracking-tight leading-snug">
-          Master Blender 3D. <span class="text-orange-500 font-bold">100% Free.</span>
-        </h1>
-        <p class="text-zinc-400 text-xs sm:text-sm">
-          Curated roadmaps across 8 disciplines with instant gotcha troubleshooting, hardware checker, free asset vault & glossary.
-        </p>
+  <div class="storage-banner" id="storage-banner" role="alert" hidden>
+    <p>Progress could not be saved in this browser, so your last change is not stored. Check that site data is allowed, or <a href="progress.html">export a backup</a> now.</p>
+  </div>
 
-        <!-- Compact Progress Strip -->
-        <div class="flex items-center gap-3 pt-1 text-xs">
-          <div class="flex items-center gap-2 text-zinc-400">
-            <span>Progress:</span>
-            <strong id="stat-completed-percent" class="text-emerald-400 font-mono">0%</strong>
-            <span class="text-zinc-500">(<span id="stat-completed-count">0/23</span> completed)</span>
-          </div>
-          <div class="w-24 sm:w-32 bg-zinc-800 h-1.5 rounded-full overflow-hidden">
-            <div id="stat-completed-bar" class="bg-emerald-500 h-full rounded-full transition-all duration-300" style="width: 0%;"></div>
-          </div>
+  <main id="main" class="wrap" tabindex="-1">
+    <section class="hero" aria-labelledby="home-title">
+      <div class="hero-copy">
+        <p class="eyebrow">Blender 5.2 LTS · free lessons</p>
+        <h1 id="home-title">Learn Blender, <span class="hero-accent">one lesson at a time.</span></h1>
+        <p class="lede">23 free community lessons in 8 tracks, each with troubleshooting for common problems. Nothing to install and no account.</p>
+        <div class="cta-row">
+          <a class="btn btn-primary btn-large btn-arrow" href="lesson.html?id=fund-1">Start lesson 1</a>
+          <a class="btn btn-large" id="continue-link" href="lessons.html" hidden></a>
         </div>
+        <p class="muted small" id="home-progress"></p>
       </div>
-
-      <!-- Compact 3D Cube Easter Egg -->
-      <div class="flex items-center gap-3 bg-zinc-900/60 border border-white/5 rounded-xl px-3.5 py-2.5 backdrop-blur-sm flex-shrink-0">
-        <div class="hero-cube-container scale-75 origin-center" id="hero-cube-trigger">
-          <div class="cube-box" id="hero-cube-mesh">
-            <div class="cube-face front"></div>
-            <div class="cube-face back"></div>
-            <div class="cube-face right"></div>
-            <div class="cube-face left"></div>
-            <div class="cube-face top"></div>
-            <div class="cube-face bottom"></div>
-          </div>
-        </div>
-        <div class="text-left">
-          <div class="text-xs font-bold text-white">Default Cube</div>
-          <button id="delete-cube-btn" class="mt-0.5 text-[11px] font-semibold text-orange-400 hover:text-orange-300 transition">
-            Delete Cube (Press X) →
-          </button>
-        </div>
+      <div class="viewport" aria-hidden="true">
+        <span class="viewport-label">User Perspective<br>(1) Collection | Cube</span>
+        <svg viewBox="0 0 640 420" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="floor-fade" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#fff" stop-opacity="0"/>
+              <stop offset="1" stop-color="#fff" stop-opacity="0.5"/>
+            </linearGradient>
+            <mask id="floor-mask"><rect y="120" width="640" height="300" fill="url(#floor-fade)"/></mask>
+            <linearGradient id="face-top" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#a9adb8"/><stop offset="1" stop-color="#7d818c"/></linearGradient>
+            <linearGradient id="face-left" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#666a75"/><stop offset="1" stop-color="#454852"/></linearGradient>
+            <linearGradient id="face-right" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#50535d"/><stop offset="1" stop-color="#34363e"/></linearGradient>
+            <radialGradient id="cube-glow"><stop offset="0" stop-color="#ea7600" stop-opacity="0.35"/><stop offset="1" stop-color="#ea7600" stop-opacity="0"/></radialGradient>
+          </defs>
+          <g mask="url(#floor-mask)" stroke="#9aa1b1" stroke-width="1">
+            <path d="M320 120 L-260 420 M320 120 L-110 420 M320 120 L40 420 M320 120 L180 420 M320 120 L320 420 M320 120 L460 420 M320 120 L600 420 M320 120 L750 420 M320 120 L900 420"/>
+            <path d="M0 176 H640 M0 214 H640 M0 262 H640 M0 326 H640 M0 404 H640"/>
+          </g>
+          <path d="M0 300 L640 256" stroke="#ff4d5e" stroke-width="1.5" opacity="0.75"/>
+          <path d="M214 150 L462 420" stroke="#6fd24a" stroke-width="1.5" opacity="0.75"/>
+          <ellipse cx="320" cy="340" rx="170" ry="40" fill="url(#cube-glow)"/>
+          <g class="viewport-cube" stroke="#ff9a3d" stroke-width="2.5" stroke-linejoin="round">
+            <path d="M320 92 L432 146 L320 200 L208 146 Z" fill="url(#face-top)"/>
+            <path d="M208 146 L320 200 L320 326 L208 272 Z" fill="url(#face-left)"/>
+            <path d="M320 200 L432 146 L432 272 L320 326 Z" fill="url(#face-right)"/>
+            <circle cx="320" cy="209" r="4.5" fill="#ffb27a" stroke="#1d0e00" stroke-width="1.5"/>
+          </g>
+          <g font-family="monospace" font-size="11" font-weight="700" text-anchor="middle">
+            <path d="M578 62 L610 72" stroke="#ff4d5e" stroke-width="2.5"/>
+            <path d="M578 62 L552 82" stroke="#6fd24a" stroke-width="2.5"/>
+            <path d="M578 62 V28" stroke="#3d9dff" stroke-width="2.5"/>
+            <circle cx="612" cy="73" r="10" fill="#ff4d5e"/><text x="612" y="77" fill="#2a0508">X</text>
+            <circle cx="550" cy="84" r="10" fill="#6fd24a"/><text x="550" y="88" fill="#0d2a05">Y</text>
+            <circle cx="578" cy="26" r="10" fill="#3d9dff"/><text x="578" y="30" fill="#04182e">Z</text>
+          </g>
+        </svg>
       </div>
+    </section>
 
-    </div>
-  </section>
+    <ul class="stat-strip" aria-label="At a glance">
+      <li><strong>23</strong> lessons</li>
+      <li><strong>8</strong> tracks</li>
+      <li><strong>100%</strong> free</li>
+      <li><strong>0</strong> accounts</li>
+    </ul>
 
-  <!-- Main Views Container (Only active tab is shown!) -->
-  <main class="max-w-7xl mx-auto px-4 md:px-8 py-8 flex-grow w-full">
-    
-    <!-- ================= VIEW 1: LESSONS ROADMAP ================= -->
-    <div id="view-lessons" class="space-y-6">
-      
-      <!-- Minimalist Filter Bar -->
-      <div class="space-y-3">
-        <div class="flex flex-wrap items-center gap-2.5">
-          <!-- Search Input -->
-          <div class="relative flex-grow min-w-[240px]">
-            <span class="absolute left-3 top-1/2 -translate-y-1/2 text-zinc-400 text-xs">🔍</span>
-            <input 
-              type="text" 
-              id="search-input" 
-              placeholder="Search tutorials, shortcuts, topics..."
-              class="w-full bg-[#181a1f] border border-white/10 rounded-lg pl-8 pr-3 py-1.5 text-xs text-zinc-200 placeholder-zinc-500 focus:outline-none focus:border-orange-500 transition"
-            >
-          </div>
-
-          <!-- Level Filter -->
-          <select id="filter-level-select" class="bg-[#181a1f] border border-white/10 rounded-lg px-2.5 py-1.5 text-xs text-zinc-300 focus:outline-none focus:border-orange-500">
-            <option value="all">All Difficulties</option>
-            <option value="beginner">Beginner</option>
-            <option value="intermediate">Intermediate</option>
-          </select>
-
-          <!-- Status Filter -->
-          <select id="filter-status-select" class="bg-[#181a1f] border border-white/10 rounded-lg px-2.5 py-1.5 text-xs text-zinc-300 focus:outline-none focus:border-orange-500">
-            <option value="all">All Statuses</option>
-            <option value="completed">Completed ✓</option>
-            <option value="incomplete">Incomplete ○</option>
-            <option value="bookmarked">Bookmarked ⭐</option>
-          </select>
-
-          <!-- Reset Button -->
-          <button id="clear-filters-btn" class="text-xs text-zinc-400 hover:text-white px-2 py-1.5 transition">
-            Clear
-          </button>
-        </div>
-
-        <!-- Track Pills -->
-        <div class="flex items-center gap-1.5 overflow-x-auto pb-1 scrollbar-none" id="track-pills-container">
-          <!-- Injected via app.js -->
-        </div>
+    <section class="section" aria-labelledby="tracks-title">
+      <div class="section-title">
+        <h2 id="tracks-title">Pick a track</h2>
+        <a href="lessons.html">All lessons</a>
       </div>
+      <ul class="tile-grid" id="home-tracks"></ul>
+    </section>
 
-      <!-- Active Lessons Count -->
-      <div class="flex items-center justify-between text-xs text-zinc-400 pt-1">
-        <span id="lessons-count-label">Loading lessons...</span>
-        <span class="text-zinc-500 text-[11px]">Click any card to open full lesson & video</span>
-      </div>
-
-      <!-- Minimalist Lessons Grid -->
-      <div id="lessons-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3.5">
-        <!-- Rendered via app.js with SVG vector graphics -->
-      </div>
-
-      <!-- Empty State -->
-      <div id="no-lessons-found" class="hidden text-center py-12 bg-zinc-900/40 rounded-xl border border-white/5 space-y-2">
-        <div class="text-3xl">🔍</div>
-        <h3 class="text-sm font-bold text-white">No lessons match your search</h3>
-        <p class="text-xs text-zinc-400">Try clearing filters or switching tracks.</p>
-      </div>
-    </div>
-
-    <!-- ================= VIEW 2: HARDWARE RIG CHECKER (ZTT Style) ================= -->
-    <div id="view-rig" class="hidden space-y-4">
-      <div class="flex items-center justify-between">
-        <div>
-          <h2 class="text-lg font-bold text-white flex items-center gap-2">
-            <span>🖥️</span> Blender Rig Checker
-          </h2>
-          <p class="text-xs text-zinc-400">Select your CPU, GPU, and RAM capacity to test your 3D capabilities and identify your next upgrade bottleneck.</p>
-        </div>
-      </div>
-
-      <div class="bg-[#181a1f] border border-white/5 rounded-xl p-4 sm:p-5 space-y-4">
-        <!-- 3 Quick Dropdowns -->
-        <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
-          <div>
-            <label class="block text-[11px] font-semibold text-zinc-400 mb-1">Processor (CPU)</label>
-            <select id="hw-cpu-select" class="w-full bg-[#121316] border border-white/10 rounded-lg px-2.5 py-2 text-xs text-zinc-200 focus:outline-none focus:border-orange-500"></select>
-          </div>
-          <div>
-            <label class="block text-[11px] font-semibold text-zinc-400 mb-1">Graphics Card (GPU)</label>
-            <select id="hw-gpu-select" class="w-full bg-[#121316] border border-white/10 rounded-lg px-2.5 py-2 text-xs text-zinc-200 focus:outline-none focus:border-orange-500"></select>
-          </div>
-          <div>
-            <label class="block text-[11px] font-semibold text-zinc-400 mb-1">Memory (RAM)</label>
-            <select id="hw-ram-select" class="w-full bg-[#121316] border border-white/10 rounded-lg px-2.5 py-2 text-xs text-zinc-200 focus:outline-none focus:border-orange-500"></select>
-          </div>
-        </div>
-
-        <!-- Live Evaluation Result Card -->
-        <div id="hw-result-container" class="bg-[#121316] border border-white/5 rounded-lg p-4 space-y-3">
-          <!-- Dynamically populated via hardware.js & app.js -->
-        </div>
-      </div>
-    </div>
-
-    <!-- ================= VIEW 3: BEGINNER ADDONS ================= -->
-    <div id="view-plugins" class="hidden space-y-4">
-      <div class="flex items-center justify-between">
-        <div>
-          <h2 class="text-lg font-bold text-white flex items-center gap-2">
-            <span>🔌</span> Beginner Plugins & Addons
-          </h2>
-          <p class="text-xs text-zinc-400">Essential built-in tools to enable in Preferences, plus free community add-ons.</p>
-        </div>
-      </div>
-
-      <div id="addons-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
-        <!-- Rendered dynamically -->
-      </div>
-    </div>
-
-    <!-- ================= VIEW 4: FREE 3D RESOURCE VAULT (Idea 3) ================= -->
-    <div id="view-vault" class="hidden space-y-4">
-      <div class="flex flex-wrap items-center justify-between gap-3">
-        <div>
-          <h2 class="text-lg font-bold text-white flex items-center gap-2">
-            <span>📦</span> The Free 3D Resource Vault
-          </h2>
-          <p class="text-xs text-zinc-400">Curated, 100% free textures, game-ready models, HDRIs, and essential artist software.</p>
-        </div>
-
-        <!-- Vault Filter Pills -->
-        <div class="flex items-center gap-1.5 text-xs" id="vault-filter-pills">
-          <button class="vault-pill px-2.5 py-1 rounded-lg bg-orange-500 text-white font-medium" data-cat="all">All</button>
-          <button class="vault-pill px-2.5 py-1 rounded-lg bg-zinc-800 text-zinc-400 hover:text-white font-medium" data-cat="textures">Textures</button>
-          <button class="vault-pill px-2.5 py-1 rounded-lg bg-zinc-800 text-zinc-400 hover:text-white font-medium" data-cat="models">Models</button>
-          <button class="vault-pill px-2.5 py-1 rounded-lg bg-zinc-800 text-zinc-400 hover:text-white font-medium" data-cat="tools">Tools</button>
-          <button class="vault-pill px-2.5 py-1 rounded-lg bg-zinc-800 text-zinc-400 hover:text-white font-medium" data-cat="hdris">HDRIs</button>
-        </div>
-      </div>
-
-      <div id="vault-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
-        <!-- Rendered via vault.js & app.js -->
-      </div>
-    </div>
-
-    <!-- ================= VIEW 5: 3D JARGON DECODER (Idea 5) ================= -->
-    <div id="view-glossary" class="hidden space-y-4">
-      <div class="flex flex-wrap items-center justify-between gap-3">
-        <div>
-          <h2 class="text-lg font-bold text-white flex items-center gap-2">
-            <span>📖</span> 3D Jargon & Terminology Decoder
-          </h2>
-          <p class="text-xs text-zinc-400">Plain-English explanations for confusing 3D modeling, shading, and animation terms.</p>
-        </div>
-
-        <!-- Glossary Search Input -->
-        <div class="relative w-full sm:w-64">
-          <span class="absolute left-3 top-1/2 -translate-y-1/2 text-zinc-400 text-xs">🔍</span>
-          <input 
-            type="text" 
-            id="glossary-search-input" 
-            placeholder="Search terms (e.g. normal, quad, bake)..."
-            class="w-full bg-[#181a1f] border border-white/10 rounded-lg pl-8 pr-3 py-1.5 text-xs text-zinc-200 placeholder-zinc-500 focus:outline-none focus:border-orange-500 transition"
-          >
-        </div>
-      </div>
-
-      <div id="glossary-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
-        <!-- Rendered via glossary.js & app.js -->
-      </div>
-    </div>
-
-    <!-- ================= VIEW 6: KEYBOARD SHORTCUTS ================= -->
-    <div id="view-shortcuts" class="hidden space-y-4">
-      <div>
-        <h2 class="text-lg font-bold text-white flex items-center gap-2">
-          <span>⌨️</span> Blender Keyboard Shortcuts Reference
-        </h2>
-        <p class="text-xs text-zinc-400">A quick reference for navigation, modeling, editing, and common Blender actions.</p>
-      </div>
-      <div id="shortcuts-container" class="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <!-- Rendered dynamically -->
-      </div>
-    </div>
-
+    <section class="section" aria-labelledby="explore-title">
+      <h2 id="explore-title">Tools for your journey</h2>
+      <ul class="tile-grid three">
+        <li><a class="tile" href="rig.html" style="--track:#00a2ff"><span class="tile-icon" aria-hidden="true">🖥️</span><span class="tile-title">Rig checker</span><span class="tile-text">Which upgrade matters most for your PC.</span></a></li>
+        <li><a class="tile" href="plugins.html" style="--track:#a06bff"><span class="tile-icon" aria-hidden="true">🔌</span><span class="tile-title">Add-ons</span><span class="tile-text">What to enable in Blender, and where it comes from.</span></a></li>
+        <li><a class="tile" href="vault.html" style="--track:#00c98a"><span class="tile-icon" aria-hidden="true">📦</span><span class="tile-title">Free vault</span><span class="tile-text">Free asset and texture sources.</span></a></li>
+        <li><a class="tile" href="glossary.html" style="--track:#ffc53d"><span class="tile-icon" aria-hidden="true">📖</span><span class="tile-title">3D glossary</span><span class="tile-text">Plain definitions of 3D terms.</span></a></li>
+        <li><a class="tile" href="shortcuts.html" style="--track:#ff6b8a"><span class="tile-icon" aria-hidden="true">⌨️</span><span class="tile-title">Shortcuts</span><span class="tile-text">Keyboard shortcut reference.</span></a></li>
+        <li><a class="tile" href="progress.html" style="--track:#ea7600"><span class="tile-icon" aria-hidden="true">🏆</span><span class="tile-title">Progress</span><span class="tile-text">Achievements, backup and restore.</span></a></li>
+      </ul>
+    </section>
   </main>
 
-  <!-- ================= MODALS & POPUPS ================= -->
-
-  <!-- Lesson Detail Modal (Rich with full overview, embed video, summary, troubleshooting, notes) -->
-  <div id="lesson-modal" class="modal-overlay">
-    <div class="modal-window" id="lesson-modal-content">
-      <!-- Full detailed lesson view rendered dynamically -->
-    </div>
-  </div>
-
-  <!-- Suzanne Mascot Easter Egg Modal -->
-  <div id="suzanne-modal" class="modal-overlay">
-    <div class="modal-window max-w-md p-6 text-center space-y-4 bg-gradient-to-b from-[#22252c] to-[#16171b] border-orange-500/30">
-      <div class="text-6xl animate-bounce">🐵</div>
-      <h3 class="text-xl font-black text-white">You found Suzanne!</h3>
-      <p class="text-xs text-zinc-300 leading-relaxed bg-black/40 p-3.5 rounded-xl border border-white/5">
-        "Hi there, human! I'm Suzanne, Blender's official monkey test primitive since 1997. Did you know I only have 500 faces and I'm named after the orangutan in Kevin Smith's movie <em>Jay and Silent Bob</em>? Here's +100 XP for your journey!"
-      </p>
-      <div class="pt-2">
-        <button id="close-suzanne-btn" class="btn-primary text-xs py-2 px-5">
-          Thanks, Suzanne! (+100 XP)
-        </button>
-      </div>
-    </div>
-  </div>
-
-  <!-- Secret Shift + A Add Primitive Pie Menu Modal -->
-  <div id="shift-a-modal" class="modal-overlay">
-    <div class="modal-window max-w-sm p-5 space-y-3 bg-[#1e2027] border-orange-500/40">
-      <div class="flex items-center justify-between border-b border-white/10 pb-2">
-        <span class="text-xs font-bold text-orange-400 font-mono">Shift + A ➔ Add Object</span>
-        <button id="close-shift-a-btn" class="text-xs text-zinc-400 hover:text-white">✕</button>
-      </div>
-      <p class="text-[11px] text-zinc-400">Blender secret shortcut detected! Pick a primitive to spawn:</p>
-      <div class="grid grid-cols-2 gap-2 text-xs">
-        <button class="shift-a-item p-2.5 rounded-lg bg-zinc-800 hover:bg-orange-500 hover:text-white transition font-medium flex items-center gap-2" data-obj="cube">
-          <span>📦</span> Cube
-        </button>
-        <button class="shift-a-item p-2.5 rounded-lg bg-zinc-800 hover:bg-orange-500 hover:text-white transition font-medium flex items-center gap-2" data-obj="donut">
-          <span>🍩</span> Torus (Donut)
-        </button>
-        <button class="shift-a-item p-2.5 rounded-lg bg-zinc-800 hover:bg-orange-500 hover:text-white transition font-medium flex items-center gap-2" data-obj="suzanne">
-          <span>🐵</span> Monkey (Suzanne)
-        </button>
-        <button class="shift-a-item p-2.5 rounded-lg bg-zinc-800 hover:bg-orange-500 hover:text-white transition font-medium flex items-center gap-2" data-obj="sphere">
-          <span>🌐</span> UV Sphere
-        </button>
-      </div>
-    </div>
-  </div>
-
-  <!-- Konami Code Easter Egg Modal (↑↑↓↓←→←→BA) -->
-  <div id="konami-modal" class="modal-overlay">
-    <div class="modal-window max-w-md p-6 text-center space-y-4 bg-gradient-to-b from-[#1a1c24] to-[#0f1015] border-purple-500/40">
-      <div class="text-5xl animate-pulse">🎮</div>
-      <h3 class="text-xl font-black text-white">CHEAT CODE ACTIVATED!</h3>
-      <div class="bg-purple-950/40 border border-purple-500/30 rounded-xl p-4 text-xs text-purple-200 font-mono space-y-2">
-        <div class="text-lg tracking-widest">↑ ↑ ↓ ↓ ← → ← → B A</div>
-        <p class="text-zinc-300 text-xs">You entered the legendary Konami Code! In the early days of Blender, the developers hid a secret: type <kbd>bpy.ops.mesh.primitive_monkey_add()</kbd> in the Python console to summon Suzanne.</p>
-      </div>
-      <p class="text-xs text-zinc-400">+200 XP bonus awarded. You have gamer DNA.</p>
-      <button id="close-konami-btn" class="btn-primary text-xs py-2 px-6 bg-purple-600 hover:bg-purple-500">
-        🏆 Claim Reward (+200 XP)
-      </button>
-    </div>
-  </div>
-
-  <!-- Floating Suzanne Mascot Button (Easter Egg) -->
-  <button id="suzanne-fab-btn" class="suzanne-fab p-2.5 bg-gradient-to-tr from-amber-500 to-orange-500 rounded-full shadow-2xl text-2xl flex items-center justify-center border-2 border-white/20" title="Click Suzanne the Monkey! (Easter Egg)">
-    🐵
-  </button>
-
-  <!-- Minimalist Footer -->
-  <footer class="mt-16 border-t border-white/5 py-6 px-4 md:px-8 text-xs text-zinc-500">
-    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3">
-      <div class="flex items-center gap-2">
-        <span class="font-bold text-zinc-300">Blender Academy</span>
-        <span>•</span>
-        <span>Curated free community knowledge hub</span>
-      </div>
-      <div class="text-[11px] text-zinc-500">
-        All progress saved locally in browser
-      </div>
+  <footer class="site-footer">
+    <div class="wrap">
+      <p><strong>Blender Academy</strong> · Free community learning guide for Blender 5.2 LTS.</p>
+      <p>Progress is saved in this browser only. Use <a href="progress.html">Progress</a> to export a backup.</p>
+      <ul>
+        <li><a href="https://docs.blender.org/manual/en/5.2/" rel="noopener noreferrer">Blender 5.2 manual ↗</a></li>
+        <li><a href="secrets.html">Secrets</a></li>
+      </ul>
     </div>
   </footer>
 
-  <!-- Scripts -->
-  <script src="js/data.js?v=blender52-program-20261015"></script>
-  <script src="js/visuals.js"></script>
-  <script src="js/hardware.js"></script>
-  <script src="js/vault.js"></script>
-  <script src="js/glossary.js"></script>
-  <script src="js/app.js?v=blender52-program-20261015"></script>
+  <div class="toasts" id="toasts" role="status" aria-live="polite"></div>
+
+  <script src="js/common.js"></script>
+  <script src="data/lessons-index.js"></script>
+  <script src="js/home.js"></script>
 </body>
 </html>
-

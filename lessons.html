@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lessons — Blender Academy</title>
+  <meta name="description" content="Filter and search all 23 free Blender lessons by track, difficulty and your progress.">
+  <link rel="canonical" href="https://pashalegion.github.io/blender-academy/lessons.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Blender Academy">
+  <meta property="og:title" content="Lessons — Blender Academy">
+  <meta property="og:description" content="Filter and search all 23 free Blender lessons by track, difficulty and your progress.">
+  <meta property="og:url" content="https://pashalegion.github.io/blender-academy/lessons.html">
+  <meta property="og:image" content="https://pashalegion.github.io/blender-academy/assets/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="index.html" aria-label="Blender Academy home">
+        <span class="brand-logo" aria-hidden="true">B</span>
+        <span>Blender<span class="brand-accent">Academy</span></span>
+      </a>
+      <button class="nav-toggle" id="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+      <nav class="site-nav" id="site-nav" data-open="false" aria-label="Main">
+        <ul>
+          <li><a href="index.html" data-nav-href="index.html">Home</a></li>
+          <li><a href="lessons.html" data-nav-href="lessons.html">Lessons</a></li>
+          <li><a href="tracks.html" data-nav-href="tracks.html">Tracks</a></li>
+          <li><a href="rig.html" data-nav-href="rig.html">Rig checker</a></li>
+          <li><a href="plugins.html" data-nav-href="plugins.html">Add-ons</a></li>
+          <li><a href="vault.html" data-nav-href="vault.html">Free vault</a></li>
+          <li><a href="glossary.html" data-nav-href="glossary.html">Glossary</a></li>
+          <li><a href="shortcuts.html" data-nav-href="shortcuts.html">Shortcuts</a></li>
+          <li><a href="progress.html" data-nav-href="progress.html">Progress</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <div class="storage-banner" id="storage-banner" role="alert" hidden>
+    <p>Progress could not be saved in this browser, so your last change is not stored. Check that site data is allowed, or <a href="progress.html">export a backup</a> now.</p>
+  </div>
+
+  <main id="main" class="wrap" tabindex="-1">
+    <div class="page-head compact">
+      <h1>Lessons</h1>
+      <p class="lede">Filter by track, difficulty or your progress. Each lesson opens on its own page.</p>
+    </div>
+
+    <div class="filters" role="search">
+      <div class="field">
+        <label for="q">Search lessons</label>
+        <input class="input" id="q" type="search" autocomplete="off" placeholder="For example: modifiers, UV, rig">
+      </div>
+      <details class="filter-box" id="filter-box">
+        <summary>Filters</summary>
+        <div class="filters-more">
+          <div class="field">
+            <label for="track">Track</label>
+            <select class="select" id="track"></select>
+          </div>
+          <div class="field">
+            <label for="level">Difficulty</label>
+            <select class="select" id="level">
+              <option value="all">All difficulties</option>
+              <option value="beginner">Beginner</option>
+              <option value="intermediate">Intermediate</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="status">Status</label>
+            <select class="select" id="status">
+              <option value="all">All lessons</option>
+              <option value="completed">Done</option>
+              <option value="incomplete">Not done</option>
+              <option value="bookmarked">Bookmarked</option>
+            </select>
+          </div>
+        </div>
+      </details>
+    </div>
+
+    <div class="list-bar">
+      <span class="muted small" id="count" aria-live="polite">Loading lessons…</span>
+      <button class="btn btn-small" id="clear-btn" type="button">Clear filters</button>
+    </div>
+
+    <h2 class="visually-hidden">Lesson list</h2>
+    <ul class="grid-cards" id="lesson-list"></ul>
+
+    <div class="card" id="empty" hidden>
+      <h2>No lessons match these filters</h2>
+      <p class="muted">Clear the filters to see all 23 lessons.</p>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p><strong>Blender Academy</strong> · Free community learning guide for Blender 5.2 LTS.</p>
+      <p>Progress is saved in this browser only. Use <a href="progress.html">Progress</a> to export a backup.</p>
+      <ul>
+        <li><a href="https://docs.blender.org/manual/en/5.2/" rel="noopener noreferrer">Blender 5.2 manual ↗</a></li>
+        <li><a href="secrets.html">Secrets</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <div class="toasts" id="toasts" role="status" aria-live="polite"></div>
+
+  <script src="js/common.js"></script>
+  <script src="data/lessons-index.js"></script>
+  <script src="data/reference.js"></script>
+  <script src="js/visuals.js"></script>
+  <script src="js/lessons.js"></script>
+</body>
+</html>
