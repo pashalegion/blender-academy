@@ -81,3 +81,34 @@ Corrections, checked against https://www.blender.org/download/requirements/ and 
 - Removed the polygon-count estimates, which had no source.
 
 The overall score is still our own estimate. It uses GPU 45%, CPU 30% and RAM 25%, and the weakest part holds it back.
+
+## New lessons (2026-10-31)
+
+Added 22 lessons for topics the course did not cover, and a ninth track, Post-Production & Pipeline. The course goes from 23 to 45 lessons, so Academy Legend (25 lessons) can now be earned.
+
+Lesson steps follow the Blender 5.2 manual page linked on each lesson. Each video was checked on its watch page: it plays, can be embedded, and fits the topic by its title and chapters. The videos were not watched in full.
+
+| Lesson | Video ID | Channel | Stated version |
+|---|---|---|---|
+| fund-6 | LoyG3OjtpRU | DaVinci and Blender Studio | not stated |
+| fund-7 | ph6QUXNq5aE | Ryan King Art | not stated |
+| sculpt-4 | FMWw6XEcY4Y | Bradley Animation | 5.0 |
+| shade-4 | 7kSRXnAi7uA | Grant Abbitt (Gabbitt) | 5.1 |
+| shade-5 | Zxl38NpPWdo | Ryan King Art | not stated |
+| light-4 | aY04h4ujrlY | Ryan King Art | not stated |
+| anim-4 | fQJK3thkh0k | Ryan King Art | not stated |
+| anim-5 | kd4UGETz_Zw | Proj Prod Blender | 5.1 |
+| anim-6 | ZkqZRe9IXQ8 | Micah Buzan ANIMATION | not stated |
+| phys-3 | Z8eBFDJdmco | Freedom Arts 3D Workflow | 5.1 |
+| phys-4 | vQq0jFL1I-Y | Ryan King Art | not stated |
+| post-1 | 4zoixL45nvI | Grant Abbitt (Gabbitt) | 5 |
+| post-2 | XKqdmHRGnjI | Ryan King Art | not stated |
+| post-3 | -rG4QOR_UHM | Versatile Vertices | not stated |
+| post-4 | aGsbOGK9Ia8 | Mina Pêcheux | 4.2 |
+| fund-8 | j1EhPPFrZgk | Grant Abbitt (Gabbitt) | 5.1 |
+| hard-4 | PHh-uNbCCs8 | ZeroDotCMD | not stated |
+| shade-6 | nkUuidQb4Tk | On Mars 3D | not stated |
+| anim-7 | Vud9Ora9IwE | Joey Carlino | not stated |
+| anim-8 | XfHC7mpYNbA | The CG Essentials | not stated |
+| phys-5 | Lj2EBG2_ooQ | Ryan King Art | not stated |
+| post-5 | Jdc3hHHOdnk | Jacob Zirkle | 5.0 |

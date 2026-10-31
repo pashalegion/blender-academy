@@ -6,7 +6,7 @@ window.LESSON_TRACKS = [
     "name": "Blender Fundamentals",
     "icon": "🧭",
     "color": "#EA7600",
-    "description": "Interface and navigation, core transforms, focused modifier and topology lessons, followed by the Blender 5 donut project as a capstone.",
+    "description": "Interface and navigation, essential mesh tools, modifiers, topology, scene organization, the Asset Browser, then the Blender 5 donut project.",
     "badge": "Donut Apprentice"
   },
   {
@@ -14,7 +14,7 @@ window.LESSON_TRACKS = [
     "name": "Hard Surface & Modeling",
     "icon": "📐",
     "color": "#00A2FF",
-    "description": "Low-poly modeling, modifiers (bevel, mirror, solidify), booleans, precision CAD techniques.",
+    "description": "Low-poly modeling, booleans and bevels, precision techniques, and designing for 3D printing.",
     "badge": "Modifier Master"
   },
   {
@@ -22,7 +22,7 @@ window.LESSON_TRACKS = [
     "name": "Digital Sculpting & Anatomy",
     "icon": "🗿",
     "color": "#E040FB",
-    "description": "Sculpting brush fundamentals, Dyntopo vs voxel remesh, and manual retopology.",
+    "description": "Sculpting brush fundamentals, Dyntopo vs voxel remesh, manual retopology, and hair grooming.",
     "badge": "Sculpt Titan"
   },
   {
@@ -30,7 +30,7 @@ window.LESSON_TRACKS = [
     "name": "Materials, Shading & UVs",
     "icon": "🎨",
     "color": "#00E676",
-    "description": "Principled BSDF and PBR fundamentals, UV seam strategy, and procedural node materials.",
+    "description": "Principled BSDF and PBR fundamentals, UV seams and packing, procedural materials, texture painting, and baking.",
     "badge": "Shader Alchemist"
   },
   {
@@ -38,7 +38,7 @@ window.LESSON_TRACKS = [
     "name": "Lighting, Cameras & Render",
     "icon": "💡",
     "color": "#FFD600",
-    "description": "Cycles vs Eevee, three-point studio lighting, and HDRI world lighting with Poly Haven.",
+    "description": "Cycles vs Eevee, three-point lighting, HDRI world lighting, and camera work.",
     "badge": "Render Maestro"
   },
   {
@@ -46,7 +46,7 @@ window.LESSON_TRACKS = [
     "name": "Rigging & Character Animation",
     "icon": "🦴",
     "color": "#FF5252",
-    "description": "Armature basics, automatic skinning and weights, and the 12 animation principles with a bouncing ball.",
+    "description": "Armatures, skinning, the 12 animation principles, constraints, shape keys, the NLA Editor, drivers, and 2D Grease Pencil animation.",
     "badge": "Keyframe Virtuoso"
   },
   {
@@ -62,8 +62,16 @@ window.LESSON_TRACKS = [
     "name": "Physics, Cloth & VFX",
     "icon": "🌊",
     "color": "#00BCD4",
-    "description": "Rigid body dynamics and cloth simulation workflows.",
+    "description": "Rigid bodies, cloth, liquid, smoke, fire and particle simulations.",
     "badge": "Simulation Wizard"
+  },
+  {
+    "id": "pipeline",
+    "name": "Post-Production & Pipeline",
+    "icon": "🎞️",
+    "color": "#FF7AB6",
+    "description": "Finish and ship your work: compositing, video editing, motion tracking, exporting to game engines, and Python scripting.",
+    "badge": "Pipeline Pro"
   }
 ];
 window.LESSONS_INDEX = [
@@ -86,6 +94,28 @@ window.LESSONS_INDEX = [
       "viewport",
       "beginner",
       "transforms"
+    ]
+  },
+  {
+    "id": "fund-6",
+    "trackId": "fundamentals",
+    "title": "Essential Mesh Editing: Extrude, Inset, Bevel & Loop Cut",
+    "author": "DaVinci and Blender Studio",
+    "duration": "14 mins",
+    "level": "Absolute Beginner",
+    "youtubeId": "LoyG3OjtpRU",
+    "videoUrl": "https://www.youtube.com/watch?v=LoyG3OjtpRU",
+    "videoChannel": "DaVinci and Blender Studio",
+    "videoVersion": null,
+    "checkedOn": "2026-10-31",
+    "manualUrl": "https://docs.blender.org/manual/en/5.2/modeling/meshes/tools/extrude_region.html",
+    "tags": [
+      "edit mode",
+      "extrude",
+      "inset",
+      "bevel",
+      "loop cut",
+      "modeling basics"
     ]
   },
   {
@@ -128,6 +158,49 @@ window.LESSONS_INDEX = [
       "non-manifold",
       "auto smooth",
       "cleanup"
+    ]
+  },
+  {
+    "id": "fund-7",
+    "trackId": "fundamentals",
+    "title": "Stay Organized: Outliner, Collections, Link & Append",
+    "author": "Ryan King Art",
+    "duration": "13 mins",
+    "level": "Beginner",
+    "youtubeId": "ph6QUXNq5aE",
+    "videoUrl": "https://www.youtube.com/watch?v=ph6QUXNq5aE",
+    "videoChannel": "Ryan King Art",
+    "videoVersion": null,
+    "checkedOn": "2026-10-31",
+    "manualUrl": "https://docs.blender.org/manual/en/5.2/scene_layout/collections/collections.html",
+    "tags": [
+      "outliner",
+      "collections",
+      "append",
+      "link",
+      "scene organization",
+      "library overrides"
+    ]
+  },
+  {
+    "id": "fund-8",
+    "trackId": "fundamentals",
+    "title": "Asset Browser: Build Scenes Faster with Reusable Assets",
+    "author": "Grant Abbitt",
+    "duration": "9 mins",
+    "level": "Beginner",
+    "youtubeId": "j1EhPPFrZgk",
+    "videoUrl": "https://www.youtube.com/watch?v=j1EhPPFrZgk",
+    "videoChannel": "Grant Abbitt (Gabbitt)",
+    "videoVersion": "5.1",
+    "checkedOn": "2026-10-31",
+    "manualUrl": "https://docs.blender.org/manual/en/5.2/editors/asset_browser.html",
+    "tags": [
+      "asset browser",
+      "asset library",
+      "reuse",
+      "catalogs",
+      "materials"
     ]
   },
   {
@@ -215,6 +288,28 @@ window.LESSONS_INDEX = [
     ]
   },
   {
+    "id": "hard-4",
+    "trackId": "hardsurface",
+    "title": "Design for 3D Printing: From Blender to Slicer",
+    "author": "ZeroDotCMD",
+    "duration": "23 mins",
+    "level": "Intermediate",
+    "youtubeId": "PHh-uNbCCs8",
+    "videoUrl": "https://www.youtube.com/watch?v=PHh-uNbCCs8",
+    "videoChannel": "ZeroDotCMD",
+    "videoVersion": null,
+    "checkedOn": "2026-10-31",
+    "manualUrl": "https://docs.blender.org/manual/en/5.2/files/import_export/stl.html",
+    "tags": [
+      "3d printing",
+      "stl",
+      "manifold",
+      "units",
+      "3d print toolbox",
+      "thickness"
+    ]
+  },
+  {
     "id": "sculpt-1",
     "trackId": "sculpting",
     "title": "Digital Sculpting 101: Core Brushes & Mechanics",
@@ -275,6 +370,28 @@ window.LESSONS_INDEX = [
     ]
   },
   {
+    "id": "sculpt-4",
+    "trackId": "sculpting",
+    "title": "Hair & Fur: Grooming with Hair Curves",
+    "author": "Bradley Animation",
+    "duration": "5 mins",
+    "level": "Intermediate",
+    "youtubeId": "FMWw6XEcY4Y",
+    "videoUrl": "https://www.youtube.com/watch?v=FMWw6XEcY4Y",
+    "videoChannel": "Bradley Animation",
+    "videoVersion": "5.0",
+    "checkedOn": "2026-10-31",
+    "manualUrl": "https://docs.blender.org/manual/en/5.2/sculpt_paint/curves_sculpting/introduction.html",
+    "tags": [
+      "hair",
+      "fur",
+      "curves sculpt",
+      "grooming",
+      "hair curves",
+      "geometry nodes"
+    ]
+  },
+  {
     "id": "shade-1",
     "trackId": "shading",
     "title": "The Principled BSDF & PBR Texturing Fundamentals",
@@ -316,6 +433,27 @@ window.LESSONS_INDEX = [
     ]
   },
   {
+    "id": "shade-6",
+    "trackId": "shading",
+    "title": "UV Layouts for Games: Packing & Texel Density",
+    "author": "On Mars 3D",
+    "duration": "13 mins",
+    "level": "Intermediate",
+    "youtubeId": "nkUuidQb4Tk",
+    "videoUrl": "https://www.youtube.com/watch?v=nkUuidQb4Tk",
+    "videoChannel": "On Mars 3D",
+    "videoVersion": null,
+    "checkedOn": "2026-10-31",
+    "manualUrl": "https://docs.blender.org/manual/en/5.2/modeling/meshes/uv/editing.html",
+    "tags": [
+      "uv packing",
+      "texel density",
+      "pack islands",
+      "game art",
+      "uv layout"
+    ]
+  },
+  {
     "id": "shade-3",
     "trackId": "shading",
     "title": "Procedural Shading: Creating Real Materials with Math",
@@ -333,6 +471,50 @@ window.LESSONS_INDEX = [
       "voronoi",
       "colorramp",
       "bump"
+    ]
+  },
+  {
+    "id": "shade-4",
+    "trackId": "shading",
+    "title": "Texture Painting: Paint Directly on Your Model",
+    "author": "Grant Abbitt",
+    "duration": "21 mins",
+    "level": "Beginner",
+    "youtubeId": "7kSRXnAi7uA",
+    "videoUrl": "https://www.youtube.com/watch?v=7kSRXnAi7uA",
+    "videoChannel": "Grant Abbitt (Gabbitt)",
+    "videoVersion": "5.1",
+    "checkedOn": "2026-10-31",
+    "manualUrl": "https://docs.blender.org/manual/en/5.2/sculpt_paint/texture_paint/introduction.html",
+    "tags": [
+      "texture painting",
+      "paint",
+      "uv",
+      "stylized",
+      "texture slots",
+      "hand painted"
+    ]
+  },
+  {
+    "id": "shade-5",
+    "trackId": "shading",
+    "title": "Baking Textures: High-Poly Detail on a Low-Poly Mesh",
+    "author": "Ryan King Art",
+    "duration": "13 mins",
+    "level": "Intermediate",
+    "youtubeId": "Zxl38NpPWdo",
+    "videoUrl": "https://www.youtube.com/watch?v=Zxl38NpPWdo",
+    "videoChannel": "Ryan King Art",
+    "videoVersion": null,
+    "checkedOn": "2026-10-31",
+    "manualUrl": "https://docs.blender.org/manual/en/5.2/render/cycles/baking.html",
+    "tags": [
+      "baking",
+      "normal map",
+      "high poly",
+      "low poly",
+      "selected to active",
+      "game assets"
     ]
   },
   {
@@ -397,6 +579,28 @@ window.LESSONS_INDEX = [
     ]
   },
   {
+    "id": "light-4",
+    "trackId": "lighting",
+    "title": "Camera & Composition: Lenses, Focus & Framing",
+    "author": "Ryan King Art",
+    "duration": "16 mins",
+    "level": "Beginner",
+    "youtubeId": "aY04h4ujrlY",
+    "videoUrl": "https://www.youtube.com/watch?v=aY04h4ujrlY",
+    "videoChannel": "Ryan King Art",
+    "videoVersion": null,
+    "checkedOn": "2026-10-31",
+    "manualUrl": "https://docs.blender.org/manual/en/5.2/render/cameras.html",
+    "tags": [
+      "camera",
+      "focal length",
+      "depth of field",
+      "composition",
+      "framing",
+      "f-stop"
+    ]
+  },
+  {
     "id": "anim-1",
     "trackId": "animation",
     "title": "Bones & Armature Fundamentals: Your First Rig",
@@ -453,6 +657,112 @@ window.LESSONS_INDEX = [
       "bouncing ball",
       "squash and stretch",
       "keyframes"
+    ]
+  },
+  {
+    "id": "anim-4",
+    "trackId": "animation",
+    "title": "Constraints: Make Objects Follow, Aim & Attach",
+    "author": "Ryan King Art",
+    "duration": "49 mins",
+    "level": "Intermediate",
+    "youtubeId": "fQJK3thkh0k",
+    "videoUrl": "https://www.youtube.com/watch?v=fQJK3thkh0k",
+    "videoChannel": "Ryan King Art",
+    "videoVersion": null,
+    "checkedOn": "2026-10-31",
+    "manualUrl": "https://docs.blender.org/manual/en/5.2/animation/constraints/introduction.html",
+    "tags": [
+      "constraints",
+      "track to",
+      "child of",
+      "copy location",
+      "follow path",
+      "rigging"
+    ]
+  },
+  {
+    "id": "anim-5",
+    "trackId": "animation",
+    "title": "Shape Keys: Facial Expressions & Morphing",
+    "author": "Proj Prod Blender",
+    "duration": "10 mins",
+    "level": "Intermediate",
+    "youtubeId": "kd4UGETz_Zw",
+    "videoUrl": "https://www.youtube.com/watch?v=kd4UGETz_Zw",
+    "videoChannel": "Proj Prod Blender",
+    "videoVersion": "5.1",
+    "checkedOn": "2026-10-31",
+    "manualUrl": "https://docs.blender.org/manual/en/5.2/animation/shape_keys/introduction.html",
+    "tags": [
+      "shape keys",
+      "facial animation",
+      "morph targets",
+      "blend shapes",
+      "expressions"
+    ]
+  },
+  {
+    "id": "anim-7",
+    "trackId": "animation",
+    "title": "NLA Editor: Layer & Reuse Your Animations",
+    "author": "Joey Carlino",
+    "duration": "19 mins",
+    "level": "Intermediate",
+    "youtubeId": "Vud9Ora9IwE",
+    "videoUrl": "https://www.youtube.com/watch?v=Vud9Ora9IwE",
+    "videoChannel": "Joey Carlino",
+    "videoVersion": null,
+    "checkedOn": "2026-10-31",
+    "manualUrl": "https://docs.blender.org/manual/en/5.2/editors/nla/introduction.html",
+    "tags": [
+      "nla",
+      "nonlinear animation",
+      "actions",
+      "animation layers",
+      "strips"
+    ]
+  },
+  {
+    "id": "anim-8",
+    "trackId": "animation",
+    "title": "Drivers: Link Values with Simple Math",
+    "author": "The CG Essentials",
+    "duration": "5 mins",
+    "level": "Intermediate",
+    "youtubeId": "XfHC7mpYNbA",
+    "videoUrl": "https://www.youtube.com/watch?v=XfHC7mpYNbA",
+    "videoChannel": "The CG Essentials",
+    "videoVersion": null,
+    "checkedOn": "2026-10-31",
+    "manualUrl": "https://docs.blender.org/manual/en/5.2/animation/drivers/introduction.html",
+    "tags": [
+      "drivers",
+      "expressions",
+      "automation",
+      "rigging",
+      "properties"
+    ]
+  },
+  {
+    "id": "anim-6",
+    "trackId": "animation",
+    "title": "Grease Pencil: Draw & Animate in 2D",
+    "author": "Micah Buzan",
+    "duration": "12 mins",
+    "level": "Beginner",
+    "youtubeId": "ZkqZRe9IXQ8",
+    "videoUrl": "https://www.youtube.com/watch?v=ZkqZRe9IXQ8",
+    "videoChannel": "Micah Buzan ANIMATION",
+    "videoVersion": null,
+    "checkedOn": "2026-10-31",
+    "manualUrl": "https://docs.blender.org/manual/en/5.2/grease_pencil/introduction.html",
+    "tags": [
+      "grease pencil",
+      "2d animation",
+      "drawing",
+      "onion skinning",
+      "storyboard"
     ]
   },
   {
@@ -534,6 +844,181 @@ window.LESSONS_INDEX = [
       "cloth brush",
       "pressure",
       "folds"
+    ]
+  },
+  {
+    "id": "phys-3",
+    "trackId": "physics",
+    "title": "Liquid Simulation: Fill a Cup with Water",
+    "author": "Freedom Arts 3D Workflow",
+    "duration": "8 mins",
+    "level": "Intermediate",
+    "youtubeId": "Z8eBFDJdmco",
+    "videoUrl": "https://www.youtube.com/watch?v=Z8eBFDJdmco",
+    "videoChannel": "Freedom Arts 3D Workflow",
+    "videoVersion": "5.1",
+    "checkedOn": "2026-10-31",
+    "manualUrl": "https://docs.blender.org/manual/en/5.2/physics/fluid/introduction.html",
+    "tags": [
+      "fluid",
+      "liquid",
+      "mantaflow",
+      "domain",
+      "inflow",
+      "simulation"
+    ]
+  },
+  {
+    "id": "phys-4",
+    "trackId": "physics",
+    "title": "Smoke & Fire Simulation",
+    "author": "Ryan King Art",
+    "duration": "35 mins",
+    "level": "Intermediate",
+    "youtubeId": "vQq0jFL1I-Y",
+    "videoUrl": "https://www.youtube.com/watch?v=vQq0jFL1I-Y",
+    "videoChannel": "Ryan King Art",
+    "videoVersion": null,
+    "checkedOn": "2026-10-31",
+    "manualUrl": "https://docs.blender.org/manual/en/5.2/physics/fluid/type/flow.html",
+    "tags": [
+      "smoke",
+      "fire",
+      "gas simulation",
+      "mantaflow",
+      "quick smoke",
+      "vfx"
+    ]
+  },
+  {
+    "id": "phys-5",
+    "trackId": "physics",
+    "title": "Particle Systems: Sparks, Dust & Scattered Objects",
+    "author": "Ryan King Art",
+    "duration": "52 mins",
+    "level": "Intermediate",
+    "youtubeId": "Lj2EBG2_ooQ",
+    "videoUrl": "https://www.youtube.com/watch?v=Lj2EBG2_ooQ",
+    "videoChannel": "Ryan King Art",
+    "videoVersion": null,
+    "checkedOn": "2026-10-31",
+    "manualUrl": "https://docs.blender.org/manual/en/5.2/physics/particles/introduction.html",
+    "tags": [
+      "particles",
+      "emitter",
+      "force fields",
+      "hair particles",
+      "instancing"
+    ]
+  },
+  {
+    "id": "post-1",
+    "trackId": "pipeline",
+    "title": "Compositing in Blender 5: Finish Your Renders",
+    "author": "Grant Abbitt",
+    "duration": "9 mins",
+    "level": "Beginner",
+    "youtubeId": "4zoixL45nvI",
+    "videoUrl": "https://www.youtube.com/watch?v=4zoixL45nvI",
+    "videoChannel": "Grant Abbitt (Gabbitt)",
+    "videoVersion": "5",
+    "checkedOn": "2026-10-31",
+    "manualUrl": "https://docs.blender.org/manual/en/5.2/compositing/introduction.html",
+    "tags": [
+      "compositor",
+      "post processing",
+      "glare",
+      "color grading",
+      "render layers",
+      "nodes"
+    ]
+  },
+  {
+    "id": "post-2",
+    "trackId": "pipeline",
+    "title": "Video Editing in Blender: Cut Your First Video",
+    "author": "Ryan King Art",
+    "duration": "23 mins",
+    "level": "Beginner",
+    "youtubeId": "XKqdmHRGnjI",
+    "videoUrl": "https://www.youtube.com/watch?v=XKqdmHRGnjI",
+    "videoChannel": "Ryan King Art",
+    "videoVersion": null,
+    "checkedOn": "2026-10-31",
+    "manualUrl": "https://docs.blender.org/manual/en/5.2/video_editing/edit/montage/strips/index.html",
+    "tags": [
+      "video editing",
+      "sequencer",
+      "vse",
+      "strips",
+      "cutting",
+      "audio"
+    ]
+  },
+  {
+    "id": "post-5",
+    "trackId": "pipeline",
+    "title": "Motion Tracking: Put 3D Objects into Real Video",
+    "author": "Jacob Zirkle",
+    "duration": "24 mins",
+    "level": "Intermediate",
+    "youtubeId": "Jdc3hHHOdnk",
+    "videoUrl": "https://www.youtube.com/watch?v=Jdc3hHHOdnk",
+    "videoChannel": "Jacob Zirkle",
+    "videoVersion": "5.0",
+    "checkedOn": "2026-10-31",
+    "manualUrl": "https://docs.blender.org/manual/en/5.2/movie_clip/tracking/introduction.html",
+    "tags": [
+      "motion tracking",
+      "camera tracking",
+      "vfx",
+      "movie clip editor",
+      "camera solve"
+    ]
+  },
+  {
+    "id": "post-3",
+    "trackId": "pipeline",
+    "title": "Export for Games: FBX & glTF to Unity, Unreal & Godot",
+    "author": "Versatile Vertices",
+    "duration": "8 mins",
+    "level": "Intermediate",
+    "youtubeId": "-rG4QOR_UHM",
+    "videoUrl": "https://www.youtube.com/watch?v=-rG4QOR_UHM",
+    "videoChannel": "Versatile Vertices",
+    "videoVersion": null,
+    "checkedOn": "2026-10-31",
+    "manualUrl": "https://docs.blender.org/manual/en/5.2/files/import_export/index.html",
+    "tags": [
+      "export",
+      "fbx",
+      "gltf",
+      "unity",
+      "unreal",
+      "godot",
+      "game assets"
+    ]
+  },
+  {
+    "id": "post-4",
+    "trackId": "pipeline",
+    "title": "Python Scripting: Automate Blender",
+    "author": "Mina Pêcheux",
+    "duration": "8 mins",
+    "level": "Intermediate",
+    "youtubeId": "aGsbOGK9Ia8",
+    "videoUrl": "https://www.youtube.com/watch?v=aGsbOGK9Ia8",
+    "videoChannel": "Mina Pêcheux",
+    "videoVersion": "4.2",
+    "checkedOn": "2026-10-31",
+    "manualUrl": "https://docs.blender.org/manual/en/5.2/advanced/scripting/introduction.html",
+    "tags": [
+      "python",
+      "scripting",
+      "bpy",
+      "automation",
+      "add-ons",
+      "text editor"
     ]
   }
 ];
