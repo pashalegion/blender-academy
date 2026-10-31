@@ -11,6 +11,7 @@ import pathlib, re
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 SITE = "https://pashalegion.github.io/blender-academy/"
+CSS_VERSION = "2"  # Raise this when css/style.css changes, so browsers fetch the new file.
 PAGES = ["index", "lessons", "lesson", "tracks", "shortcuts", "rig", "plugins", "vault", "glossary", "progress", "secrets"]
 
 SHELL = [
@@ -138,7 +139,14 @@ KEEP = {"Blender", "Academy", "BlenderAcademy", "CPU", "GPU", "RAM", "Suzanne", 
 
 
 def language_link(html, name, href, code, label):
-    tag = f'<a class="lang-link" id="lang-link" href="{href}" lang="{code}" hreflang="{code}" aria-label="{label}"><span class="lang-full">{label}</span><span class="lang-short" aria-hidden="true">{code.upper()}</span></a>\n      '
+    """Two-part EN/ES switch. Only the language you are not reading is a link."""
+    here = "es" if code == "en" else "en"
+    group = "Language" if here == "en" else "Idioma"
+    current = f'<span class="lang-option" aria-current="true" lang="{here}">{here.upper()}</span>'
+    other = f'<a class="lang-option" id="lang-link" href="{href}" lang="{code}" hreflang="{code}" aria-label="{label}">{code.upper()}</a>'
+    parts = current + other if here == "en" else other + current
+    tag = f'<div class="lang-switch" role="group" aria-label="{group}">{parts}</div>\n      '
+    html = re.sub(r'<div class="lang-switch".*?</div>\n      ', "", html)
     html = re.sub(r'<a class="lang-link".*?</a>\n      ', "", html)
     return html.replace('<button class="nav-toggle"', tag + '<button class="nav-toggle"', 1)
 
@@ -162,6 +170,7 @@ def main():
         html = alternates(path.read_text(), name) if name != "404" else path.read_text()
         target = f"es/{name}.html" if name != "404" else "es/index.html"
         html = language_link(html, name, target, "es", "Español")
+        html = re.sub(r'href="css/style\.css(\?v=\w+)?"', f'href="css/style.css?v={CSS_VERSION}"', html)
         path.write_text(html)
         english[name] = html
     (ROOT / "es").mkdir(exist_ok=True)
