@@ -5,10 +5,10 @@
   var esc = BA.esc;
   var resources = window.BLENDER_REFERENCE.vault;
   var categories = [
-    { id: "all", label: "All" },
-    { id: "textures", label: "Textures" },
-    { id: "models", label: "Models" },
-    { id: "tools", label: "Tools" },
+    { id: "all", label: BA.t("All") },
+    { id: "textures", label: BA.t("Textures") },
+    { id: "models", label: BA.t("Models") },
+    { id: "tools", label: BA.t("Tools") },
     { id: "hdris", label: "HDRIs" }
   ];
 
@@ -28,9 +28,9 @@
         '<p class="ref-meta">' + esc(r.categoryName) + '</p></div>' +
         '<span class="badge badge-ok">' + esc(r.badge) + '</span></div>' +
         '<p class="ref-body">' + esc(r.description) + '</p>' +
-        '<p class="ref-body"><strong>Why it is useful:</strong> ' + esc(r.whyTopTier) + '</p>' +
-        '<div class="ref-foot"><span class="muted small">Check the licence on the site</span>' +
-        '<a href="' + esc(r.url) + '" rel="noopener noreferrer" target="_blank">Visit<span class="visually-hidden"> ' + esc(r.name) + '</span> ↗</a></div>' +
+        '<p class="ref-body"><strong>' + BA.t("Why it is useful:") + '</strong> ' + esc(r.whyTopTier) + '</p>' +
+        '<div class="ref-foot"><span class="muted small">' + BA.t("Check the licence on the site") + '</span>' +
+        '<a href="' + esc(r.url) + '" rel="noopener noreferrer" target="_blank">' + BA.t("Visit") + '<span class="visually-hidden"> ' + esc(r.name) + '</span> ↗</a></div>' +
         '</article></li>';
     }).join("");
   }

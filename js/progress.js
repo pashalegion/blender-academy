@@ -24,20 +24,20 @@
 
     $("stat-done").textContent = done + "/" + total;
     $("stat-xp").textContent = state.xp + " XP";
-    $("stat-level").textContent = "Level " + level.current.level + ": " + level.current.name;
+    $("stat-level").textContent = BA.t("Level {level}: {name}", { level: level.current.level, name: BA.t(level.current.name) });
     $("stat-trophies").textContent = unlocked + "/" + achievements.length;
     $("stat-notes").textContent = Object.keys(state.notes).length;
     $("stat-bar").style.setProperty("--p", (done / total).toFixed(3));
-    $("trophy-count").textContent = unlocked + " of " + achievements.length + " achievements unlocked.";
+    $("trophy-count").textContent = BA.t("{done} of {total} achievements unlocked.", { done: unlocked, total: achievements.length });
 
     $("trophy-list").innerHTML = achievements.map(function (a) {
       var got = state.unlockedAchievements.indexOf(a.id) !== -1;
       var hidden = a.secret && !got;
       return '<li class="trophy' + (got ? ' unlocked' : '') + '">' +
         '<span class="trophy-icon" aria-hidden="true">' + (hidden ? '🔒' : esc(a.icon)) + '</span>' +
-        '<h3 class="card-title">' + (hidden ? 'Secret achievement' : esc(a.title)) + '</h3>' +
-        '<p class="ref-meta">' + (hidden ? 'Unlock it to see what it is.' : esc(a.description)) + '</p>' +
-        '<span class="trophy-xp">' + (got ? 'Unlocked' : 'Locked') + ' · +' + a.xp + ' XP</span>' +
+        '<h3 class="card-title">' + (hidden ? BA.t('Secret achievement') : esc(a.title)) + '</h3>' +
+        '<p class="ref-meta">' + (hidden ? BA.t('Unlock it to see what it is.') : esc(a.description)) + '</p>' +
+        '<span class="trophy-xp">' + (got ? BA.t('Unlocked') : BA.t('Locked')) + ' · +' + a.xp + ' XP</span>' +
         '</li>';
     }).join("");
   }
@@ -53,7 +53,7 @@
 
   function showError(messages) {
     errorBox.hidden = false;
-    errorBox.innerHTML = "<strong>This file was not imported.</strong><ul>" + messages.map(function (m) {
+    errorBox.innerHTML = "<strong>" + BA.t("This file was not imported.") + "</strong><ul>" + messages.map(function (m) {
       return "<li>" + esc(m) + "</li>";
     }).join("") + "</ul>";
   }
@@ -61,15 +61,15 @@
   function showPreview(value, skipped) {
     preview.hidden = false;
     preview.innerHTML =
-      "<p><strong>Preview of this backup</strong></p><ul>" +
+      "<p><strong>" + BA.t("Preview of this backup") + "</strong></p><ul>" +
       "<li>XP: " + value.xp + "</li>" +
-      "<li>Lessons done: " + value.completedLessons.length + " of " + total + "</li>" +
-      "<li>Bookmarks: " + value.bookmarkedLessons.length + "</li>" +
-      "<li>Notes: " + Object.keys(value.notes).length + "</li>" +
-      "<li>Achievements: " + value.unlockedAchievements.length + "</li>" +
+      "<li>" + BA.t("Lessons done: {done} of {total}", { done: value.completedLessons.length, total: total }) + "</li>" +
+      "<li>" + BA.t("Bookmarks") + ": " + value.bookmarkedLessons.length + "</li>" +
+      "<li>" + BA.t("Notes") + ": " + Object.keys(value.notes).length + "</li>" +
+      "<li>" + BA.t("Achievements") + ": " + value.unlockedAchievements.length + "</li>" +
       "</ul>" +
-      (skipped.length ? "<p>Skipped:</p><ul>" + skipped.map(function (s) { return "<li>" + esc(s) + "</li>"; }).join("") + "</ul>" : "") +
-      '<p class="hint">Importing replaces the progress in this browser.</p>';
+      (skipped.length ? "<p>" + BA.t("Skipped:") + "</p><ul>" + skipped.map(function (s) { return "<li>" + esc(s) + "</li>"; }).join("") + "</ul>" : "") +
+      '<p class="hint">' + BA.t("Importing replaces the progress in this browser.") + '</p>';
     actions.hidden = false;
   }
 
@@ -87,7 +87,7 @@
       pending = result.value;
       showPreview(result.value, result.skipped);
     };
-    reader.onerror = function () { showError(["The file could not be read."]); };
+    reader.onerror = function () { showError([BA.t("The file could not be read.")]); };
     reader.readAsText(file);
   });
 
@@ -99,12 +99,12 @@
 
   $("import-apply").addEventListener("click", function () {
     if (!pending) return;
-    if (!window.confirm("Replace the progress in this browser with this backup?")) return;
+    if (!window.confirm(BA.t("Replace the progress in this browser with this backup?"))) return;
     if (BA.replaceProgress(pending)) {
       clearImport();
       fileInput.value = "";
       renderStats();
-      BA.toast("Backup imported", "info");
+      BA.toast(BA.t("Backup imported"), "info");
     }
   });
 
@@ -118,15 +118,15 @@
     link.click();
     link.remove();
     window.setTimeout(function () { URL.revokeObjectURL(url); }, 1000);
-    BA.toast("Backup downloaded", "info");
+    BA.toast(BA.t("Backup downloaded"), "info");
   });
 
   $("reset-btn").addEventListener("click", function () {
-    if (!window.confirm("Reset all progress, notes and achievements in this browser? This cannot be undone.")) return;
+    if (!window.confirm(BA.t("Reset all progress, notes and achievements in this browser? This cannot be undone."))) return;
     if (BA.resetAll()) {
       clearImport();
       renderStats();
-      BA.toast("Progress reset", "info");
+      BA.toast(BA.t("Progress reset"), "info");
     }
   });
 

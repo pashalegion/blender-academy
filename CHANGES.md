@@ -112,3 +112,13 @@ Lesson steps follow the Blender 5.2 manual page linked on each lesson. Each vide
 | anim-8 | XfHC7mpYNbA | The CG Essentials | not stated |
 | phys-5 | Lj2EBG2_ooQ | Ryan King Art | not stated |
 | post-5 | Jdc3hHHOdnk | Jacob Zirkle | 5.0 |
+
+## Spanish version (2026-10-31)
+
+Added a full Spanish site in `es/`, with a language switch on every page. Both versions share the code and the browser progress.
+
+- Lessons, reference data and interface text are in `data/es/`. `tests/build-es.py` generates the pages from the English ones and stops if any English text is left.
+- Every lesson has its own Spanish-language video. `VIDEOS.md` lists them. Only the video changed, so a lesson's text may cover more or less than its Spanish video.
+- Blender menu and tool names stay in English, and each lesson explains how to switch Blender itself to Spanish.
+- Manual links point to the Spanish edition of the Blender 5.2 manual.
+- The Rig Checker scores, shared code and English text are unchanged, apart from a new language link and a menu that collapses at a wider screen size.

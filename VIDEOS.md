@@ -51,3 +51,55 @@ All 45 are working. The 16 unavailable videos were replaced on 2026-10-31, and 2
 | post-5 | Jdc3hHHOdnk | working | The Best Method for Camera Tracking in Blender 5.0 | Jacob Zirkle | Jacob Zirkle |
 | post-3 | -rG4QOR_UHM | working | Blender to Game Engine Tutorial (Unity, Unreal & Godot) | Versatile Vertices | Versatile Vertices |
 | post-4 | aGsbOGK9Ia8 | working | Here's Everything You Need To Get Started With Blender Scripting! | Mina Pêcheux | Mina Pêcheux |
+
+## Spanish site videos
+
+The Spanish pages use their own videos. Each was checked on 2026-10-31: it plays, can be embedded, and YouTube lists Spanish speech for it, except `anim-4`, which has no speech data. Its title and description are in Spanish, so listen to it once before class.
+
+| Lesson | YouTube ID | Spoken language | Title | Channel |
+|---|---|---|---|---|
+| fund-1 | LQrbW7Uz0ok | Spanish | BLENDER 5.0 PARA PRINCIPIANTES - Tutorial Español desde 0 - Cómo navegar por la interfaz | Alejandro de Costas |
+| fund-6 | 6sM4aXrXLFs | Spanish | TUTORIALES BLENDER - Cómo redondear bordes, extruir, herramienta Loop cut, inset y solidify Parte 4 | Alejandro de Costas |
+| fund-4 | o6yBoG5Yneo | Spanish | ¡APRENDE A USAR los MODIFICADORES en Blender! \| BEVEL, ARRAY, SUBDIVISION SURFACE, BOOLEAN, MIRROR | Entíntate |
+| fund-5 | rjKBV8Gk09Y | Spanish | Todo lo básico sobre topología en Blender (para modelado 3D) | Mitzu Milky |
+| fund-7 | 1utCI0zGDnw | Spanish | Organizar escena con Outliner primeros pasos Blender 5 | Sergio Rodríguez (Blender Wizard) |
+| fund-8 | P7TUEboMz-Y | Spanish | Blender 5.0.1 Asset Browser - Tutorial COMPLETO | artphisto |
+| fund-3 | lrlpwIumFnE | Spanish | 🔥LA GUÍA DEFINITIVA DE BLENDER! (Curso completo en Español) \| Desde cero! 4.5 | Aura Prods |
+| hard-1 | vE4jYloVqXc | Spanish | 011 - El Pozo | Santiago Shang |
+| hard-2 | FTi4h_o9f4A | Spanish | ⚙️ Hacer AGUJEROS Rápido en Blender con BOOLEAN | Xan Tips |
+| hard-3 | h6t2_77ds58 | Spanish | Medidas en blender - con presición | Juanchibox |
+| hard-4 | lyWyqIpeo28 | Spanish | Cómo preparar modelos en Blender para impresión 3D paso a paso | D1nuz |
+| sculpt-1 | ed1Oe341w8I | Spanish | Cómo Empezar a Esculpir en Blender \| Guía para Principiantes | D1nuz |
+| sculpt-2 | XTSPySQtNHU | Spanish | Remesh vs Dyntopo en Blender — Cuándo usar cada uno para esculpir | D1nuz |
+| sculpt-3 | my_dUzQPU94 | Spanish | Este MÉTODO de retopología en Blender es más simple de lo que crees | D1nuz |
+| sculpt-4 | 3VEUBdT-xEk | Spanish | ASI SE HACE CABELLO EN BLENDER ┊ Tuto Xpress | Juanperoen3D |
+| shade-1 | cZwC1e9ObWQ | Spanish | Domina PRINCIPAL BSDF en BLENDER: Materiales PBR y TEXTURIZACIÓN Realista | Javier Vega (Zao3D) |
+| shade-2 | xBiMInkUT8c | Spanish | Tutorial Desenvolver un Mapa UV \| Curso de Blender 4.4 \| Parte 8 | Chanchito3D |
+| shade-6 | Fr-rsucFgbc | Spanish | Mapas UV - La GUÍA DEFINITIVA en Blender | El Abrigo de Paulo |
+| shade-3 | RMPwIm3-1IQ | Spanish | Materiales procedurales en Blender | MinerDesign |
+| shade-4 | j5L1BWbDpeg | Spanish | Como empezar a pintar texturas en Blender | Mitzu Milky |
+| shade-5 | Mi6gd3loiA4 | Spanish | Cómo Hacer un "Bake" de Mapa de Normales en Blender 2024: Tutorial Completo | Oscar-3D |
+| light-1 | fXmhNFe9gDY | Spanish | Ajustes de Render en Blender 2026: Eevee vs. Cycles (Guía de Optimización) 🚀🎬 | Cristian Eslava (ceslava) |
+| light-2 | 9rO45c9nXLA | Spanish | Tutorial Luces de Estudio (Luz de Tres Puntos) \| Curso de Blender 4.4 \| Parte 24 | Chanchito3D |
+| light-3 | 5xnE_v7uxpo | Spanish | CURSO BLENDER 4.0 - APRENDE A USAR HDRi \| Iluminación Realista | Dani Blender |
+| light-4 | _QgS0VvNmT4 | Spanish | CURSO BLENDER 4.0 - Profundidad de Campo \| APRENDE A TRABAJAR CON LA CÁMARA | Dani Blender |
+| anim-1 | P7wk7ZQYGEI | Spanish | Rigging en Blender 3D para personajes paso a paso - Tutorial en español - Animación y Videojuegos | Alejandro de Costas |
+| anim-2 | lxD_vYBSCSQ | Spanish | Guia de Pesado de Vertices(Weight Paint) en Blender 3.5 - Tutorial Blender | Alex Baeza (Str3Dlok) |
+| anim-3 | k-mgjqLHzLo | Spanish | ANIMACIÓN BÁSICA en Blender para PRINCIPIANTES \| Pelota Rebotando con Dope Sheet y Graph Editor | Leo Almirez |
+| anim-4 | Dja81F0tupk | not available | INICIACIÓN a BLENDER jerarquias y restricciones | abraham castilla (AbrahamArtDesign) |
+| anim-5 | bGNyX6FQ970 | Spanish | Crear, animar y exportar ShapeKeys en Blender // Tutorial | Harambe Tor |
+| anim-7 | LArEEprtkMo | Spanish | Cómo Repetir y Loopear Animaciones en Blender 5.0 (Graph Editor y NLA) | Xan Tips |
+| anim-8 | bgXx5lIx2h8 | Spanish | Animando con drivers en BLENDER | Carlos Behrens 3D |
+| anim-6 | FuPMw4Ad7wQ | Spanish | Cómo hacer ANIMACIONES 2D en BLENDER (grease pencil 2026) \| ZeikoGeneriko #animación #tutorial | ZeikoGeneriko |
+| geo-1 | BOIsEYWeXoI | Spanish | 🔥 Curso de Geometry Nodes - Blender en Español 2025 | Aura Prods |
+| geo-2 | abmfmeFC-rE | Spanish | Dibujando Cables con Geometry Nodes - Tutorial de Blender en Español | Sanctus - Blender Procedural |
+| phys-1 | 0KurwvfC33M | Spanish | 🎯 Tutorial Básico de Rigid Bodies en Blender | Jeffrey Rivera |
+| phys-2 | f1IcBk8vc3k | Spanish | TUTORIAL - PRINCIPIOS DE SIMULACIÓN DE CLOTH O TELAS - BLENDER 3.5 | Werner Martinez |
+| phys-3 | bH0kF8V5ljE | Spanish | SIMULACIÓN de FLUIDOS en Blender | Lelush Producciones |
+| phys-4 | IpS9m_xm4jo | Spanish | Introducción a Simulaciones (Humo y Fuego) - Tutorial Blender | Alex Baeza (Str3Dlok) |
+| phys-5 | 0Im7n03B7KA | Spanish | 🟠 GUÍA de PARTÍCULAS en Blender + Force Fields | Xan Tips |
+| post-1 | gg6eDvowLvc | Spanish | Postproducción en Blender: mejora tus renders con el Compositor | Luis Voronov \| Blender 3D |
+| post-2 | SqoPbz_Z5KQ | Spanish | Tutorial desde España, La edición de video  que Blender puede ofrecerte en español. | 3Dilusion |
+| post-5 | _gduqf0Qx8s | Spanish | Cómo hacer TRACKEO de CÁMARA + COMPOSICIÓN en Blender | Lelush Producciones |
+| post-3 | 9SphYaY1E-M | Spanish | 15 - Exportar modelos 3D de Blender a Unity o Unreal - Modelado 3D para videojuegos en Blender | Academia A3D |
+| post-4 | 0SQuE__XRF0 | Spanish | Programación 3D con Blender y Python #1: Introducción | carladevv |

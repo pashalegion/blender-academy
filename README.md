@@ -20,6 +20,10 @@ The 45 lessons are organized as focused tracks. Fundamentals now progresses from
 
 The refreshed interface lesson and donut capstone use Blender 5-era instruction. Other community lessons may have been recorded for earlier versions; their lesson notes identify version-sensitive steps where known and link to the official Blender manual. Check the lesson card and its notes before following version-specific UI instructions.
 
+## Spanish version
+
+The full site is available in Spanish in `es/`, with Spanish-language videos. Each page links to its other language, and progress carries over. To change a page, edit the English HTML, update the table in `tests/build-es.py`, then run it. Spanish lessons and data are in `data/es/`.
+
 ## Study tools
 
 - Troubleshooting notes on every lesson.
