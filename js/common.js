@@ -33,6 +33,21 @@
     "#shortcuts": "shortcuts.html"
   };
 
+  /* Language: English pages have no string table, so t() returns the English text. */
+  var LANG = document.documentElement.lang === "es" ? "es" : "en";
+  var STRINGS = window.BA_STRINGS || {};
+
+  function t(text, vars) {
+    var out = Object.prototype.hasOwnProperty.call(STRINGS, text) ? STRINGS[text] : text;
+    if (vars) Object.keys(vars).forEach(function (key) { out = out.split("{" + key + "}").join(vars[key]); });
+    return out;
+  }
+
+  /* Lowercase and drop accents, so "animacion" finds "animación". */
+  function fold(text) {
+    return String(text).normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
+  }
+
   function data() { return window.BLENDER_REFERENCE || { achievements: [] }; }
   function lessons() { return window.LESSONS_INDEX || []; }
   function tracks() { return window.LESSON_TRACKS || []; }
@@ -92,7 +107,7 @@
     var errors = [];
     var skipped = [];
     if (!isPlainObject(input)) {
-      return { ok: false, value: null, errors: ["The file does not contain a progress object."], skipped: skipped };
+      return { ok: false, value: null, errors: [t("The file does not contain a progress object.")], skipped: skipped };
     }
     var out = emptyProgress();
     var lessonIds = {};
@@ -102,24 +117,24 @@
 
     if (input.xp !== undefined) {
       if (isWholeNumber(input.xp)) out.xp = input.xp;
-      else errors.push("XP must be a whole number of 0 or more.");
+      else errors.push(t("XP must be a whole number of 0 or more."));
     }
 
     function idList(key, known, label) {
       if (input[key] === undefined) return [];
       if (!Array.isArray(input[key])) {
-        errors.push(label + " must be a list.");
+        errors.push(t("{label} must be a list.", { label: label }));
         return [];
       }
       var seen = {};
       var result = [];
       input[key].forEach(function (item) {
         if (typeof item !== "string") {
-          errors.push(label + " must contain only text IDs.");
+          errors.push(t("{label} must contain only text IDs.", { label: label }));
           return;
         }
         if (!known(item)) {
-          skipped.push(label + ": unknown ID “" + item.slice(0, 60) + "”");
+          skipped.push(t("{label}: unknown ID “{id}”", { label: label, id: item.slice(0, 60) }));
           return;
         }
         if (!seen[item]) { seen[item] = true; result.push(item); }
@@ -127,26 +142,26 @@
       return result;
     }
 
-    out.completedLessons = idList("completedLessons", function (id) { return keepUnknownIds || !!lessonIds[id]; }, "Completed lessons");
-    out.bookmarkedLessons = idList("bookmarkedLessons", function (id) { return keepUnknownIds || !!lessonIds[id]; }, "Bookmarks");
-    out.unlockedAchievements = idList("unlockedAchievements", function (id) { return keepUnknownIds || !!achievementIds[id]; }, "Achievements");
+    out.completedLessons = idList("completedLessons", function (id) { return keepUnknownIds || !!lessonIds[id]; }, t("Completed lessons"));
+    out.bookmarkedLessons = idList("bookmarkedLessons", function (id) { return keepUnknownIds || !!lessonIds[id]; }, t("Bookmarks"));
+    out.unlockedAchievements = idList("unlockedAchievements", function (id) { return keepUnknownIds || !!achievementIds[id]; }, t("Achievements"));
     out.viewedTroubleshoots = idList("viewedTroubleshoots", function (id) {
       var lessonPart = id.split("_tb_")[0];
       return id.indexOf("_tb_") > 0 && (keepUnknownIds || !!lessonIds[lessonPart]);
-    }, "Gotchas viewed");
+    }, t("Gotchas viewed"));
 
     if (input.notes !== undefined) {
       if (!isPlainObject(input.notes)) {
-        errors.push("Notes must be an object keyed by lesson ID.");
+        errors.push(t("Notes must be an object keyed by lesson ID."));
       } else {
         Object.keys(input.notes).forEach(function (id) {
           var text = input.notes[id];
           if (typeof text !== "string") {
-            errors.push("Note for “" + id.slice(0, 40) + "” must be text.");
+            errors.push(t("Note for “{id}” must be text.", { id: id.slice(0, 40) }));
           } else if (!keepUnknownIds && !lessonIds[id]) {
-            skipped.push("Note: unknown lesson “" + id.slice(0, 60) + "”");
+            skipped.push(t("Note: unknown lesson “{id}”", { id: id.slice(0, 60) }));
           } else if (text.length > MAX_NOTE_LENGTH) {
-            errors.push("Note for “" + id + "” is longer than " + MAX_NOTE_LENGTH + " characters.");
+            errors.push(t("Note for “{id}” is longer than {max} characters.", { id: id, max: MAX_NOTE_LENGTH }));
           } else if (text.trim().length > 0) {
             out.notes[id] = text;
           }
@@ -156,17 +171,17 @@
 
     if (input.lastLessonId !== undefined && input.lastLessonId !== null) {
       if (typeof input.lastLessonId === "string" && (keepUnknownIds || lessonIds[input.lastLessonId])) out.lastLessonId = input.lastLessonId;
-      else if (typeof input.lastLessonId === "string") skipped.push("Last lesson: unknown ID");
-      else errors.push("Last lesson must be a lesson ID or empty.");
+      else if (typeof input.lastLessonId === "string") skipped.push(t("Last lesson: unknown ID"));
+      else errors.push(t("Last lesson must be a lesson ID or empty."));
     }
 
     if (input.cubeDestroyed !== undefined) {
       if (typeof input.cubeDestroyed === "boolean") out.cubeDestroyed = input.cubeDestroyed;
-      else errors.push("Cube state must be true or false.");
+      else errors.push(t("Cube state must be true or false."));
     }
     if (input.cubeRespawnCount !== undefined) {
       if (isWholeNumber(input.cubeRespawnCount)) out.cubeRespawnCount = input.cubeRespawnCount;
-      else errors.push("Cube respawn count must be a whole number of 0 or more.");
+      else errors.push(t("Cube respawn count must be a whole number of 0 or more."));
     }
 
     return { ok: errors.length === 0, value: out, errors: errors, skipped: skipped };
@@ -291,7 +306,7 @@
     return change(function (p) {
       p.unlockedAchievements.push(id);
       p.xp += ach.xp;
-    }, silent ? "" : "Achievement unlocked: " + ach.title + " (+" + ach.xp + " XP)", "achievement");
+    }, silent ? "" : t("Achievement unlocked: {title} (+{xp} XP)", { title: ach.title, xp: ach.xp }), "achievement");
   }
 
   function checkAchievements() {
@@ -356,12 +371,12 @@
       return change(function (p) {
         p.completedLessons = p.completedLessons.filter(function (id) { return id !== lessonId; });
         p.xp = Math.max(0, p.xp - 100);
-      }, "Lesson marked as not done (−100 XP)", "info");
+      }, t("Lesson marked as not done (−100 XP)"), "info");
     }
     var ok = change(function (p) {
       p.completedLessons.push(lessonId);
       p.xp += 100;
-    }, "Lesson done (+100 XP)", "info");
+    }, t("Lesson done (+100 XP)"), "info");
     if (ok) {
       celebrate();
       checkAchievements();
@@ -375,7 +390,7 @@
       p.bookmarkedLessons = on
         ? p.bookmarkedLessons.filter(function (id) { return id !== lessonId; })
         : p.bookmarkedLessons.concat([lessonId]);
-    }, on ? "Bookmark removed" : "Bookmarked", "info");
+    }, on ? t("Bookmark removed") : t("Bookmarked"), "info");
   }
 
   function saveNote(lessonId, text) {
@@ -414,15 +429,15 @@
     try {
       parsed = JSON.parse(text);
     } catch (e) {
-      return { ok: false, errors: ["This file is not valid JSON."], skipped: [] };
+      return { ok: false, errors: [t("This file is not valid JSON.")], skipped: [] };
     }
     if (!isPlainObject(parsed)) {
-      return { ok: false, errors: ["This file is not a Blender Academy backup."], skipped: [] };
+      return { ok: false, errors: [t("This file is not a Blender Academy backup.")], skipped: [] };
     }
     if (parsed.format !== undefined) {
-      if (parsed.format !== BACKUP_FORMAT) return { ok: false, errors: ["This file is not a Blender Academy backup."], skipped: [] };
-      if (parsed.version !== 2) return { ok: false, errors: ["Backup version " + parsed.version + " is not supported."], skipped: [] };
-      if (!isPlainObject(parsed.data)) return { ok: false, errors: ["The backup has no data section."], skipped: [] };
+      if (parsed.format !== BACKUP_FORMAT) return { ok: false, errors: [t("This file is not a Blender Academy backup.")], skipped: [] };
+      if (parsed.version !== 2) return { ok: false, errors: [t("Backup version {version} is not supported.", { version: parsed.version })], skipped: [] };
+      if (!isPlainObject(parsed.data)) return { ok: false, errors: [t("The backup has no data section.")], skipped: [] };
       return validateProgress(parsed.data);
     }
     return validateProgress(parsed);
@@ -487,14 +502,25 @@
     });
   }
 
+  /* The language link stays on the same page, lesson and filters. */
+  function setupLanguageLink() {
+    var link = document.getElementById("lang-link");
+    if (link) link.href = link.getAttribute("href") + window.location.search + window.location.hash;
+  }
+
   function init() {
     if (redirectOldHash()) return;
     setupNav();
+    setupLanguageLink();
     markCurrentNav();
     if (storageFailed) showStorageBanner();
   }
 
   window.BlenderAcademy = {
+    lang: LANG,
+    dataBase: LANG === "es" ? "../data/es/" : "data/",
+    t: t,
+    fold: fold,
     esc: esc,
     lessons: lessons,
     tracks: tracks,

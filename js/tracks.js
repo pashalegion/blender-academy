@@ -13,10 +13,10 @@
     return '<li><article class="tile" style="--track:' + esc(track.color) + '">' +
       '<span class="tile-icon" aria-hidden="true">' + esc(track.icon) + '</span>' +
       '<h2 class="tile-title" style="font-size:1.1rem;margin:0">' + esc(track.name) + '</h2>' +
-      '<p class="tile-text">' + inTrack.length + ' lessons · ' + done + ' done</p>' +
+      '<p class="tile-text">' + BA.t("{total} lessons · {done} done", { total: inTrack.length, done: done }) + '</p>' +
       '<div class="progress" aria-hidden="true"><span style="--p:' + fraction.toFixed(3) + '"></span></div>' +
-      '<div class="ref-foot" style="margin-top:10px"><span class="muted small">' + Math.round(fraction * 100) + '% done</span>' +
-      '<a class="btn btn-small" href="lessons.html?track=' + encodeURIComponent(track.id) + '">View lessons<span class="visually-hidden"> in ' + esc(track.name) + '</span></a></div>' +
+      '<div class="ref-foot" style="margin-top:10px"><span class="muted small">' + BA.t("{percent}% done", { percent: Math.round(fraction * 100) }) + '</span>' +
+      '<a class="btn btn-small" href="lessons.html?track=' + encodeURIComponent(track.id) + '">' + BA.t("View lessons") + '<span class="visually-hidden"> ' + BA.t("in") + ' ' + esc(track.name) + '</span></a></div>' +
       '</article></li>';
   }).join("");
 })();

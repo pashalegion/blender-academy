@@ -9,6 +9,7 @@
   var BA = window.BlenderAcademy;
   var esc = BA.esc;
   var hw = window.BLENDER_HARDWARE;
+  var t = BA.t;
 
   var DEFAULT_CPU = "cpu-ryzen-5-5600";
   var DEFAULT_GPU = "gpu-rtx-4060";
@@ -21,6 +22,11 @@
   };
   var result = document.getElementById("rig-result");
 
+  /* Part names stay as they are, apart from the words we add to them. */
+  function displayName(name) {
+    return t(name).replace(/ Laptop$/, t(" Laptop")).replace(/(\d+)-core GPU/, t("$1-core GPU"));
+  }
+
   function grouped(list, selectedId) {
     var groups = {};
     var order = [];
@@ -29,8 +35,8 @@
       groups[item.group].push(item);
     });
     return order.map(function (label) {
-      return '<optgroup label="' + esc(label) + '">' + groups[label].map(function (item) {
-        return '<option value="' + esc(item.id) + '"' + (item.id === selectedId ? " selected" : "") + '>' + esc(item.name) + '</option>';
+      return '<optgroup label="' + esc(t(label)) + '">' + groups[label].map(function (item) {
+        return '<option value="' + esc(item.id) + '"' + (item.id === selectedId ? " selected" : "") + '>' + esc(displayName(item.name)) + '</option>';
       }).join("") + '</optgroup>';
     }).join("");
   }
@@ -39,7 +45,7 @@
     selects.cpu.innerHTML = grouped(hw.cpus, DEFAULT_CPU);
     selects.gpu.innerHTML = grouped(hw.gpus, DEFAULT_GPU);
     selects.ram.innerHTML = hw.rams.map(function (r) {
-      return '<option value="' + esc(r.id) + '"' + (r.amount === 16 ? " selected" : "") + '>' + esc(r.name) + '</option>';
+      return '<option value="' + esc(r.id) + '"' + (r.amount === 16 ? " selected" : "") + '>' + esc(t(r.name)) + '</option>';
     }).join("");
     document.getElementById("rig-snapshot").textContent = hw.snapshot;
   }
@@ -66,7 +72,7 @@
   }
 
   function capability(task, status, cls) {
-    return { task: task, status: status, cls: cls };
+    return { task: t(task), status: t(status), cls: cls };
   }
 
   function evaluate(cpu, gpu, ram) {
@@ -79,49 +85,49 @@
     var weakest = Math.min(cpuScore, gpuScore, ramScore);
     var score = rounded(Math.min(gpuScore * 0.45 + cpuScore * 0.3 + ramScore * 0.25, weakest + 3.5));
 
-    var tier = { label: "Below recommended", status: "status-bad", description: "Blender will run, but expect waiting. Stick to small scenes and simple materials." };
+    var tier = { label: t("Below recommended"), status: "status-bad", description: t("Blender will run, but expect waiting. Stick to small scenes and simple materials.") };
     if (score >= 8.5) {
-      tier = { label: "Studio Powerhouse Rig", status: "status-good", description: "Handles large sculpts, complex Geometry Nodes, Cycles renders and physics simulations comfortably." };
+      tier = { label: t("Studio Powerhouse Rig"), status: "status-good", description: t("Handles large sculpts, complex Geometry Nodes, Cycles renders and physics simulations comfortably.") };
     } else if (score >= 6.5) {
-      tier = { label: "3D Sweet Spot Rig", status: "status-good", description: "Good for most Blender work: modelling, texturing, animation and everyday Cycles renders." };
+      tier = { label: t("3D Sweet Spot Rig"), status: "status-good", description: t("Good for most Blender work: modelling, texturing, animation and everyday Cycles renders.") };
     } else if (score >= 4.5) {
-      tier = { label: "3D Starter Rig", status: "status-mid", description: "Good for the lessons in this course, modelling and simple scenes. Heavy renders and dense sculpts will take longer." };
+      tier = { label: t("3D Starter Rig"), status: "status-mid", description: t("Good for the lessons in this course, modelling and simple scenes. Heavy renders and dense sculpts will take longer.") };
     }
 
     var modelling = perThread >= 6 && ram.amount >= 16
       ? capability("Modelling", "Smooth", "status-good")
-      : capability("Modelling", perThread >= 4 ? "Fine for small to medium scenes" : "Can lag in larger scenes", perThread >= 4 ? "status-good" : "status-mid");
+      : capability("Modellingt(", perThread >= 4 ? ")Fine for small to medium scenes" : t("Can lag in larger scenes"), perThread >= 4 ? "status-good" : "status-mid");
     var sculpt = ram.amount >= 32 && perThread >= 5
-      ? capability("Sculpting", "Great for dense meshes", "status-good")
-      : (ram.amount >= 16 ? capability("Sculpting", "Good for medium detail", "status-good") : capability("Sculpting", "Small sculpts only", "status-mid"));
+      ? capability("Sculpting", t("Great for dense meshes"), "status-good")
+      : (ram.amount >= 16 ? capability("Sculpting", t("Good for medium detail"), "status-good") : capability("Sculpting", t("Small sculpts only"), "status-mid"));
     var bakes = multi >= 7 && ram.amount >= 32
-      ? capability("Geometry Nodes and simulation", "Strong", "status-good")
-      : (multi >= 4.5 ? capability("Geometry Nodes and simulation", "Moderate bake times", "status-mid") : capability("Geometry Nodes and simulation", "Slow bakes", "status-bad"));
+      ? capability(t("Geometry Nodes and simulation"), "Strong", "status-good")
+      : (multi >= 4.5 ? capability(t("Geometry Nodes and simulation"), t("Moderate bake times"), "status-mid") : capability(t("Geometry Nodes and simulation"), t("Slow bakes"), "status-bad"));
 
     var cycles;
-    if (!gpu.bench) cycles = capability("Cycles rendering", "CPU only", cpu.bench >= 300 ? "status-mid" : "status-bad");
+    if (!gpu.bench) cycles = capability(t("Cycles rendering"), "CPU onlyt(", cpu.bench >= 300 ? ")status-mid" : "status-bad");
     else {
-      var rt = gpu.rt ? ", hardware ray tracing" : "";
-      if (gpu.bench >= 5000) cycles = capability("Cycles rendering", "Very fast (" + gpu.backend + rt + ")", "status-good");
-      else if (gpu.bench >= 1500) cycles = capability("Cycles rendering", "Fast (" + gpu.backend + rt + ")", "status-good");
-      else if (gpu.bench >= 400) cycles = capability("Cycles rendering", "Usable (" + gpu.backend + rt + ")", "status-mid");
-      else cycles = capability("Cycles rendering", "Slow (" + gpu.backend + ")", "status-bad");
+      var rt = gpu.rt ? t(", hardware ray tracing") : "";
+      if (gpu.bench >= 5000) cycles = capability(t("Cycles rendering"), t("Very fast ({detail})", { detail: gpu.backend + rt }), "status-good");
+      else if (gpu.bench >= 1500) cycles = capability(t("Cycles rendering"), t("Fast ({detail})", { detail: gpu.backend + rt }), "status-good");
+      else if (gpu.bench >= 400) cycles = capability(t("Cycles rendering"), t("Usable ({detail})", { detail: gpu.backend + rt }), "status-mid");
+      else cycles = capability(t("Cycles rendering"), t("Slow ({detail})", { detail: gpu.backend }), "status-bad");
     }
 
     var viewport;
-    if (gpu.status === "old") viewport = capability("EEVEE and viewport", "May not start in Blender 5.2", "status-bad");
-    else if (!gpu.bench) viewport = capability("EEVEE and viewport", "Light scenes only", "status-mid");
-    else if (gpu.bench >= 1500) viewport = capability("EEVEE and viewport", "Smooth", "status-good");
-    else if (gpu.bench >= 300) viewport = capability("EEVEE and viewport", "Usually smooth", "status-good");
-    else viewport = capability("EEVEE and viewport", "Low frame rates likely", "status-mid");
+    if (gpu.status === "old") viewport = capability("EEVEE and viewport", t("May not start in Blender 5.2"), "status-bad");
+    else if (!gpu.bench) viewport = capability(t("EEVEE and viewport"), t("Light scenes only"), "status-mid");
+    else if (gpu.bench >= 1500) viewport = capability(t("EEVEE and viewport"), "Smooth", "status-good");
+    else if (gpu.bench >= 300) viewport = capability(t("EEVEE and viewport"), t("Usually smooth"), "status-good");
+    else viewport = capability(t("EEVEE and viewport"), t("Low frame rates likely"), "status-mid");
 
     var scene;
-    if (!gpu.bench) scene = capability("GPU memory", "Not used for Cycles", "status-mid");
+    if (!gpu.bench) scene = capability("GPU memory", t("Not used for Cycles"), "status-mid");
     else {
-      var shared = gpu.vram ? "" : " shared";
-      if (memory >= 16) scene = capability("GPU memory", memory + " GB" + shared + ": large scenes", "status-good");
-      else if (memory >= 8) scene = capability("GPU memory", memory + " GB" + shared + ": medium scenes", "status-good");
-      else scene = capability("GPU memory", memory + " GB" + shared + ": can be tight", "status-mid");
+      var shared = gpu.vram ? "" : t(" shared");
+      if (memory >= 16) scene = capability("GPU memory", t("{gb} GB{shared}: large scenes", { gb: memory, shared: shared }), "status-good");
+      else if (memory >= 8) scene = capability("GPU memory", t("{gb} GB{shared}: medium scenes", { gb: memory, shared: shared }), "status-good");
+      else scene = capability("GPU memory", t("{gb} GB{shared}: can be tight", { gb: memory, shared: shared }), "status-mid");
     }
 
     return {
@@ -135,56 +141,57 @@
   }
 
   function measureLine(cpu, gpu) {
-    var line = "Open Data benchmark: CPU " + cpu.bench.toLocaleString("en-US");
-    if (!gpu.bench) return line + ". This GPU has no Cycles result, so renders use the CPU.";
-    line += ", GPU " + gpu.bench.toLocaleString("en-US") + ".";
+    var locale = BA.lang === "es" ? "es-ES" : "en-US";
+    var line = t("Open Data benchmark: CPU {score}", { score: cpu.bench.toLocaleString(locale) });
+    if (!gpu.bench) return line + t(". This GPU has no Cycles result, so renders use the CPU.");
+    line += t(", GPU {score}.", { score: gpu.bench.toLocaleString(locale) });
     var ratio = gpu.bench / cpu.bench;
-    if (ratio >= 1.2) line += " The GPU renders about " + (ratio >= 10 ? Math.round(ratio) : rounded(ratio)) + " times faster than this CPU.";
-    else if (ratio <= 0.8) line += " This CPU renders faster than this GPU, so try both in Blender.";
-    else line += " This CPU and GPU render at about the same speed.";
+    if (ratio >= 1.2) line += t(" The GPU renders about {ratio} times faster than this CPU.", { ratio: String(ratio >= 10 ? Math.round(ratio) : rounded(ratio)) });
+    else if (ratio <= 0.8) line += t(" This CPU renders faster than this GPU, so try both in Blender.");
+    else line += t(" This CPU and GPU render at about the same speed.");
     return line;
   }
 
   function notesFor(cpu, gpu, ram) {
     var notes = [];
-    if (gpu.status === "old") notes.push("This GPU is below the Blender 5.2 minimum (GeForce 900, AMD GCN 4th gen or Intel Kaby Lake). Blender 4.5 LTS supports older hardware, back to GeForce 400, AMD GCN 1st gen and Intel Broadwell.");
-    if (gpu.status === "none") notes.push("Blender 5.2 can display on this GPU but cannot render Cycles with it. AMD cards need RDNA1 or newer (RX 5000 and up), and Intel needs Arc. Cycles will use the CPU.");
-    if (!!cpu.apple !== !!gpu.apple) notes.push("Macs use their built-in Apple GPU. Blender 5.0 and later need Apple Silicon, so Intel Macs should stay on Blender 4.5 LTS.");
-    if (cpu.threads < 8) notes.push("Blender recommends 8 cores. This CPU has " + cpu.threads + " threads, so simulations and CPU renders will take longer.");
-    if (ram.amount === 8) notes.push("8 GB is Blender's minimum. The recommended amount is 32 GB.");
-    if (gpu.backend === "oneAPI") notes.push("With oneAPI, the whole scene has to fit in GPU memory. The other backends can spill into system RAM, though more slowly.");
-    if (gpu.vram && gpu.vram < 4 && gpu.bench) notes.push("Blender recommends 8 GB of VRAM. Scenes that do not fit will render slower or may fail.");
+    if (gpu.status === "old") notes.push(t("This GPU is below the Blender 5.2 minimum (GeForce 900, AMD GCN 4th gen or Intel Kaby Lake). Blender 4.5 LTS supports older hardware, back to GeForce 400, AMD GCN 1st gen and Intel Broadwell."));
+    if (gpu.status === "none") notes.push(t("Blender 5.2 can display on this GPU but cannot render Cycles with it. AMD cards need RDNA1 or newer (RX 5000 and up), and Intel needs Arc. Cycles will use the CPU."));
+    if (!!cpu.apple !== !!gpu.apple) notes.push(t("Macs use their built-in Apple GPU. Blender 5.0 and later need Apple Silicon, so Intel Macs should stay on Blender 4.5 LTS."));
+    if (cpu.threads < 8) notes.push(t("Blender recommends 8 cores. This CPU has {threads} threads, so simulations and CPU renders will take longer.", { threads: cpu.threads }));
+    if (ram.amount === 8) notes.push(t("8 GB is Blender's minimum. The recommended amount is 32 GB."));
+    if (gpu.backend === "oneAPI") notes.push(t("With oneAPI, the whole scene has to fit in GPU memory. The other backends can spill into system RAM, though more slowly."));
+    if (gpu.vram && gpu.vram < 4 && gpu.bench) notes.push(t("Blender recommends 8 GB of VRAM. Scenes that do not fit will render slower or may fail."));
     return notes;
   }
 
   function chooseUpgrade(cpu, gpu, ram, cpuScore, gpuScore, ramScore, memory) {
     var locked = gpu.apple || cpu.apple
-      ? " Mac chips and memory cannot be upgraded later, so this applies to your next Mac."
-      : (gpu.mobile || cpu.mobile ? " Laptop CPUs and GPUs usually cannot be swapped, so check what your model allows." : "");
+      ? t(" Mac chips and memory cannot be upgraded later, so this applies to your next Mac.")
+      : (gpu.mobile || cpu.mobile ? t(" Laptop CPUs and GPUs usually cannot be swapped, so check what your model allows.") : "");
     var why = {
       gpu: {
-        component: "Graphics card",
-        recommendation: "A GPU with Cycles support and at least 8 GB of VRAM would help most, and 12 GB or more is safer." + locked,
-        whyTitle: "Why the GPU matters most here:",
-        whyText: "Cycles renders on NVIDIA (OptiX or CUDA), AMD RX 5000 and newer (HIP), Intel Arc (oneAPI) or Apple Silicon (Metal). A faster GPU also keeps the viewport responsive."
+        component: t("Graphics card"),
+        recommendation: t("A GPU with Cycles support and at least 8 GB of VRAM would help most, and 12 GB or more is safer.") + locked,
+        whyTitle: t("Why the GPU matters most here:"),
+        whyText: t("Cycles renders on NVIDIA (OptiX or CUDA), AMD RX 5000 and newer (HIP), Intel Arc (oneAPI) or Apple Silicon (Metal). A faster GPU also keeps the viewport responsive.")
       },
       vram: {
-        component: "GPU with more VRAM",
-        recommendation: "This GPU is fast enough, but its " + memory + " GB of memory is the limit. Look for 12 GB or more." + locked,
-        whyTitle: "Why VRAM can matter more than speed:",
-        whyText: "Textures and geometry have to load into GPU memory. When it fills up, Blender moves data to system RAM on most backends. That is slower, and a large scene can still fail."
+        component: t("GPU with more VRAM"),
+        recommendation: t("This GPU is fast enough, but its {gb} GB of memory is the limit. Look for 12 GB or more.", { gb: memory }) + locked,
+        whyTitle: t("Why VRAM can matter more than speed:"),
+        whyText: t("Textures and geometry have to load into GPU memory. When it fills up, Blender moves data to system RAM on most backends. That is slower, and a large scene can still fail.")
       },
       ram: {
-        component: "System RAM (" + (ram.amount < 16 ? "16 GB or more" : "32 GB is Blender's recommendation") + ")",
-        recommendation: "More memory would help most. Blender recommends 32 GB." + locked,
-        whyTitle: "Why RAM matters:",
-        whyText: "Undo history, modifier results and sculpt data all live in system RAM. If it runs out, Blender slows down badly or crashes, and your browser and other apps need memory too."
+        component: ram.amount < 16 ? t("System RAM (16 GB or more)") : t("System RAM (32 GB is Blender's recommendation)"),
+        recommendation: t("More memory would help most. Blender recommends 32 GB.") + locked,
+        whyTitle: t("Why RAM matters:"),
+        whyText: t("Undo history, modifier results and sculpt data all live in system RAM. If it runs out, Blender slows down badly or crashes, and your browser and other apps need memory too.")
       },
       cpu: {
-        component: "Processor (more cores or a newer generation)",
-        recommendation: "A newer CPU would help most, because this one is the weakest part of the rig." + locked,
-        whyTitle: "Why the CPU still matters:",
-        whyText: "Even with a fast GPU, the CPU handles modifiers, Geometry Nodes, simulation baking and scene preparation before each render. Newer generations do more per core, which keeps everyday modelling responsive."
+        component: t("Processor (more cores or a newer generation)"),
+        recommendation: t("A newer CPU would help most, because this one is the weakest part of the rig.") + locked,
+        whyTitle: t("Why the CPU still matters:"),
+        whyText: t("Even with a fast GPU, the CPU handles modifiers, Geometry Nodes, simulation baking and scene preparation before each render. Newer generations do more per core, which keeps everyday modelling responsive.")
       }
     };
     if (gpu.status === "old") return why.gpu;
@@ -192,10 +199,10 @@
     var weakest = Math.min(cpuScore, gpuScore, ramScore);
     if (weakest >= 7) {
       return {
-        component: "None needed",
-        recommendation: "This rig is well balanced for the lessons in this course.",
-        whyTitle: "Why this setup is ready:",
-        whyText: "Your CPU, GPU and memory all score well, so no single part stands out as the bottleneck."
+        component: t("None needed"),
+        recommendation: t("This rig is well balanced for the lessons in this course."),
+        whyTitle: t("Why this setup is ready:"),
+        whyText: t("Your CPU, GPU and memory all score well, so no single part stands out as the bottleneck.")
       };
     }
     if (ramScore === weakest) return why.ram;
@@ -210,7 +217,7 @@
     var r = evaluate(cpu, gpu, ram);
 
     result.innerHTML =
-      '<div class="ref-head"><div><p class="ref-meta">Estimated score</p>' +
+      '<div class="ref-head"><div><p class="ref-meta">' + t("Estimated score") + '</p>' +
       '<p class="mono" id="rig-score" style="font-size:1.6rem;font-weight:800;white-space:nowrap">' + r.score + ' / 10</p></div>' +
       '<div><p class="' + r.tier.status + '" id="rig-tier" style="font-weight:700">' + esc(r.tier.label) + '</p>' +
       '<p class="ref-body">' + esc(r.tier.description) + '</p></div></div>' +
@@ -219,9 +226,9 @@
       }).join("") + '</div>' +
       '<p class="rig-measure" id="rig-measure">' + esc(r.measure) + '</p>' +
       (r.notes.length ? '<ul class="rig-notes">' + r.notes.map(function (n) { return '<li>' + esc(n) + '</li>'; }).join("") + '</ul>' : '') +
-      '<div class="upgrade-box"><p id="rig-upgrade"><strong>Upgrade that would help most:</strong> ' + esc(r.upgrade.component) + '</p>' +
+      '<div class="upgrade-box"><p id="rig-upgrade"><strong>' + t("Upgrade that would help most:") + '</strong> ' + esc(r.upgrade.component) + '</p>' +
       '<p class="ref-body">' + esc(r.upgrade.recommendation) + '</p>' +
-      '<div><button type="button" class="btn btn-small" id="why-btn" aria-expanded="false" aria-controls="why-text">Why?</button></div>' +
+      '<div><button type="button" class="btn btn-small" id="why-btn" aria-expanded="false" aria-controls="why-text">' + t("Why?") + '</button></div>' +
       '<div class="explain" id="why-text" hidden><h2 class="card-title">' + esc(r.upgrade.whyTitle) + '</h2><p>' + esc(r.upgrade.whyText) + '</p></div>' +
       '</div>';
   }

@@ -66,9 +66,10 @@
     if (s.status === "incomplete" && done) return false;
     if (s.status === "bookmarked" && !bookmarked) return false;
     if (s.q) {
-      var q = s.q.toLowerCase();
+      var q = BA.fold(s.q);
       var track = BA.trackById(lesson.trackId);
-      var haystack = [lesson.title, lesson.author, track ? track.name : ""].concat(lesson.tags || []).join(" ").toLowerCase();
+      var haystack = [lesson.title, lesson.author, track ? track.name : ""].concat(lesson.tags || []).join(" ");
+      haystack = BA.fold(haystack);
       if (haystack.indexOf(q) === -1) return false;
     }
     return true;
@@ -87,14 +88,14 @@
           '<div class="lesson-thumb"><span aria-hidden="true">' + thumb + '</span><span class="lesson-duration">' + esc(lesson.duration) + '</span></div>' +
           '<div class="lesson-meta">' +
             '<span class="track-label">' + esc(track.icon) + ' ' + esc(track.name) + '</span>' +
-            '<span>' + esc(lesson.level) + '</span>' +
+            '<span>' + esc(BA.t(lesson.level)) + '</span>' +
           '</div>' +
           '<h3 class="lesson-title">' + title + '</h3>' +
         '</a>' +
         '<div class="lesson-card-actions">' +
           '<span class="lesson-card-buttons">' +
-            '<button type="button" class="btn btn-small" data-complete-id="' + id + '" aria-pressed="' + done + '">' + (done ? '✓ Done' : 'Mark done') + '</button> ' +
-            '<button type="button" class="btn btn-small" data-bookmark-id="' + id + '" aria-pressed="' + bookmarked + '">' + (bookmarked ? '★ Saved' : '☆ Bookmark') + '</button>' +
+            '<button type="button" class="btn btn-small" data-complete-id="' + id + '" aria-pressed="' + done + '">' + (done ? BA.t('✓ Done') : BA.t('Mark done')) + '</button> ' +
+            '<button type="button" class="btn btn-small" data-bookmark-id="' + id + '" aria-pressed="' + bookmarked + '">' + (bookmarked ? BA.t('★ Saved') : BA.t('☆ Bookmark')) + '</button>' +
           '</span>' +
         '</div>' +
       '</article>' +
@@ -106,7 +107,7 @@
     var state = BA.state();
     var shown = lessons.filter(function (l) { return matches(l, s, state); });
     els.list.innerHTML = shown.map(function (l) { return cardHtml(l, state); }).join("");
-    els.count.textContent = "Showing " + shown.length + " of " + lessons.length + " lessons";
+    els.count.textContent = BA.t("Showing {shown} of {total} lessons", { shown: shown.length, total: lessons.length });
     els.empty.hidden = shown.length !== 0;
     writeQuery(s);
   }
@@ -127,7 +128,7 @@
   });
 
   function populateTracks() {
-    var options = ['<option value="all">All tracks</option>'];
+    var options = ['<option value="all">' + BA.t("All tracks") + '</option>'];
     BA.tracks().forEach(function (t) {
       options.push('<option value="' + esc(t.id) + '">' + esc(t.icon) + ' ' + esc(t.name) + '</option>');
     });
