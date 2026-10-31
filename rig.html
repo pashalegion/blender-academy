@@ -50,7 +50,7 @@
   <main id="main" class="wrap" tabindex="-1">
     <div class="page-head">
       <h1>Rig checker</h1>
-      <p class="lede">Choose your parts to see a rough Blender tier and the upgrade that would help most. The scores are a simple rule-of-thumb model, not a benchmark.</p>
+      <p class="lede">Pick your exact parts to see how they handle Blender 5.2 and which upgrade would help most. Speed comes from real benchmark results, so your CPU and GPU generation both count.</p>
     </div>
 
     <div class="card stack">
@@ -60,7 +60,7 @@
           <select class="select" id="cpu"></select>
         </div>
         <div class="field">
-          <label for="gpu">Graphics card (GPU)</label>
+          <label for="gpu">Graphics (GPU)</label>
           <select class="select" id="gpu"></select>
         </div>
         <div class="field">
@@ -68,8 +68,14 @@
           <select class="select" id="ram"></select>
         </div>
       </div>
+      <p class="hint">Part not listed? Choose the closest one from the same generation. Laptop parts are listed separately because they usually run slower than desktop parts with similar names.</p>
       <div class="rig-result" id="rig-result" aria-live="polite"></div>
     </div>
+
+    <section class="section" aria-labelledby="rig-sources">
+      <h2 id="rig-sources">Where the numbers come from</h2>
+      <p class="prose">Benchmarks are median results from <a href="https://opendata.blender.org/" rel="noopener noreferrer">Blender Open Data ↗</a>, using the snapshot from <span id="rig-snapshot"></span>. Each score adds up three test scenes, mostly on Blender 5.x. Support rules come from the <a href="https://www.blender.org/download/requirements/" rel="noopener noreferrer">system requirements ↗</a> and the <a href="https://docs.blender.org/manual/en/5.2/render/cycles/gpu_rendering.html" rel="noopener noreferrer">Blender 5.2 GPU rendering manual ↗</a>. The overall score is our own estimate. Your results will vary with cooling, power limits and the scene.</p>
+    </section>
   </main>
 
   <footer class="site-footer">
@@ -87,6 +93,7 @@
 
   <script src="js/common.js"></script>
   <script src="data/reference.js"></script>
+  <script src="data/hardware.js"></script>
   <script src="js/rig.js"></script>
 </body>
 </html>

@@ -765,7 +765,10 @@ a.tile:hover { transform: translateY(-3px); color: var(--text-primary); border-c
 @media (min-width: 720px) { .rig-grid { grid-template-columns: repeat(3, 1fr); } }
 .rig-result { display: grid; gap: 12px; }
 .capability-grid { display: grid; gap: 8px; grid-template-columns: 1fr 1fr; }
-@media (min-width: 720px) { .capability-grid { grid-template-columns: repeat(4, 1fr); } }
+@media (min-width: 720px) { .capability-grid { grid-template-columns: repeat(3, 1fr); } }
+.rig-notes { list-style: none; display: grid; gap: 8px; }
+.rig-notes li { border-left: 3px solid var(--warning); padding: 2px 0 2px 12px; color: var(--text-secondary); font-size: 0.9375rem; }
+.rig-measure { color: var(--text-secondary); font-size: 0.9375rem; }
 .capability { background: rgba(0, 0, 0, 0.25); border-radius: var(--radius-sm); padding: 10px; border: 1px solid var(--border-subtle); }
 .capability .label { display: block; font-size: 0.75rem; color: var(--text-muted); }
 .capability .status { font-weight: 700; font-size: 0.875rem; }
