@@ -1,7 +1,7 @@
 // Lesson body for light-2. Loaded only by lesson.html.
 window.LESSON_BODIES = window.LESSON_BODIES || {};
 window.LESSON_BODIES["light-2"] = {
-  "overview": "Bad lighting ruins great models, while masterful lighting makes simple models look legendary. Gleb Alexandrov demonstrates classic studio lighting principles: Key Light (primary subject illuminator), Fill Light (softens harsh shadows), and Rim/Back Light (separates the subject from the dark background with a crisp edge highlight).",
+  "overview": "Bad lighting ruins great models, while masterful lighting makes simple models look legendary. This lesson covers classic studio lighting principles: Key Light (primary subject illuminator), Fill Light (softens harsh shadows), and Rim/Back Light (separates the subject from the dark background with a crisp edge highlight).",
   "summary": [
     "Key Light: Placed ~45 degrees to the side and slightly above the subject; strongest light in the scene.",
     "Fill Light: Placed opposite the Key Light with ~20-50% power and a larger radius to create soft, diffused shadows.",

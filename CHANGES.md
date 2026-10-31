@@ -122,3 +122,19 @@ Added a full Spanish site in `es/`, with a language switch on every page. Both v
 - Blender menu and tool names stay in English, and each lesson explains how to switch Blender itself to Spanish.
 - Manual links point to the Spanish edition of the Blender 5.2 manual.
 - The Rig Checker scores, shared code and English text are unchanged, apart from a new language link and a menu that collapses at a wider screen size.
+
+## Stronger English videos (2026-10-31)
+
+Audited all 45 English videos by views, likes, age, detected speech language and fit, then replaced nine weak ones. Spanish videos are unchanged. This also settles the old light-2 credit, because that lesson now uses a different video.
+
+| Lesson | Old ID | New ID | Channel | Views | Year |
+|---|---|---|---|---|---|
+| fund-6 | LoyG3OjtpRU | KfSQh2dFCik | Brad Colbow | 1,250,746 | 2022 |
+| sculpt-3 | CuQzPDs99yM | 1myOZaxtHes | Ryan King Art | 161,194 | 2024 |
+| sculpt-4 | FMWw6XEcY4Y | bIsJquzVsPY | Martin Klekner | 45,025 | 2024 |
+| light-1 | pn1SaFo3suQ | Enggo_nqDHs | The Blenderender | 61,144 | 2024 |
+| light-2 | m-N149FMlWk | ENnEYoUpFfU | Blender Guru | 189,895 | 2026 |
+| anim-5 | kd4UGETz_Zw | Kumk-reupso | Ryan King Art | 51,718 | 2025 |
+| geo-2 | mrxN-qCpRLc | k65ofSRnxfs | Johnny Matthews | 7,739 | 2021 |
+| phys-1 | 02u8Ag49Gec | lctjzasiy64 | Ryan King Art | 345,597 | 2021 |
+| phys-3 | Z8eBFDJdmco | A93O4COVPyw | Ryan King Art | 316,781 | 2023 |
