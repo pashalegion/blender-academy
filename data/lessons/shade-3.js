@@ -1,7 +1,7 @@
 // Lesson body for shade-3. Loaded only by lesson.html.
 window.LESSON_BODIES = window.LESSON_BODIES || {};
 window.LESSON_BODIES["shade-3"] = {
-  "overview": "Procedural materials require zero external image files and never lose resolution no matter how close the camera gets. Ducky 3D guides you through building sci-fi metals, marble, and organic grunge using Noise Texture, Voronoi Texture, ColorRamp, Bump nodes, and the essential Texture Coordinate + Mapping setup.",
+  "overview": "Procedural materials require zero external image files and never lose resolution no matter how close the camera gets. This lesson covers building sci-fi metals, marble, and organic grunge using Noise Texture, Voronoi Texture, ColorRamp, Bump nodes, and the essential Texture Coordinate + Mapping setup.",
   "summary": [
     "Texture Coordinate + Mapping nodes: Select any texture node and press Ctrl + T (with Node Wrangler enabled) to instantly add both.",
     "Plug 'Object' coordinate output (not Generated or UV) into Mapping for seamless procedural textures without UV seams.",

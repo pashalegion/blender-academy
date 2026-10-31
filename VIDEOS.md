@@ -2,35 +2,30 @@
 
 Checked 2026-10-31 with YouTube's public oEmbed endpoint. "Working" means oEmbed returned the video; it does not prove the video embeds on every site. No video ID was changed.
 
-16 of 23 are unavailable. They need the owner's decision.
+All 23 are working. The 16 unavailable videos were replaced on 2026-10-31; see `CHANGES.md` for what each one replaced.
 
 | Lesson | YouTube ID | Status | oEmbed title | oEmbed author | Credit in the data |
 |---|---|---|---|---|---|
 | fund-1 | kVcY7K-JA1Y | working | Blender 5 Complete Beginners Guide - FREE COURSE - Part 1 - The Interface | Grant Abbitt (Gabbitt) | Grant Abbitt |
-| fund-4 | qJEWOTrmzpg | unavailable (HTTP 404) | — | — | CrossMind Studio |
-| fund-5 | 4b4U63oG7YI | unavailable (HTTP 404) | — | — | CG Cookie / Kent Trammell |
+| fund-4 | F_f-O-W9lMU | working | Modifiers for Beginners (Blender Tutorial) | Ryan King Art | Ryan King Art |
+| fund-5 | HUjpeqpd53A | working | Absolute Beginner’s Guide to Topology in Blender +10 Easy Tips | SouthernShotty | SouthernShotty |
 | fund-3 | z-Xl9tGqH14 | working | Beginner Blender Tutorial (2026) | Blender Guru | Blender Guru |
-| hard-1 | 1pnh4A9Iq48 | unavailable (HTTP 404) | — | — | Grant Abbitt |
-| hard-2 | U4m6gC3d3l0 | unavailable (HTTP 404) | — | — | Josh Gambrell & Ponte Ryuurui (Blender Bros) |
-| hard-3 | WvGk04RkIeI | unavailable (HTTP 404) | — | — | CG Essentials |
-| sculpt-1 | 4_R0B1-yL7Y | unavailable (HTTP 404) | — | — | Grant Abbitt / CG Boost |
-| sculpt-2 | uL0XJm9s3p8 | unavailable (HTTP 404) | — | — | SpeedChar / Nikolay Naydenov |
+| hard-1 | QPh8h0hWkg0 | working | Beginner Blender 4.2 Tutorial: Modelling a Low-Poly Well - Part1 | Grant Abbitt (Gabbitt) | Grant Abbitt |
+| hard-2 | lCA1AFEQ_z4 | working | Become a Boolean PRO in Blender | Josh - Blender Bros | Josh Gambrell (Blender Bros) |
+| hard-3 | -yFnkQHHoWY | working | Mastering Precision Modelling in Blender -  A Beginner friendly Guide | SFE-Viz | SFE-Viz |
+| sculpt-1 | K7AJVx0H3Ec | working | Complete Beginner's Guide to Sculpting in Blender 4.4 | Grant Abbitt (Gabbitt) | Grant Abbitt |
+| sculpt-2 | Y6asaZsDHCg | working | Essential Sculpting Workflows - Multires vs Dyntopo vs Remesh | Grant Abbitt (Gabbitt) | Grant Abbitt |
 | sculpt-3 | CuQzPDs99yM | working | Retopology for Beginners in Blender 2.8 - Retopo the Correct Way | FlippedNormals | FlippedNormals |
 | shade-1 | 4H5W6C_Mbck | working | How to make Photorealistic Materials in Blender, using the Principled Shader | Blender Guru | Blender Guru |
 | shade-2 | qa_1LjeWsJg | working | UV Unwrapping for Beginners (Blender Tutorial) | Ryan King Art | Ryan King Art |
-| shade-3 | j6fKkG7_pA8 | unavailable (HTTP 404) | — | — | Ducky 3D |
-| light-1 | QzVzXF395Zg | unavailable (HTTP 404) | — | — | CG Geek |
+| shade-3 | J5t7gzIfTt0 | working | Introduction to Procedural Shader Nodes for Complete Beginners (Blender Tutorial) | Ryan King Art | Ryan King Art |
+| light-1 | pn1SaFo3suQ | working | Blender Rendering Tutorial – Render Engine: EEVEE vs Cycles | Blender Academy | Blender Academy (YouTube channel) |
 | light-2 | m-N149FMlWk | working | Mastering Lighting in Blender | Blender Guru | Gleb Alexandrov / Creative Shrimp |
-| light-3 | V_x4H8r6P_U | unavailable (HTTP 404) | — | — | Curtis Holt |
-| anim-1 | f280dE6w318 | unavailable (HTTP 404) | — | — | Royal Skies LLC |
-| anim-2 | T7y_LqU_JkE | unavailable (HTTP 404) | — | — | Dikko |
+| light-3 | N3DZL56cG84 | working | The ULTIMATE GUIDE to HDRI Lighting in Blender! | The CG Essentials | The CG Essentials |
+| anim-1 | DDeB4tDVCGY | working | Rigging for impatient people - Blender Tutorial | Joey Carlino | Joey Carlino |
+| anim-2 | FuiY0wtxdHQ | working | [SOLVED] Bone Heat Weighting failed (Automatic Weights doesn't work in Blender) | CGDive (Blender Rigging Tuts) | CGDive |
 | anim-3 | uDqjIdI4bF4 | working | 12 Principles of Animation (Official Full Series) | AlanBeckerTutorials | Alan Becker Tutorials & Pierrick Picaut |
-| geo-1 | p_6F1eK1s6U | unavailable (HTTP 404) | — | — | Joey Carlino & CG Cookie |
-| geo-2 | J8C_tA7E6a0 | unavailable (HTTP 404) | — | — | Erindale & CrossMind Studio |
-| phys-1 | GqYhT65mD8U | unavailable (HTTP 404) | — | — | CG Geek |
-| phys-2 | F4s4xV4wJq0 | unavailable (HTTP 404) | — | — | Blender Guru |
-
-## Mismatches to review
-
-- light-2: the data credits Gleb Alexandrov / Creative Shrimp, but YouTube reports Blender Guru. The credit is unchanged until the owner replies.
-- anim-3: the data also credits Pierrick Picaut, but YouTube reports only AlanBeckerTutorials.
+| geo-1 | aO0eUnu0hO0 | working | Blender Tutorial: Geometry Nodes for Beginners - Part 1 | Blender Guru | Blender Guru |
+| geo-2 | mrxN-qCpRLc | working | Blender Pipes Made EASY with Geometry Nodes! | James Combridge | James Combridge |
+| phys-1 | 02u8Ag49Gec | working | Rigid Body Physics For Beginners \| Blender 4.3 | PIXXO 3D | PIXXO 3D |
+| phys-2 | UcYdWmUIssA | working | Blender 5.2 Cloth Physics: Complete Beginner Guide | Grant Abbitt (Gabbitt) | Grant Abbitt |

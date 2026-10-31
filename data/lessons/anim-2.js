@@ -1,7 +1,7 @@
 // Lesson body for anim-2. Loaded only by lesson.html.
 window.LESSON_BODIES = window.LESSON_BODIES || {};
 window.LESSON_BODIES["anim-2"] = {
-  "overview": "Skinning connects your 3D mesh to the bone armature. In this essential lesson, Dikko breaks down parenting with Automatic Weights (Ctrl + P -> With Automatic Weights) and Weight Paint Mode. You'll learn how vertex groups control deformation and how to resolve the most infamous error in all of Blender: \"Bone Heat Weighting: failed to find solution\".",
+  "overview": "Skinning connects your 3D mesh to the bone armature. This essential lesson breaks down parenting with Automatic Weights (Ctrl + P -> With Automatic Weights) and Weight Paint Mode. You'll learn how vertex groups control deformation and how to resolve the most infamous error in all of Blender: \"Bone Heat Weighting: failed to find solution\".",
   "summary": [
     "Parenting Order: First select the Mesh, THEN Shift-select the Armature -> Press Ctrl + P -> 'With Automatic Weights'.",
     "Weight Paint Mode: Blue = 0% influence, Green = 50%, Red = 100% influence from the active bone.",
