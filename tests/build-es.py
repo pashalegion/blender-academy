@@ -11,7 +11,7 @@ import pathlib, re
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 SITE = "https://pashalegion.github.io/blender-academy/"
-CSS_VERSION = "2"  # Raise this when css/style.css changes, so browsers fetch the new file.
+CSS_VERSION = "3"  # Raise this when css/style.css changes, so browsers fetch the new file.
 PAGES = ["index", "lessons", "lesson", "tracks", "shortcuts", "rig", "plugins", "vault", "glossary", "progress", "secrets"]
 
 SHELL = [

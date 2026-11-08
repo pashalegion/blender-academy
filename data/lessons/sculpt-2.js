@@ -25,5 +25,48 @@ window.LESSON_BODIES["sculpt-2"] = {
       "cause": "The mesh center shifted away from the world X=0 axis, or Dyntopo created asymmetric density.",
       "solution": "In Sculpt Mode, go to the top header -> click the Symmetry dropdown -> click 'Symmetrize' (+X to -X or -X to +X)."
     }
+  ],
+  "tutorial": [
+    {
+      "heading": "Three ways to manage detail",
+      "steps": [
+        "Sculpting needs enough polygons, but in the right place. Blender has three main workflows: Dyntopo, Remesh and the Multiresolution modifier.",
+        "Each fits a different stage: rough shapes, blocking out, and fine detail."
+      ]
+    },
+    {
+      "heading": "Dyntopo",
+      "steps": [
+        "Turn on Dyntopo in the Sculpt Mode header. Blender now adds triangles under the brush as you sculpt.",
+        "Detail Size controls how fine the new triangles are. Relative detail depends on how far you zoom.",
+        "It is great for pulling out long shapes (horns, tentacles) without stretching the mesh.",
+        "Dyntopo removes UV maps and some other data, so use it early, before texturing."
+      ]
+    },
+    {
+      "heading": "Remesh",
+      "steps": [
+        "Remesh rebuilds the whole mesh into even quads. Set Voxel Size in the header's Remesh panel and click Remesh.",
+        "It also fuses separate overlapping pieces (head, ears, nose) into one mesh.",
+        "Smaller voxel sizes give more detail but more polygons. Lower the size step by step.",
+        "Use Remesh often while blocking out to keep the mesh clean."
+      ],
+      "tip": "Save before remeshing at a small size. Very small voxel sizes can create millions of faces and slow your computer down."
+    },
+    {
+      "heading": "Multiresolution modifier",
+      "steps": [
+        "When the big forms are done, add a Multiresolution modifier and click Subdivide several times.",
+        "You can switch between levels: sculpt big shapes on low levels and fine details like pores and wrinkles on high levels.",
+        "It works well for final detailing and for baking detail to textures."
+      ]
+    },
+    {
+      "heading": "Combine them",
+      "steps": [
+        "Typical order: Remesh (or Dyntopo) for blocking out, then retopology if you need clean geometry, then Multiresolution for fine detail.",
+        "Pick the method that fits the current stage instead of using just one for everything."
+      ]
+    }
   ]
 };

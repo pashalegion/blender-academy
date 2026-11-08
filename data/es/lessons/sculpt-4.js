@@ -25,5 +25,66 @@ window.LESSON_BODIES["sculpt-4"] = {
       "cause": "Cambiar la topología de la superficie rompe la información de unión guardada.",
       "solution": "Usa Curves ‣ Snap to Nearest Surface, que mueve la raíz de cada curva al punto más cercano de la malla."
     }
+  ],
+  "tutorial": [
+    {
+      "heading": "Prepara el modelo base",
+      "steps": [
+        "El pelo crece sobre una malla de superficie, como una cabeza o el cuerpo de una criatura.",
+        "Aplica la escala de la malla (Object ‣ Apply ‣ Scale) antes de añadir pelo."
+      ]
+    },
+    {
+      "heading": "Quick Fur",
+      "steps": [
+        "Selecciona la malla y usa Object ‣ Quick Effects ‣ Quick Fur.",
+        "Blender crea un objeto de curvas de pelo con Geometry Nodes que ya parece pelaje.",
+        "Ajusta los valores en su panel de modificador, como densidad, longitud y agrupación."
+      ]
+    },
+    {
+      "heading": "Curvas guía",
+      "steps": [
+        "Para más control, con la malla seleccionada añade un objeto de pelo vacío con Add ‣ Curve ‣ Empty Hair.",
+        "Cambia el objeto de pelo a Sculpt Mode. Usa el pincel Add para colocar unas pocas curvas guía largas donde deba crecer el pelo.",
+        "Usa Comb para peinarlas, Cut para acortarlas y Puff para levantarlas de la superficie."
+      ]
+    },
+    {
+      "heading": "Herramientas de nodos de pelo",
+      "steps": [
+        "Blender incluye grupos de nodos de pelo listos para usar en la biblioteca Essentials del Asset Browser.",
+        "Añádelos como modificadores al objeto de pelo, por ejemplo Interpolate Hair Curves, Clump Hair Curves y Frizz Hair Curves."
+      ]
+    },
+    {
+      "heading": "Interpola el pelo",
+      "steps": [
+        "Interpolate Hair Curves crea muchos pelos hijos entre tus pocas curvas guía.",
+        "Sube la densidad para cubrir la cabeza y mantén pocas guías para que sean fáciles de peinar."
+      ]
+    },
+    {
+      "heading": "Da forma al pelo",
+      "steps": [
+        "Clump Hair Curves agrupa los mechones para un aspecto más natural.",
+        "Ajusta la forma y la distancia de los mechones para que no sean demasiado perfectos."
+      ]
+    },
+    {
+      "heading": "Ruido y encrespado",
+      "steps": [
+        "Añade Hair Curves Noise o Frizz Hair Curves para romper las hebras perfectamente rectas.",
+        "Usa poca cantidad; el pelo real es un poco desordenado pero sigue la forma general."
+      ]
+    },
+    {
+      "heading": "Ejemplo: una barba",
+      "steps": [
+        "Repite los mismos pasos en la barbilla y la mandíbula.",
+        "Pinta una máscara de densidad o un grupo de vértices para que el pelo solo crezca donde va la barba.",
+        "Haz las hebras más cortas y encrespadas que el pelo de la cabeza."
+      ]
+    }
   ]
 };

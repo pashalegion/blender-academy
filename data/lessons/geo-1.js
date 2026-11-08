@@ -25,5 +25,69 @@ window.LESSON_BODIES["geo-1"] = {
       "cause": "Rotation input on 'Instance on Points' has no random variation.",
       "solution": "Add a 'Rotate Instances' node or plug a 'Random Value' node (Vector type, Min -3.14 to Max 3.14 on Z) into the Rotation socket."
     }
+  ],
+  "tutorial": [
+    {
+      "heading": "Getting started",
+      "steps": [
+        "Geometry Nodes builds or changes geometry with nodes, procedurally.",
+        "Open the Geometry Nodes workspace tab, select an object (for example a plane for the ground), and click New."
+      ]
+    },
+    {
+      "heading": "It is a modifier",
+      "steps": [
+        "Geometry Nodes appears as a modifier in the wrench tab, so you can turn it off or reorder it like any modifier.",
+        "Group Input is the original mesh; Group Output is the result."
+      ]
+    },
+    {
+      "heading": "Distribute points",
+      "steps": [
+        "Add Distribute Points on Faces (Shift + A, or search) between Group Input and Group Output.",
+        "The mesh becomes many points. Change Density to add or remove points. Choose Poisson Disk for evenly spaced points."
+      ]
+    },
+    {
+      "heading": "Join geometry",
+      "steps": [
+        "The original surface disappeared because only the points reach the output.",
+        "Add a Join Geometry node and connect both the original geometry and the new geometry into it."
+      ]
+    },
+    {
+      "heading": "Instance objects on the points",
+      "steps": [
+        "Add Instance on Points after the points. Connect an object (for example a rock) to its Instance input.",
+        "Every point now shows a copy of that object."
+      ]
+    },
+    {
+      "heading": "Pin the node layout",
+      "steps": [
+        "Click the pin icon in the node editor header to keep this node tree shown, even when you select another object, such as the rock."
+      ]
+    },
+    {
+      "heading": "Reference another object",
+      "steps": [
+        "Drag the object from the Outliner into the node editor to make an Object Info node.",
+        "Connect its Geometry output to Instance. Changes to the original object update every copy."
+      ]
+    },
+    {
+      "heading": "Randomize rotation",
+      "steps": [
+        "Add a Random Value node set to Vector, and connect it to the Rotation input of Instance on Points.",
+        "Set Max Z to about 6.28 (a full turn in radians) so every rock faces a different way."
+      ]
+    },
+    {
+      "heading": "Randomize scale",
+      "steps": [
+        "Add another Random Value node (Float), set Min and Max, for example 0.5 and 1.5, and connect it to Scale.",
+        "Now every instance has a different size, which looks much more natural."
+      ]
+    }
   ]
 };

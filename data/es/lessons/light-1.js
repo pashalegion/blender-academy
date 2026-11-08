@@ -25,5 +25,38 @@ window.LESSON_BODIES["light-1"] = {
       "cause": "View Transform está en 'Standard', que recorta las luces altas a blanco puro.",
       "solution": "Ve a Render Properties -> Color Management y elige una transformación como AgX. Consulta el manual de Blender 5.2 para ver los nombres y controles actuales."
     }
+  ],
+  "tutorial": [
+    {
+      "heading": "Dos motores de render",
+      "steps": [
+        "Blender tiene dos motores principales: Cycles y Eevee.",
+        "Cycles es un trazador de rayos: sigue los rayos de luz para lograr luz, sombras y reflejos realistas, pero tarda más.",
+        "Eevee es en tiempo real: es muy rápido y va bien para vistas previas, animación y estilos no realistas, pero usa atajos menos precisos."
+      ]
+    },
+    {
+      "heading": "Cambia de motor",
+      "steps": [
+        "Abre Render Properties (el icono de la parte trasera de una cámara) y cambia Render Engine.",
+        "Pulsa Z ‣ Rendered en la vista para ver el resultado en directo."
+      ]
+    },
+    {
+      "heading": "Compáralos en la misma escena",
+      "steps": [
+        "Renderiza la misma escena en los dos motores y compara rebotes de luz, sombras suaves, vidrio y reflejos.",
+        "El Eevee más reciente (llamado Eevee Next en algunos vídeos antiguos) añade opciones de ray tracing y mejores sombras, así que la diferencia es menor que antes."
+      ]
+    },
+    {
+      "heading": "Cuándo usar cada uno",
+      "steps": [
+        "Usa Cycles para imágenes realistas, fotos de producto y todo lo que tenga vidrio o luz compleja.",
+        "Usa Eevee para vistas previas rápidas, motion graphics, estilos no realistas y animaciones largas en ordenadores modestos.",
+        "Muchos artistas preparan la escena en Eevee y hacen el render final en Cycles."
+      ],
+      "tip": "En Cycles, usa la GPU si tienes una compatible: Edit ‣ Preferences ‣ System ‣ Cycles Render Devices."
+    }
   ]
 };

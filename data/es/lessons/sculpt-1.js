@@ -25,5 +25,60 @@ window.LESSON_BODIES["sculpt-1"] = {
       "cause": "El icono de presión junto a Radius y Strength, en la cabecera, está desactivado.",
       "solution": "Haz clic en el pequeño icono de lápiz con círculos concéntricos junto a los controles Radius y Strength."
     }
+  ],
+  "tutorial": [
+    {
+      "heading": "Prepárate para esculpir",
+      "steps": [
+        "Cambia a la pestaña de workspace Sculpting. Abre Sculpt Mode con los pinceles a la izquierda.",
+        "Si usas una tableta, la presión del lápiz controla la fuerza o el tamaño. Actívala con los iconos de lápiz junto a Radius y Strength, en la cabecera.",
+        "Con ratón también se puede; solo es más lento."
+      ]
+    },
+    {
+      "heading": "Consigue suficiente geometría",
+      "steps": [
+        "Los pinceles empujan vértices, así que una malla low poly (como el cubo por defecto) no se esculpe bien.",
+        "Usa Remesh en la cabecera: pon un Voxel Size (más pequeño = más detalle) y haz clic en Remesh. Reconstruye la malla con densidad uniforme.",
+        "Empieza con un tamaño medio para las formas grandes y redúcelo después para el detalle."
+      ]
+    },
+    {
+      "heading": "Controles del pincel",
+      "steps": [
+        "Pulsa F y mueve el ratón para cambiar el radio. Pulsa Shift + F para cambiar la fuerza.",
+        "Mantén Ctrl mientras esculpes para invertir el pincel, por ejemplo excavar en vez de añadir.",
+        "Mantén Shift para suavizar momentáneamente con cualquier pincel.",
+        "Activa la simetría (el botón X de la cabecera) para esculpir los dos lados de una cara a la vez."
+      ]
+    },
+    {
+      "heading": "Los pinceles principales",
+      "steps": [
+        "Draw: añade o excava trazos sencillos.",
+        "Clay Strips: añade capas planas de arcilla, ideal para encajar formas.",
+        "Grab: arrastra zonas grandes, perfecto para cambiar proporciones.",
+        "Snake Hook: estira cuernos, orejas y pinchos.",
+        "Inflate: hincha zonas, como mejillas o narices.",
+        "Crease: crea pliegues y arrugas marcados. Smooth: suaviza bultos."
+      ]
+    },
+    {
+      "heading": "Encaja una cabeza",
+      "steps": [
+        "Empieza con una esfera y usa Grab para dar forma al cráneo, la mandíbula y la frente.",
+        "Usa Clay Strips para añadir mejillas, nariz y cejas.",
+        "Estira orejas o cuernos con Snake Hook. Para un goblin, exagera: orejas grandes, nariz larga y ojos hundidos."
+      ]
+    },
+    {
+      "heading": "Refina y detalla",
+      "steps": [
+        "Vuelve a hacer Remesh con un vóxel más pequeño cuando necesites más detalle.",
+        "Usa Crease para arrugas y líneas alrededor de ojos y boca.",
+        "Suaviza las zonas abultadas y revisa el modelo desde todos los lados."
+      ],
+      "tip": "Guarda a menudo, y guarda versiones antes de remallados grandes."
+    }
   ]
 };

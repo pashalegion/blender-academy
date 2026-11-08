@@ -25,5 +25,50 @@ window.LESSON_BODIES["geo-2"] = {
       "cause": "The radius socket is hardcoded inside the node graph.",
       "solution": "Drag a noodle from the 'Radius' input of the Curve Circle node all the way to an empty slot on the 'Group Input' node. Now it appears as an input slider in the Modifier tab!"
     }
+  ],
+  "tutorial": [
+    {
+      "heading": "Start from a curve",
+      "steps": [
+        "Add a Bezier curve (Shift + A ‣ Curve ‣ Bezier) and shape it where the cable should hang.",
+        "Add a Geometry Nodes modifier to the curve and click New."
+      ]
+    },
+    {
+      "heading": "Make the cable droop with fields",
+      "steps": [
+        "Resample the curve (Resample Curve) so it has many points along its length.",
+        "Use Spline Parameter, which goes from 0 at one end to 1 at the other, to calculate how far each point should sag.",
+        "Feed that value through a Float Curve or simple math to move points down most in the middle, using Set Position."
+      ]
+    },
+    {
+      "heading": "Turn the curve into a tube",
+      "steps": [
+        "Add Curve to Mesh and connect a Curve Circle node to its Profile Curve input.",
+        "The radius of the circle sets the cable thickness."
+      ]
+    },
+    {
+      "heading": "Make several cables",
+      "steps": [
+        "Duplicate the curve geometry, for example with Instance on Points or Duplicate Elements, and offset each copy a little.",
+        "Give each copy a slightly different sag amount using a Random Value node, so they look like a bundle."
+      ]
+    },
+    {
+      "heading": "Expose settings",
+      "steps": [
+        "Drag sockets such as sag amount and thickness into the Group Input. They appear as sliders in the modifier panel.",
+        "You can now adjust the cables without opening the node editor."
+      ]
+    },
+    {
+      "heading": "Add a material",
+      "steps": [
+        "Use Set Material at the end so the cables render with the right material."
+      ],
+      "tip": "This is Part 1 of the video series; later parts add more detail."
+    }
   ]
 };

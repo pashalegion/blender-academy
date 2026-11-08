@@ -25,5 +25,82 @@ window.LESSON_BODIES["shade-2"] = {
       "cause": "La densidad de texel es irregular: el tamaño de las islas UV no coincide con sus proporciones reales en 3D.",
       "solution": "En el UV Editor, selecciona todas las islas y haz clic en UV -> 'Average Island Scale', y luego en 'Pack Islands'."
     }
+  ],
+  "tutorial": [
+    {
+      "heading": "Añade una textura a un objeto",
+      "steps": [
+        "Selecciona un objeto, abre el workspace Shading y añade un material.",
+        "Añade un nodo Image Texture (Shift + A ‣ Texture ‣ Image Texture) y conecta su Color a Base Color.",
+        "Pulsa New en el nodo y elige Generated Type: UV Grid. Este patrón de prueba muestra claramente cualquier estiramiento."
+      ]
+    },
+    {
+      "heading": "Mapas UV por defecto",
+      "steps": [
+        "La mayoría de objetos nuevos ya traen un mapa UV. Lo ves en Object Data Properties ‣ UV Maps.",
+        "Un mapa UV le dice a Blender cómo colocar la imagen 2D sobre la superficie 3D."
+      ]
+    },
+    {
+      "heading": "Editar la malla cambia las UV",
+      "steps": [
+        "Cuando extruyes o mueves partes en Edit Mode, el mapa UV no se actualiza solo, así que la textura puede estirarse.",
+        "Tras cambios grandes, vuelve a desplegar la malla."
+      ]
+    },
+    {
+      "heading": "Mira y edita los mapas UV",
+      "steps": [
+        "Abre el workspace UV Editing. A la izquierda está el UV Editor y a la derecha la vista 3D en Edit Mode.",
+        "Selecciona caras en la vista 3D para ver sus UV a la izquierda.",
+        "En el UV Editor, usa G, R y S para mover, rotar y escalar islas UV, igual que con objetos."
+      ]
+    },
+    {
+      "heading": "Despliega la malla",
+      "steps": [
+        "En Edit Mode selecciona todo (A) y pulsa U ‣ Unwrap. Blender aplana la malla usando sus costuras.",
+        "Sin costuras, Unwrap puede dar un resultado raro, así que añade costuras primero para un resultado limpio."
+      ]
+    },
+    {
+      "heading": "Smart UV Project y Project From View",
+      "steps": [
+        "U ‣ Smart UV Project corta la malla automáticamente según el ángulo. Es rápido y bueno para objetos duros y accesorios.",
+        "U ‣ Project From View proyecta las UV tal como ves el objeto en la vista, útil para superficies planas."
+      ]
+    },
+    {
+      "heading": "Costuras en un cubo",
+      "steps": [
+        "Las costuras son aristas donde la superficie se abre, como los pliegues de una caja de cartón.",
+        "Selecciona aristas y pulsa Ctrl + E ‣ Mark Seam. Se vuelven rojas.",
+        "Marca costuras para que el cubo pueda desplegarse plano y pulsa U ‣ Unwrap. Obtendrás una forma de cruz."
+      ]
+    },
+    {
+      "heading": "Costuras en un cilindro",
+      "steps": [
+        "Marca una costura vertical en el lateral, más costuras alrededor de las tapas superior e inferior.",
+        "Despliega: el lateral queda como un rectángulo largo y las tapas como dos círculos.",
+        "Esconde las costuras donde no se noten, como detrás o debajo."
+      ]
+    },
+    {
+      "heading": "Separa caras en el UV Editor",
+      "steps": [
+        "A veces quieres apartar caras de su isla. Selecciónalas en el UV Editor y sepáralas para moverlas por su cuenta.",
+        "Después vuelve a empaquetar las islas con UV ‣ Pack Islands."
+      ]
+    },
+    {
+      "heading": "Aplica la escala del objeto",
+      "steps": [
+        "Si el objeto se escaló en Object Mode, el despliegue puede verse estirado.",
+        "Usa primero Object ‣ Apply ‣ Scale y vuelve a desplegar."
+      ],
+      "tip": "Revisa siempre la textura UV Grid tras desplegar: los cuadrados deben verse cuadrados en todas partes."
+    }
   ]
 };

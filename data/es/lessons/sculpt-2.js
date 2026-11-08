@@ -25,5 +25,48 @@ window.LESSON_BODIES["sculpt-2"] = {
       "cause": "El centro de la malla se ha alejado del eje X = 0 del mundo, o Dyntopo ha creado densidad asimétrica.",
       "solution": "En Sculpt Mode, ve a la cabecera, abre el menú Symmetry y haz clic en 'Symmetrize' (+X a -X o -X a +X)."
     }
+  ],
+  "tutorial": [
+    {
+      "heading": "Tres formas de gestionar el detalle",
+      "steps": [
+        "Esculpir necesita suficientes polígonos, pero en el sitio adecuado. Blender tiene tres flujos principales: Dyntopo, Remesh y el modificador Multiresolution.",
+        "Cada uno encaja en una fase: formas bastas, encaje y detalle fino."
+      ]
+    },
+    {
+      "heading": "Dyntopo",
+      "steps": [
+        "Activa Dyntopo en la cabecera de Sculpt Mode. Blender añade triángulos bajo el pincel mientras esculpes.",
+        "Detail Size controla lo finos que son los triángulos nuevos. El detalle Relative depende del zoom.",
+        "Es ideal para estirar formas largas (cuernos, tentáculos) sin deformar la malla.",
+        "Dyntopo elimina los mapas UV y otros datos, así que úsalo pronto, antes de texturizar."
+      ]
+    },
+    {
+      "heading": "Remesh",
+      "steps": [
+        "Remesh reconstruye toda la malla con quads uniformes. Pon Voxel Size en el panel Remesh de la cabecera y haz clic en Remesh.",
+        "También fusiona piezas separadas superpuestas (cabeza, orejas, nariz) en una sola malla.",
+        "Un vóxel más pequeño da más detalle pero más polígonos. Redúcelo poco a poco.",
+        "Usa Remesh a menudo durante el encaje para mantener la malla limpia."
+      ],
+      "tip": "Guarda antes de remallar con un tamaño pequeño. Los vóxeles diminutos pueden crear millones de caras y ralentizar el ordenador."
+    },
+    {
+      "heading": "Modificador Multiresolution",
+      "steps": [
+        "Cuando las formas grandes estén listas, añade un modificador Multiresolution y pulsa Subdivide varias veces.",
+        "Puedes cambiar de nivel: esculpe formas grandes en niveles bajos y detalles finos como poros y arrugas en niveles altos.",
+        "Funciona muy bien para el detalle final y para hornear el detalle a texturas."
+      ]
+    },
+    {
+      "heading": "Combínalos",
+      "steps": [
+        "Orden típico: Remesh (o Dyntopo) para encajar, después retopología si necesitas geometría limpia, y por último Multiresolution para el detalle fino.",
+        "Elige el método que encaje con la fase actual en vez de usar uno solo para todo."
+      ]
+    }
   ]
 };

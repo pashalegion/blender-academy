@@ -25,5 +25,67 @@ window.LESSON_BODIES["post-3"] = {
       "cause": "El origen del objeto no está donde lo espera el motor.",
       "solution": "Define el origen antes de exportar, normalmente en la base o en el centro del objeto."
     }
+  ],
+  "tutorial": [
+    {
+      "heading": "Haz primero una copia",
+      "steps": [
+        "Guarda una copia del archivo antes de prepararlo para exportar. Algunos pasos (como triangular) cambian la malla."
+      ]
+    },
+    {
+      "heading": "Revisa el número de caras",
+      "steps": [
+        "Activa Statistics en Viewport Overlays para ver el número de caras y triángulos.",
+        "Los motores de videojuegos prefieren modelos ligeros, así que quita caras ocultas o innecesarias."
+      ]
+    },
+    {
+      "heading": "Arregla los n-gons",
+      "steps": [
+        "Las caras de más de cuatro lados pueden triangularse mal en un motor.",
+        "Encuéntralas con Select ‣ Select All by Trait ‣ Faces by Sides (más de 4) y arréglalas con el cuchillo o conectando vértices (J)."
+      ]
+    },
+    {
+      "heading": "Despliegue UV",
+      "steps": [
+        "Cada modelo necesita un mapa UV limpio para sus texturas. Despliégalo y revisa que no haya estiramientos."
+      ]
+    },
+    {
+      "heading": "Coloca el origen",
+      "steps": [
+        "El origen es el punto alrededor del que el objeto se mueve y gira en el motor.",
+        "Ponlo en la base o el centro: por ejemplo, Object ‣ Set Origin ‣ Origin to 3D Cursor tras poner el cursor abajo."
+      ]
+    },
+    {
+      "heading": "Aplica las transformaciones",
+      "steps": [
+        "Usa Object ‣ Apply ‣ All Transforms para que el motor reciba la escala y la rotación correctas."
+      ]
+    },
+    {
+      "heading": "Triangula",
+      "steps": [
+        "Los motores lo convierten todo en triángulos igualmente. Si lo haces tú (modificador Triangulate o Ctrl + T en Edit Mode), controlas cómo se dividen las caras."
+      ]
+    },
+    {
+      "heading": "FBX para Unity y Unreal",
+      "steps": [
+        "Usa File ‣ Export ‣ FBX. Activa Selected Objects si solo quieres una parte de la escena.",
+        "Revisa las opciones de escala y ejes; Unity y Unreal tienen ajustes recomendados.",
+        "Importa en el motor y comprueba tamaño, rotación y materiales."
+      ]
+    },
+    {
+      "heading": "glTF para Godot",
+      "steps": [
+        "Usa File ‣ Export ‣ glTF 2.0 y elige .glb para guardarlo todo en un solo archivo.",
+        "glTF lee directamente los materiales Principled BSDF y las texturas, y Godot los admite bien."
+      ]
+    }
   ]
 };

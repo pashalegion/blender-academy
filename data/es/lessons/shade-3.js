@@ -25,5 +25,59 @@ window.LESSON_BODIES["shade-3"] = {
       "cause": "Ver el shader final no permite revisar cada máscara por separado.",
       "solution": "Con Node Wrangler activo, mantén Ctrl + Shift y haz clic izquierdo en cualquier nodo. Se conectará un nodo Viewer temporal para aislar su salida."
     }
+  ],
+  "tutorial": [
+    {
+      "heading": "Abre el Shader Editor",
+      "steps": [
+        "Haz clic en la pestaña Shading, o cambia cualquier área al Shader Editor.",
+        "Selecciona tu objeto y pulsa New para añadir un material."
+      ]
+    },
+    {
+      "heading": "Nociones de nodos",
+      "steps": [
+        "Cada nodo hace una tarea. Los datos fluyen de izquierda a derecha por las conexiones.",
+        "El Principled BSDF decide el aspecto de la superficie, y Material Output lo envía al render.",
+        "Arrastra de una entrada a otra para conectarlas. Ctrl + clic derecho y arrastrar corta conexiones."
+      ]
+    },
+    {
+      "heading": "Añade nodos nuevos",
+      "steps": [
+        "Pulsa Shift + A en el Shader Editor, o usa el menú Add, y elige un nodo de una categoría como Texture o Converter.",
+        "Usa la búsqueda de la parte superior del menú Add para encontrar nodos por su nombre."
+      ]
+    },
+    {
+      "heading": "Imagen frente a procedural",
+      "steps": [
+        "Las texturas de imagen usan fotos. Son fáciles, pero necesitan UV y pueden verse borrosas de cerca.",
+        "Las procedurales se crean con matemáticas, como Noise, Voronoi y Wave. No tienen límite de resolución ni necesitan archivos."
+      ]
+    },
+    {
+      "heading": "Conecta una textura procedural",
+      "steps": [
+        "Añade una Noise Texture y conecta su salida Color o Fac a Base Color.",
+        "Añade un Color Ramp entre ambos para elegir tus colores y controlar el contraste.",
+        "Añade un nodo Texture Coordinate y uno Mapping antes de la textura (con Node Wrangler: selecciona la textura y pulsa Ctrl + T) para controlar su posición y escala."
+      ]
+    },
+    {
+      "heading": "Edita la textura",
+      "steps": [
+        "Cambia Scale para hacer el patrón más grande o pequeño, Detail para más variación fina y Roughness para un ruido más definido o suave.",
+        "Junta los manejadores del Color Ramp para bordes más marcados."
+      ]
+    },
+    {
+      "heading": "Crea un material metálico",
+      "steps": [
+        "Pon Metallic en 1 y elige un Base Color gris o de color.",
+        "Conecta una Noise Texture a través de un Color Ramp a Roughness, para que unas zonas brillen más que otras.",
+        "Si quieres, añade un nodo Bump alimentado por el mismo ruido y conectado a Normal para pequeñas abolladuras."
+      ]
+    }
   ]
 };

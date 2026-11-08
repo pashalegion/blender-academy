@@ -25,5 +25,70 @@ window.LESSON_BODIES["anim-4"] = {
       "cause": "The stack runs from top to bottom, so the later constraint works on the earlier result.",
       "solution": "Reorder them by dragging, or lower Influence to see what each one is doing."
     }
+  ],
+  "tutorial": [
+    {
+      "heading": "What constraints do",
+      "steps": [
+        "Constraints control an object's location, rotation or scale automatically, based on another object.",
+        "Add them in Object Constraint Properties (the icon below the wrench) with Add Object Constraint.",
+        "Each has an Influence slider. You can keyframe it to turn the constraint on and off during an animation."
+      ]
+    },
+    {
+      "heading": "Copy Location, Rotation, Scale and Transforms",
+      "steps": [
+        "Copy Location makes an object follow another object's position. You can choose which axes and add an offset.",
+        "Copy Rotation and Copy Scale copy only rotation or only scale.",
+        "Copy Transforms copies all three at once."
+      ]
+    },
+    {
+      "heading": "Limit constraints",
+      "steps": [
+        "Limit Distance keeps an object inside, outside or exactly at a distance from a target.",
+        "Limit Location, Limit Rotation and Limit Scale set a minimum and maximum, for example a door that cannot open past 90 degrees.",
+        "Turn on Affect Transform so the limits also apply while you move the object."
+      ]
+    },
+    {
+      "heading": "Maintain Volume and Transformation",
+      "steps": [
+        "Maintain Volume squashes the other axes when you stretch one, keeping volume, like squash and stretch.",
+        "Transformation maps one movement to another, for example turning a dial rotates a gear."
+      ]
+    },
+    {
+      "heading": "Tracking constraints",
+      "steps": [
+        "Damped Track points one axis at a target, the simplest way to aim.",
+        "Locked Track aims while keeping one axis locked, good for things that should only turn left and right.",
+        "Stretch To points at a target and stretches to reach it."
+      ],
+      "tip": "Track To is another aiming constraint; for cameras, set the track axis to -Z and up to Y."
+    },
+    {
+      "heading": "Relationship constraints",
+      "steps": [
+        "Armature lets objects follow bones of an armature with weights.",
+        "Child Of works like parenting, but you can animate its influence to switch parents, for example a character picking up a cup. Press Set Inverse so the object does not jump.",
+        "Floor stops an object from going through a floor object."
+      ]
+    },
+    {
+      "heading": "Follow Path, Pivot and Shrinkwrap",
+      "steps": [
+        "Follow Path moves an object along a curve. Animate the curve's evaluation time or use Animate Path to make it travel.",
+        "Pivot rotates an object around a different point.",
+        "Shrinkwrap snaps an object onto the surface of another."
+      ]
+    },
+    {
+      "heading": "The stack",
+      "steps": [
+        "Constraints run from top to bottom, so order changes the result.",
+        "Drag to reorder them, and lower Influence to see what each one does."
+      ]
+    }
   ]
 };

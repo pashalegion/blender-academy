@@ -257,5 +257,8 @@ window.BA_STRINGS = {
   "Workstation": "Estación de trabajo",
   "Arc 140V (Core Ultra laptop)": "Arc 140V (Core Ultra para portátil)",
   "Arc Graphics (Core Ultra laptop)": "Arc Graphics (Core Ultra para portátil)",
-  "Spanish language note": "Los vídeos de esta versión están en español. Los nombres de menús y herramientas se dejan en inglés para que coincidan con Blender por defecto. Si prefieres Blender en español, cámbialo en Edit ‣ Preferences ‣ Interface ‣ Language."
+  "Spanish language note": "Los vídeos de esta versión están en español. Los nombres de menús y herramientas se dejan en inglés para que coincidan con Blender por defecto. Si prefieres Blender en español, cámbialo en Edit ‣ Preferences ‣ Interface ‣ Language.",
+  "Step-by-step guide": "Guía paso a paso",
+  "No video? This written guide follows the same topics as the video, in the same order.": "¿Sin vídeo? Esta guía escrita sigue los mismos temas que el vídeo, en el mismo orden.",
+  "Tip:": "Consejo:"
 };

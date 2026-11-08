@@ -25,5 +25,81 @@ window.LESSON_BODIES["phys-5"] = {
       "cause": "Particle motion depends on earlier frames.",
       "solution": "Play it from the start, then bake it in the Cache panel."
     }
+  ],
+  "tutorial": [
+    {
+      "heading": "Add a particle system",
+      "steps": [
+        "Select a mesh and open Particle Properties (the sparkle icon). Click + to add a system.",
+        "Press Space: particles spray from the surface."
+      ]
+    },
+    {
+      "heading": "Emission",
+      "steps": [
+        "Number sets how many particles appear. Frame Start and End set when they are emitted.",
+        "Lifetime sets how many frames each particle lives."
+      ]
+    },
+    {
+      "heading": "Source and velocity",
+      "steps": [
+        "Emit From chooses faces, vertices or volume.",
+        "Velocity ‣ Normal pushes particles out from the surface. Object Velocity and Randomize add more variety."
+      ]
+    },
+    {
+      "heading": "Physics",
+      "steps": [
+        "Newtonian physics gives realistic falling and bouncing. Mass and size matter.",
+        "Forces like Brownian add random jittery movement, good for dust."
+      ]
+    },
+    {
+      "heading": "Deflection",
+      "steps": [
+        "Add Collision physics to an object to make particles bounce off it."
+      ]
+    },
+    {
+      "heading": "Render settings",
+      "steps": [
+        "Render As decides how particles look: Halo (points), Object or Collection.",
+        "With Object, choose a mesh such as a spark or a leaf. Scale and Scale Randomness vary the size.",
+        "Rotation settings let each particle spin or face its direction."
+      ]
+    },
+    {
+      "heading": "Viewport display",
+      "steps": [
+        "Show fewer particles in the viewport (Viewport Display ‣ Amount) to keep it fast, while rendering them all."
+      ]
+    },
+    {
+      "heading": "Children and field weights",
+      "steps": [
+        "Children create extra particles around each main one, for more detail without more simulation.",
+        "Field Weights decide how much gravity and force fields affect the particles."
+      ]
+    },
+    {
+      "heading": "Force fields",
+      "steps": [
+        "Add a force field (Shift + A ‣ Force Field), such as Wind or Turbulence, to push particles around."
+      ]
+    },
+    {
+      "heading": "Scatter objects",
+      "steps": [
+        "Set the system to Hair type with Render As Object to place static copies, like grass, rocks or trees, over a surface."
+      ]
+    },
+    {
+      "heading": "Bake",
+      "steps": [
+        "Bake the simulation in the Cache panel so it plays the same every time."
+      ],
+      "tip": "Hair particles are the older way to make hair; the Hair & Fur lesson shows the newer hair curves."
+    }
   ]
 };

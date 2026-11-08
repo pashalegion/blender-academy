@@ -25,5 +25,69 @@ window.LESSON_BODIES["fund-5"] = {
       "cause": "Duplicate vertices or edge crease value set higher than 0.",
       "solution": "Select all (A) -> 'M' -> 'By Distance'. Also press 'N' -> Item tab, and check if 'Crease' is set above 0. Set it back to 0."
     }
+  ],
+  "tutorial": [
+    {
+      "heading": "What topology is",
+      "steps": [
+        "Topology is the layout of vertices, edges and faces in your mesh: how the surface is built, not just its shape.",
+        "Two models can look the same but have very different topology. Good topology makes a model easier to edit, smooth, texture and animate."
+      ]
+    },
+    {
+      "heading": "Why clean geometry matters",
+      "steps": [
+        "Clean meshes shade smoothly, without dark patches or strange creases.",
+        "They subdivide predictably with Subdivision Surface.",
+        "They deform nicely when animated, for example at elbows and knees.",
+        "They are easier to UV unwrap and to change later."
+      ]
+    },
+    {
+      "heading": "Words you need to know",
+      "steps": [
+        "Vertex: a single point. Edge: a line between two vertices. Face: a filled shape between edges.",
+        "Quad: a face with 4 sides. Tri: 3 sides. N-gon: 5 or more sides.",
+        "Edge loop: a ring of connected edges that runs around a shape. Alt + left-click an edge in Edit Mode selects its loop.",
+        "Pole: a vertex where 3, 5 or more edges meet. A few are normal; too many in the wrong place cause pinching.",
+        "Normals: the direction a face points. Faces pointing inward cause dark shading."
+      ]
+    },
+    {
+      "heading": "What good topology looks like",
+      "steps": [
+        "Mostly quads, evenly spread over the surface.",
+        "Edge loops follow the form, such as around eyes, mouths, or the curve of a handle.",
+        "More detail only where the shape needs it, and simple geometry on flat areas.",
+        "No faces hidden inside the object, and no holes unless they are meant to be there."
+      ],
+      "tip": "Turn on Statistics in the Viewport Overlays menu to see how many vertices, faces and triangles your model has."
+    },
+    {
+      "heading": "Simple tricks to fix bad meshes",
+      "steps": [
+        "Remove duplicate vertices: in Edit Mode select everything (A), then M ‣ By Distance.",
+        "Fix inside-out faces: select everything and press Shift + N (Recalculate Outside). Turn on Face Orientation in the Overlays menu: blue is correct, red is flipped.",
+        "Turn triangles into quads: select them and press Alt + J.",
+        "Remove unneeded edges with X ‣ Dissolve Edges instead of deleting, so the faces stay closed.",
+        "Find holes and broken geometry with Select ‣ Select All by Trait ‣ Non Manifold."
+      ]
+    },
+    {
+      "heading": "When in doubt, keep it simple",
+      "steps": [
+        "Start with as few faces as possible and add detail only when you need it.",
+        "Use loop cuts (Ctrl + R) and Subdivision Surface instead of lots of hand-placed vertices.",
+        "If a mesh becomes a mess, rebuilding that part cleanly is often faster than fixing it."
+      ]
+    },
+    {
+      "heading": "Don't let perfection hold you back",
+      "steps": [
+        "Triangles and n-gons are fine on flat surfaces that will not bend or be subdivided.",
+        "Background props, static objects and game assets do not need perfect quad topology.",
+        "Aim for clean topology where it matters: curved surfaces, things that move, and objects seen up close."
+      ]
+    }
   ]
 };

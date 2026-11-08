@@ -25,5 +25,50 @@ window.LESSON_BODIES["light-2"] = {
       "cause": "Contact Shadows no está activado en Eevee, o la geometría es fina y de una sola cara.",
       "solution": "Añade un modificador Solidify a la pared, y en los ajustes de luz de Eevee marca 'Contact Shadows'."
     }
+  ],
+  "tutorial": [
+    {
+      "heading": "Posición",
+      "steps": [
+        "La dirección de la luz cambia cómo se lee una forma. Una luz lateral muestra textura y volumen; una luz frontal lo aplana todo.",
+        "Un buen comienzo es una luz principal a unos 45 grados del motivo y un poco por encima."
+      ]
+    },
+    {
+      "heading": "Puesta en escena",
+      "steps": [
+        "Usa la luz para llevar la mirada a lo importante. La zona más brillante atrae primero la atención.",
+        "Deja el fondo algo más oscuro para que el motivo destaque, y usa una luz de contorno desde detrás para separarlo del fondo."
+      ]
+    },
+    {
+      "heading": "Atenuación",
+      "steps": [
+        "La luz se debilita con la distancia. Una luz cerca del motivo se apaga rápido en la escena; una lejana ilumina de forma más uniforme.",
+        "Acerca o aleja las luces para controlar cómo se atenúan, no solo la potencia."
+      ]
+    },
+    {
+      "heading": "Tamaño",
+      "steps": [
+        "El tamaño de una luz controla la suavidad de la sombra. Luces grandes dan sombras suaves; pequeñas, sombras duras.",
+        "Cambia Radius (luces de punto y foco) o Size (luces de área) en Light Properties."
+      ]
+    },
+    {
+      "heading": "Color",
+      "steps": [
+        "El color de la luz crea ambiente. La luz cálida (naranja) parece acogedora o soleada; la fría (azul), tranquila, fría o nocturna.",
+        "Combinar una luz principal cálida con un relleno frío añade profundidad y contraste."
+      ]
+    },
+    {
+      "heading": "Pulido",
+      "steps": [
+        "Añade pequeñas luces de relleno para aclarar zonas oscuras, pero deja algo de sombra para que se vea la forma.",
+        "Revisa el equilibrio general en el render, ajusta la exposición en Color Management y compara el antes y el después."
+      ],
+      "tip": "Cambia una luz cada vez y renderiza para ver el efecto."
+    }
   ]
 };

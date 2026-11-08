@@ -24,5 +24,77 @@ window.LESSON_BODIES["fund-3"] = {
       "cause": "El sombreado sólido oculta la geometría que queda detrás.",
       "solution": "Pulsa Alt + Z para activar el modo X-Ray. Así podrás seleccionar vértices delanteros y traseros con la selección de caja (B)."
     }
+  ],
+  "tutorial": [
+    {
+      "heading": "Parte 1: Lo básico",
+      "steps": [
+        "Empieza un archivo General nuevo y borra el cubo por defecto (selecciónalo y pulsa X).",
+        "Añade la forma del donut con Shift + A ‣ Mesh ‣ Torus.",
+        "En el panel Adjust Last Operation ajusta el tamaño y el número de segmentos.",
+        "Practica la navegación y guarda el archivo con un nombre claro."
+      ],
+      "tip": "El curso es largo, así que divídelo en sesiones y guarda una versión nueva del archivo al terminar cada parte."
+    },
+    {
+      "heading": "Parte 2: Modelado básico",
+      "steps": [
+        "Añade un modificador Subdivision Surface para que el toroide se vea suave.",
+        "En Edit Mode activa Proportional Editing (O) y mueve algunos vértices para que el donut parezca hecho a mano.",
+        "Duplica la mitad superior de las caras para el glaseado: selecciónalas, pulsa Shift + D y luego P ‣ Selection para separarlas en otro objeto.",
+        "Da grosor al glaseado con un modificador Solidify y pégalo al donut con un modificador Shrinkwrap."
+      ]
+    },
+    {
+      "heading": "Parte 3: Modelado orgánico",
+      "steps": [
+        "Haz goteos en el glaseado extruyendo (E) hacia abajo aristas del borde.",
+        "Usa pinceles de Sculpt Mode, como Grab y Smooth, para que el glaseado se vea suave y natural.",
+        "Comprueba desde distintos ángulos que las formas sean creíbles por todos lados."
+      ]
+    },
+    {
+      "heading": "Parte 4: Materiales",
+      "steps": [
+        "Abre el workspace Shading para ver el Shader Editor.",
+        "Haz clic en New para dar un material propio al donut y al glaseado.",
+        "Ajusta Base Color y Roughness en el nodo Principled BSDF. El glaseado algo brillante y la masa mate.",
+        "Usa Subsurface para un aspecto más suave y comestible en la masa."
+      ]
+    },
+    {
+      "heading": "Parte 5: Texturizado",
+      "steps": [
+        "Añade variación de color para que el donut no parezca de plástico, por ejemplo un anillo más claro en el centro.",
+        "Usa texturas procedurales como Noise Texture conectada a un Color Ramp para mezclar dos colores.",
+        "Mira el resultado en Material Preview o en modo Rendered (menú Z)."
+      ]
+    },
+    {
+      "heading": "Parte 6: Despliegue UV",
+      "steps": [
+        "Algunas texturas necesitan un mapa UV para envolver bien el modelo.",
+        "En Edit Mode selecciona todo y despliega (U ‣ Unwrap). Comprueba el resultado en el UV Editor.",
+        "Ajusta las costuras donde la textura se estire o se vea una unión."
+      ]
+    },
+    {
+      "heading": "Parte 7: Dispersar los sprinkles",
+      "steps": [
+        "Modela un sprinkle (un cilindro pequeño y alargado) y crea algunas variantes de color.",
+        "Pon los sprinkles en su propia colección.",
+        "En el glaseado, usa Geometry Nodes para distribuir puntos por la superficie superior y colocar instancias de sprinkles en ellos.",
+        "Varía al azar la rotación y la escala para que no haya dos iguales."
+      ]
+    },
+    {
+      "heading": "Parte 8: Iluminación y render",
+      "steps": [
+        "Coloca la cámara con una buena composición: Numpad 0 para mirar por ella y Lock Camera to View en la barra lateral para ajustarla.",
+        "Añade luces, por ejemplo una luz de área lateral, o usa un HDRI en World para una luz natural.",
+        "Elige Cycles en Render Properties para un resultado realista y pulsa F12 para renderizar.",
+        "Guarda la imagen desde la ventana de render con Image ‣ Save As."
+      ]
+    }
   ]
 };

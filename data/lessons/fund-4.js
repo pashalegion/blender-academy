@@ -25,5 +25,104 @@ window.LESSON_BODIES["fund-4"] = {
       "cause": "Extruding (E) and right-clicking cancels the movement, but DOES NOT delete the extruded vertices!",
       "solution": "In Edit Mode, press 'A' to select everything, then press 'M' -> 'By Distance'. Check the bottom info bar to see how many duplicate vertices were removed."
     }
+  ],
+  "tutorial": [
+    {
+      "heading": "What modifiers are",
+      "steps": [
+        "Modifiers change an object automatically without destroying the original mesh.",
+        "Select an object and open the wrench tab (Modifier Properties) in the Properties editor. Click Add Modifier to see them, grouped as Edit, Generate, Deform and so on.",
+        "You can switch each modifier on and off, change its settings at any time, or delete it. Your base mesh stays the same until you apply it."
+      ]
+    },
+    {
+      "heading": "Mirror modifier",
+      "steps": [
+        "Model only one half of a symmetrical object, for example the right half of a face or a car.",
+        "Add Generate ‣ Mirror. The other half appears as a mirror image across the object's origin.",
+        "Pick the mirror axis (X, Y or Z). Bisect cuts away anything that crosses to the other side.",
+        "Turn on Clipping so vertices on the center line cannot cross it and stay welded together.",
+        "Use Mirror Object to mirror across another object (for example an empty) instead of the object's own origin."
+      ]
+    },
+    {
+      "heading": "Common modifier options and applying",
+      "steps": [
+        "The icons in each modifier's header show it in Edit Mode, in the viewport and in the render. Turn them off to compare.",
+        "Drag the handle on the right to reorder modifiers. The stack runs from top to bottom.",
+        "To make a modifier permanent, open its dropdown arrow and choose Apply (or hover over it and press Ctrl + A). The result becomes real geometry."
+      ],
+      "tip": "Only apply when you are sure. Keeping modifiers live lets you change your mind later."
+    },
+    {
+      "heading": "Subdivision Surface",
+      "steps": [
+        "Add Generate ‣ Subdivision Surface to smooth a low-poly shape into a rounder one.",
+        "Set Levels Viewport for the view and Render for the final image. Higher numbers are smoother but heavier.",
+        "Ctrl + 1, Ctrl + 2 and Ctrl + 3 in Object Mode add it with that many levels.",
+        "Add edge loops close to an edge (Ctrl + R) to keep it sharper after subdivision."
+      ]
+    },
+    {
+      "heading": "Bevel modifier",
+      "steps": [
+        "Add Generate ‣ Bevel to round edges without editing the mesh.",
+        "Amount sets the size and Segments sets the smoothness.",
+        "Set Limit Method to Angle so only sharp edges get beveled."
+      ]
+    },
+    {
+      "heading": "Array modifier",
+      "steps": [
+        "Add Generate ‣ Array to repeat the object in a row, like steps, fence posts or chain links.",
+        "Count sets how many copies. Relative Offset sets the spacing compared with the object's size.",
+        "Turn on Merge to weld copies that touch, so they act as one mesh.",
+        "Combine several Array modifiers to make grids."
+      ]
+    },
+    {
+      "heading": "Skin modifier",
+      "steps": [
+        "The Skin modifier turns a skeleton of vertices and edges into a thick, blocky mesh.",
+        "Start with a single vertex, add Generate ‣ Skin, then extrude vertices (E) in Edit Mode to grow limbs.",
+        "Press Ctrl + A in Edit Mode to scale the skin thickness at the selected vertices.",
+        "Add a Subdivision Surface after it for a smooth, quick creature base."
+      ]
+    },
+    {
+      "heading": "Boolean modifier",
+      "steps": [
+        "Booleans combine two objects. Add Generate ‣ Boolean to the main object and choose the other object as the Object.",
+        "Difference cuts the second object out, Union joins them, and Intersect keeps only the overlap.",
+        "Hide the cutter object (H, or the eye icon in the Outliner) so you see the result.",
+        "The Exact solver is accurate; Fast is quicker but can fail on tricky shapes."
+      ]
+    },
+    {
+      "heading": "Wireframe, Solidify and Shrinkwrap",
+      "steps": [
+        "Wireframe turns every edge into a thin beam, for lattice-like or stylized looks. Thickness sets the beam size.",
+        "Solidify gives a flat surface real thickness, like turning a plane into a board. Turn on Even Thickness for a uniform wall.",
+        "Shrinkwrap pulls an object onto the surface of a target object. It is useful for clothes, decals and retopology."
+      ]
+    },
+    {
+      "heading": "Lattice modifier",
+      "steps": [
+        "A Lattice is a simple cage you use to bend another object.",
+        "Add a lattice with Shift + A ‣ Lattice and scale it to surround your object.",
+        "On your object add Deform ‣ Lattice and pick the lattice as the Object.",
+        "Select the lattice, press Tab, and move its points. The object bends to follow."
+      ]
+    },
+    {
+      "heading": "Apply scale, and stack order",
+      "steps": [
+        "Many modifiers (Bevel, Solidify, Array) use the object's scale. If you scaled the object in Object Mode, results can look stretched.",
+        "Fix it with Object ‣ Apply ‣ Scale (or Ctrl + A ‣ Scale) before adjusting the modifier.",
+        "Order matters: Mirror before Subdivision Surface gives a clean, smooth center; Boolean before Bevel bevels the cut edges.",
+        "If the result looks wrong, try dragging the modifiers into a different order."
+      ]
+    }
   ]
 };

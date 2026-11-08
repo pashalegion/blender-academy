@@ -64,6 +64,21 @@
       '</div>';
     }).join("");
 
+    // Written version of the video, for classrooms where YouTube is blocked.
+    var guide = body.tutorial && body.tutorial.length
+      ? '<section class="section" aria-labelledby="guide-h">' +
+          '<h2 id="guide-h">' + BA.t("Step-by-step guide") + '</h2>' +
+          '<p class="muted small">' + BA.t("No video? This written guide follows the same topics as the video, in the same order.") + '</p>' +
+          body.tutorial.map(function (part, i) {
+            return '<div class="guide-part">' +
+              '<h3>' + (i + 1) + '. ' + part.heading + '</h3>' +
+              '<ol class="guide-steps">' + part.steps.map(function (step) { return '<li>' + step + '</li>'; }).join("") + '</ol>' +
+              (part.tip ? '<p class="guide-tip"><strong>' + BA.t("Tip:") + '</strong> ' + part.tip + '</p>' : '') +
+            '</div>';
+          }).join("") +
+        '</section>'
+      : '';
+
     var summary = (body.summary || []).map(function (item) { return '<li>' + item + '</li>'; }).join("");
 
     root.innerHTML =
@@ -100,6 +115,8 @@
           '<a class="btn btn-small" href="' + esc(lesson.videoUrl) + '" target="_blank" rel="noopener noreferrer">' + BA.t("Watch on YouTube ↗") + '</a>' +
         '</div>' +
       '</section>' +
+
+      guide +
 
       '<section class="section" aria-labelledby="overview-h">' +
         '<h2 id="overview-h">' + BA.t("Overview and preparation") + '</h2>' +

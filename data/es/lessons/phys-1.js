@@ -25,5 +25,77 @@ window.LESSON_BODIES["phys-1"] = {
       "cause": "La forma de colisión del cuenco es 'Convex Hull', que cubre las aberturas huecas.",
       "solution": "Cambia Collision Shape de 'Convex Hull' a 'Mesh' en los ajustes de Rigid Body del cuenco."
     }
+  ],
+  "tutorial": [
+    {
+      "heading": "Añade física de cuerpo rígido",
+      "steps": [
+        "Selecciona un objeto y abre Physics Properties (el icono de órbita). Pulsa Rigid Body.",
+        "Pulsa Space para reproducir: el objeto cae por la gravedad."
+      ]
+    },
+    {
+      "heading": "Activo y pasivo",
+      "steps": [
+        "Los objetos Active los mueve la simulación: caen, chocan y rebotan.",
+        "Los objetos Passive no se mueven, pero los demás chocan con ellos. Pon el suelo en Passive."
+      ]
+    },
+    {
+      "heading": "Objetos animados",
+      "steps": [
+        "Un objeto pasivo puede moverse con tus propios keyframes. Activa Animated en sus ajustes de cuerpo rígido.",
+        "Úsalo para un empujador, una plataforma móvil o una bola que lanzas contra una torre."
+      ]
+    },
+    {
+      "heading": "Forma de colisión",
+      "steps": [
+        "Collision Shape define la forma usada en los choques. Box y Convex Hull son rápidas.",
+        "Usa Mesh para formas huecas o complejas, como un cuenco, para que los objetos puedan caer dentro."
+      ]
+    },
+    {
+      "heading": "Duración de la animación",
+      "steps": [
+        "La simulación dura lo que el rango de fotogramas de la escena. Cambia End en la Timeline si necesitas más.",
+        "Ajusta también el rango de la caché en Scene Properties ‣ Rigid Body World ‣ Cache."
+      ]
+    },
+    {
+      "heading": "Hornea la simulación",
+      "steps": [
+        "La simulación se calcula mientras reproduces. Hornearla guarda el resultado para que se reproduzca fluida e igual siempre.",
+        "Ve a Scene Properties ‣ Rigid Body World ‣ Cache y pulsa Bake. Libera el horneado antes de cambiar ajustes."
+      ]
+    },
+    {
+      "heading": "Gravedad y velocidad",
+      "steps": [
+        "Cambia la gravedad en Scene Properties ‣ Gravity, por ejemplo para una escena en la Luna.",
+        "Rigid Body World ‣ Speed hace toda la simulación más rápida o más lenta."
+      ]
+    },
+    {
+      "heading": "Ajustes del cuerpo rígido",
+      "steps": [
+        "Friction controla cuánto deslizan los objetos. Bounciness controla cuánto rebotan.",
+        "Mass cambia lo pesado que es un objeto frente a otros. Los pesados empujan con facilidad a los ligeros."
+      ]
+    },
+    {
+      "heading": "Copiar ajustes y hornear a keyframes",
+      "steps": [
+        "Configura un objeto, selecciona los demás y por último ese, y usa Object ‣ Rigid Body ‣ Copy from Active.",
+        "Object ‣ Rigid Body ‣ Bake to Keyframes convierte la simulación en keyframes normales que puedes editar."
+      ]
+    },
+    {
+      "heading": "Ejemplo: derriba una torre",
+      "steps": [
+        "Construye una torre de cubos (Active) sobre un suelo Passive.",
+        "Anima una esfera con keyframes y activa Animated para que choque con la torre; luego reproduce u hornea."
+      ]
+    }
   ]
 };

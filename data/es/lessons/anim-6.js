@@ -25,5 +25,76 @@ window.LESSON_BODIES["anim-6"] = {
       "cause": "Sigues en el mismo keyframe, así que los trazos se añaden ahí.",
       "solution": "Pasa a otro fotograma con Auto Key activado, o añade un keyframe nuevo antes de dibujar."
     }
+  ],
+  "tutorial": [
+    {
+      "heading": "Abre un proyecto 2D",
+      "steps": [
+        "Usa File ‣ New ‣ 2D Animation. Tendrás un lienzo blanco, un workspace de dibujo y capas listas.",
+        "O añade Grease Pencil a cualquier escena con Add ‣ Grease Pencil ‣ Blank."
+      ]
+    },
+    {
+      "heading": "Herramientas básicas de dibujo",
+      "steps": [
+        "En Draw Mode, elige la herramienta Draw y dibuja con el ratón o una tableta.",
+        "Cambia el tamaño con F y la fuerza con Shift + F. Elige colores en los ajustes de la herramienta o en la paleta.",
+        "Usa Erase para borrar trazos y Fill para colorear formas cerradas."
+      ]
+    },
+    {
+      "heading": "Transforma trazos",
+      "steps": [
+        "Cambia a Edit Mode para seleccionar trazos y puntos y moverlos, girarlos y escalarlos con G, R y S.",
+        "En Object Mode puedes mover todo el dibujo."
+      ]
+    },
+    {
+      "heading": "Añade y mueve objetos",
+      "steps": [
+        "Cada objeto Grease Pencil es como una capa de dibujo independiente en el espacio 3D.",
+        "Puedes añadir varios objetos (un personaje y un fondo) y moverlos por separado."
+      ]
+    },
+    {
+      "heading": "La línea de tiempo",
+      "steps": [
+        "Dibujar necesita un keyframe. Activa Auto Key (el botón de grabar) para que los dibujos nuevos creen keyframes solos.",
+        "Ve a un fotograma posterior y dibuja la siguiente pose. Cada keyframe mantiene un dibujo hasta el siguiente."
+      ]
+    },
+    {
+      "heading": "Papel cebolla",
+      "steps": [
+        "Activa Onion Skinning en las superposiciones para ver versiones tenues de los dibujos anterior y siguiente.",
+        "Te ayuda a dibujar fotogramas intermedios suaves."
+      ]
+    },
+    {
+      "heading": "Línea temblorosa",
+      "steps": [
+        "Añade un modificador Noise a los trazos para que las líneas tiemblen un poco en cada fotograma, un aspecto vivo de dibujo a mano (line boil)."
+      ]
+    },
+    {
+      "heading": "Rotoscopia",
+      "steps": [
+        "La rotoscopia consiste en calcar sobre un vídeo. Importa un vídeo o una imagen como referencia detrás del dibujo.",
+        "Dibuja encima fotograma a fotograma y luego oculta la referencia."
+      ]
+    },
+    {
+      "heading": "Importa imágenes y vídeo",
+      "steps": [
+        "Usa Add ‣ Image ‣ Reference (o arrastra una imagen) para colocar imágenes de referencia.",
+        "El vídeo se puede añadir como fondo de cámara o como secuencia de imágenes."
+      ]
+    },
+    {
+      "heading": "Exporta",
+      "steps": [
+        "Define el rango de fotogramas y el formato en Output Properties y renderiza la animación con Render ‣ Render Animation (Ctrl + F12)."
+      ]
+    }
   ]
 };

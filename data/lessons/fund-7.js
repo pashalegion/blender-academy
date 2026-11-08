@@ -25,5 +25,62 @@ window.LESSON_BODIES["fund-7"] = {
       "cause": "It isn't possible to Link or Append from a blend-file saved by a much newer version of Blender.",
       "solution": "Open the source file in the newer version, or update the Blender version you are working in."
     }
+  ],
+  "tutorial": [
+    {
+      "heading": "The Outliner",
+      "steps": [
+        "The Outliner (top right) lists every object in your scene, grouped in collections.",
+        "Click a name to select that object. Ctrl + click adds to the selection.",
+        "Double-click a name to rename it. In the 3D Viewport you can also press F2 to rename the active object.",
+        "Expand an object with the small arrow to see its mesh data, modifiers and materials."
+      ]
+    },
+    {
+      "heading": "Hide, show and disable",
+      "steps": [
+        "The eye icon hides an object in the viewport. In the viewport, H hides the selected objects and Alt + H shows everything again.",
+        "Open the Filter (funnel) menu in the Outliner to show extra toggles, such as the camera icon (render on or off) and the arrow (selectable or not).",
+        "Turning off selectable is handy for backgrounds you do not want to click by accident."
+      ]
+    },
+    {
+      "heading": "Collections",
+      "steps": [
+        "Collections are like folders for objects. Every scene starts with one called Collection.",
+        "Right-click in the Outliner and choose New Collection to make one. Give it a clear name, such as Furniture or Lights.",
+        "Drag objects onto a collection to move them into it, or select objects in the viewport and press M to move them to a collection.",
+        "The checkbox next to a collection excludes it from the view layer completely; the eye only hides it.",
+        "An object can be in more than one collection. Every object in the scene also belongs to the main Scene Collection."
+      ],
+      "tip": "Name things as you work. With dozens of objects, names like Cube.047 make a scene very hard to manage."
+    },
+    {
+      "heading": "Organize a real scene",
+      "steps": [
+        "Group objects by purpose: environment, characters, props, lights and cameras.",
+        "Hide collections you are not working on so the viewport stays fast and clear.",
+        "Use Shift + click on a collection's eye icon to hide or show everything inside it at once."
+      ]
+    },
+    {
+      "heading": "Append from another file",
+      "steps": [
+        "Append copies data from another .blend file into your current file.",
+        "Go to File ‣ Append and choose the other .blend file.",
+        "Open a folder inside it, such as Object or Material, and choose what you want, then click Append.",
+        "The appended copy is fully yours: editing it does not change the original file."
+      ]
+    },
+    {
+      "heading": "Link from another file",
+      "steps": [
+        "Link creates a reference to data in another .blend file instead of a copy. Go to File ‣ Link.",
+        "Linked items show a chain icon in the Outliner and cannot be edited directly.",
+        "If someone updates the source file, the change appears in your file the next time you open it. Teams use this for shared characters and props.",
+        "To edit a linked item while keeping the connection, make a Library Override of it (right-click it in the Outliner and look under Library Override)."
+      ],
+      "tip": "Keep linked files in the same project folder and do not rename or move them, or the links will break."
+    }
   ]
 };
