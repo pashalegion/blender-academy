@@ -25,5 +25,64 @@ window.LESSON_BODIES["anim-2"] = {
       "cause": "Las mallas de ojos y dientes no tienen peso 100 % en el hueso de la cabeza.",
       "solution": "Selecciona la malla de los ojos, ve a Vertex Groups, selecciona 'Head' y haz clic en 'Assign' con Weight = 1,0."
     }
+  ],
+  "tutorial": [
+    {
+      "heading": "El error",
+      "steps": [
+        "Al emparentar con Automatic Weights, Blender puede mostrar 'Bone Heat Weighting: failed to find solution for one or more bones'.",
+        "Entonces parte de la malla, o toda, no se mueve con los huesos."
+      ]
+    },
+    {
+      "heading": "Por qué ocurre",
+      "steps": [
+        "Los pesos automáticos necesitan una malla limpia y cerrada.",
+        "Las causas habituales son vértices duplicados, piezas separadas superpuestas, agujeros y objetos muy pequeños."
+      ]
+    },
+    {
+      "heading": "Solución 1: Merge by Distance",
+      "steps": [
+        "Selecciona la malla, pulsa Tab, selecciona todo (A) y usa M ‣ By Distance para quitar vértices duplicados.",
+        "Vuelve a Object Mode y emparenta otra vez con Ctrl + P ‣ With Automatic Weights."
+      ]
+    },
+    {
+      "heading": "Solución 2: escala el objeto",
+      "steps": [
+        "Los modelos muy pequeños suelen fallar. Selecciona la malla y la armadura y escálalas 100 veces (S, 100, Enter).",
+        "Aplica la escala (Ctrl + A ‣ Scale), emparenta con pesos automáticos y vuelve a reducir ambos."
+      ]
+    },
+    {
+      "heading": "Solución 3: separa piezas sueltas",
+      "steps": [
+        "Los modelos hechos de muchas piezas superpuestas (ojos, dientes, ropa) suelen fallar juntos.",
+        "En Edit Mode usa P ‣ By Loose Parts para separarlas en objetos distintos y emparenta cada una por separado, o une solo las partes limpias."
+      ]
+    },
+    {
+      "heading": "Complementos",
+      "steps": [
+        "Complementos gratuitos y de pago como Surface Heat Diffuse Skinning y Voxel Heat Diffuse Skinning calculan los pesos de otra forma que falla menos.",
+        "Instálalos solo si las soluciones integradas no funcionan."
+      ]
+    },
+    {
+      "heading": "Solución 4: transfiere los pesos",
+      "steps": [
+        "Haz una copia sencilla y limpia de la malla, emparéntala con pesos automáticos y copia sus pesos a la malla real.",
+        "Usa un modificador Data Transfer (Vertex Data ‣ Vertex Groups) o Weight Paint ‣ Transfer Weights."
+      ]
+    },
+    {
+      "heading": "Solución 5: pinta los pesos",
+      "steps": [
+        "Si los pesos automáticos siguen fallando, píntalos tú en el modo Weight Paint.",
+        "Crea un grupo de vértices por hueso (con el mismo nombre que el hueso) y pinta dónde debe influir cada uno.",
+        "Prueba a menudo en Pose Mode girando los huesos."
+      ]
+    }
   ]
 };

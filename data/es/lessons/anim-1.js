@@ -25,5 +25,64 @@ window.LESSON_BODIES["anim-1"] = {
       "cause": "Las transformaciones de pose no se han borrado.",
       "solution": "En Pose Mode, selecciona todos los huesos con 'A' y pulsa Alt + G (posición), Alt + R (rotación) y Alt + S (escala)."
     }
+  ],
+  "tutorial": [
+    {
+      "heading": "Crea una armadura",
+      "steps": [
+        "Una armadura es un esqueleto de huesos que mueve una malla.",
+        "Añádela con Shift + A ‣ Armature. Empieza con un solo hueso.",
+        "En Armature Properties ‣ Viewport Display, activa In Front para que los huesos se vean dentro de la malla.",
+        "Pulsa Tab para editar los huesos. Selecciona la punta de un hueso y pulsa E para extruir uno nuevo, formando una cadena como columna y cuello."
+      ]
+    },
+    {
+      "heading": "Nombres y simetría",
+      "steps": [
+        "Pon a cada hueso un nombre claro, por ejemplo spine, neck, head.",
+        "Termina los nombres con .L y .R para los huesos izquierdos y derechos, como arm.L y arm.R. Así Blender sabe cuáles se reflejan.",
+        "Usa Armature ‣ Symmetrize después de hacer un lado para crear el otro automáticamente."
+      ]
+    },
+    {
+      "heading": "Pesos automáticos",
+      "steps": [
+        "En Object Mode, selecciona primero la malla, luego la armadura con Shift, y pulsa Ctrl + P ‣ With Automatic Weights.",
+        "Blender calcula cuánto mueve cada hueso cada parte de la malla.",
+        "Selecciona la armadura, pulsa Ctrl + Tab para entrar en Pose Mode y gira huesos (R) para probar la deformación."
+      ],
+      "tip": "Si aparece el error 'Bone Heat Weighting: failed to find solution', consulta la lección de skinning para solucionarlo."
+    },
+    {
+      "heading": "Trucos de pesos",
+      "steps": [
+        "Para corregir deformaciones, cambia la malla al modo Weight Paint. El rojo es influencia total y el azul, ninguna.",
+        "Selecciona un hueso (Ctrl + clic en Weight Paint, con la armadura en Pose Mode) y pinta dónde debe mover la malla.",
+        "Usa las herramientas Blur y Smooth para suavizar transiciones bruscas."
+      ]
+    },
+    {
+      "heading": "Ajustes de Weight Paint",
+      "steps": [
+        "Weight es el valor que pintas (1 = total, 0 = nada). Radius y Strength funcionan como en otros pinceles.",
+        "Activa Auto Normalize para que los pesos de cada vértice sumen 1."
+      ]
+    },
+    {
+      "heading": "Rigging rígido",
+      "steps": [
+        "Los objetos mecánicos (robots, lámparas) no necesitan pesos suaves.",
+        "Emparenta cada pieza a un hueso: selecciona la pieza, luego la armadura con Shift, entra en Pose Mode, selecciona el hueso y pulsa Ctrl + P ‣ Bone.",
+        "Cada pieza se mueve ahora de forma rígida con su hueso."
+      ]
+    },
+    {
+      "heading": "Cinemática inversa",
+      "steps": [
+        "Con cinemática inversa (IK) mueves una mano o un pie y el brazo o la pierna se doblan solos.",
+        "En Pose Mode, selecciona el hueso inferior de la pierna y añade Bone Constraint ‣ Inverse Kinematics. Pon como Target la armadura y un hueso de control del pie, y Chain Length en 2.",
+        "Dobla un poco la rodilla hacia delante en Edit Mode para que Blender sepa hacia dónde debe doblarse."
+      ]
+    }
   ]
 };

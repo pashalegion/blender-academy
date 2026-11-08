@@ -25,5 +25,78 @@ window.LESSON_BODIES["phys-4"] = {
       "cause": "Ha llegado al borde del dominio.",
       "solution": "Escala el dominio antes de hornear o activa la opción Adaptive Domain."
     }
+  ],
+  "tutorial": [
+    {
+      "heading": "Añade los objetos",
+      "steps": [
+        "Añade un objeto pequeño que será la fuente del fuego, como una esfera o un tronco.",
+        "El fuego ocurre dentro de una caja de dominio, igual que las simulaciones de líquido."
+      ]
+    },
+    {
+      "heading": "Añade la física de fuego",
+      "steps": [
+        "Selecciona la fuente, abre Physics Properties ‣ Fluid y pon Type en Flow.",
+        "Pon Flow Type en Fire, Smoke o Fire + Smoke."
+      ]
+    },
+    {
+      "heading": "Quick Smoke",
+      "steps": [
+        "La forma más rápida: selecciona la fuente y usa Object ‣ Quick Effects ‣ Quick Smoke.",
+        "Crea el dominio y un material de volumen. Después pon Flow Type en Fire + Smoke para tener llamas."
+      ]
+    },
+    {
+      "heading": "Reproduce cada fotograma",
+      "steps": [
+        "En el menú Playback de la Timeline, pon Sync en Play Every Frame para que la vista previa no se salte fotogramas.",
+        "La primera reproducción calcula la simulación y puede ir lenta."
+      ]
+    },
+    {
+      "heading": "Comportamiento y origen del flujo",
+      "steps": [
+        "Inflow emite sin parar, como un tronco ardiendo. Geometry emite solo una vez.",
+        "Flow Source puede ser la malla, su superficie o partículas."
+      ]
+    },
+    {
+      "heading": "Densidad y combustible",
+      "steps": [
+        "Use Flow aumenta la cantidad de humo. Absolute Density fija la densidad en vez de sumarla.",
+        "Fuel controla cuánto arde el fuego; más combustible da llamas más grandes."
+      ]
+    },
+    {
+      "heading": "Da forma al fuego",
+      "steps": [
+        "Usa un grupo de vértices para emitir solo desde una parte del objeto.",
+        "Initial Velocity lanza el fuego en una dirección, y una textura en el flujo hace que el fuego se rompa de forma más natural."
+      ]
+    },
+    {
+      "heading": "Colisiones y ocultar la fuente",
+      "steps": [
+        "Añade la física Collision o Effector a los objetos que el humo debe rodear.",
+        "Oculta el objeto Flow en el render para que solo se vea el fuego."
+      ]
+    },
+    {
+      "heading": "Ajustes del dominio",
+      "steps": [
+        "Resolution Divisions define el detalle. Súbelo para el resultado final y espera horneados más largos.",
+        "Time Scale cambia la velocidad. Border Collisions decide qué paredes del dominio frenan el humo.",
+        "Adaptive Domain encoge el dominio alrededor del humo para ahorrar tiempo."
+      ]
+    },
+    {
+      "heading": "Hornea y renderiza",
+      "steps": [
+        "Hornea en el panel Cache del dominio y renderiza. Cycles da el fuego más realista.",
+        "Ajusta Density y la intensidad de Blackbody del material de volumen para afinar el aspecto."
+      ]
+    }
   ]
 };

@@ -25,5 +25,76 @@ window.LESSON_BODIES["anim-6"] = {
       "cause": "You stayed on the same keyframe, so the strokes were added there.",
       "solution": "Move to a new frame with Auto Key on, or add a new keyframe before you draw."
     }
+  ],
+  "tutorial": [
+    {
+      "heading": "Open a 2D project",
+      "steps": [
+        "Use File ‣ New ‣ 2D Animation. You get a white canvas, a drawing workspace and layers ready to use.",
+        "Or add Grease Pencil to any scene with Add ‣ Grease Pencil ‣ Blank."
+      ]
+    },
+    {
+      "heading": "Basic drawing tools",
+      "steps": [
+        "In Draw Mode, choose the Draw tool and draw with the mouse or a tablet.",
+        "Change brush size with F and strength with Shift + F. Pick colors in the tool settings or the color palette.",
+        "Use Erase to remove strokes and Fill to color closed shapes."
+      ]
+    },
+    {
+      "heading": "Transform strokes",
+      "steps": [
+        "Switch to Edit Mode to select strokes and points, then move, rotate and scale them with G, R and S.",
+        "In Object Mode you can move the whole drawing object."
+      ]
+    },
+    {
+      "heading": "Add and move objects",
+      "steps": [
+        "Each Grease Pencil object is like a separate drawing layer in 3D space.",
+        "You can add several objects (for a character and a background) and move them independently."
+      ]
+    },
+    {
+      "heading": "The animation timeline",
+      "steps": [
+        "Drawing needs a keyframe. Turn on Auto Key (the record button) so new drawings create keys automatically.",
+        "Move to a later frame and draw the next pose. Each keyframe holds a drawing until the next one."
+      ]
+    },
+    {
+      "heading": "Onion skinning",
+      "steps": [
+        "Turn on Onion Skinning in the overlays to see faint versions of the previous and next drawings.",
+        "It helps you draw smooth in-between frames."
+      ]
+    },
+    {
+      "heading": "Line boil",
+      "steps": [
+        "Add a Noise modifier to strokes to make lines wiggle slightly on every frame, a lively hand-drawn look called line boil."
+      ]
+    },
+    {
+      "heading": "Rotoscoping",
+      "steps": [
+        "Rotoscoping means tracing over video. Import a video or image as a reference behind the drawing.",
+        "Draw over it frame by frame, then hide the reference."
+      ]
+    },
+    {
+      "heading": "Import images and video",
+      "steps": [
+        "Use Add ‣ Image ‣ Reference (or drag in an image) to place reference images.",
+        "Video can be added as a camera background or an image sequence."
+      ]
+    },
+    {
+      "heading": "Export",
+      "steps": [
+        "Set the frame range and output format in Output Properties, then render the animation with Render ‣ Render Animation (Ctrl + F12)."
+      ]
+    }
   ]
 };

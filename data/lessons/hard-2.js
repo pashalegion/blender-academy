@@ -25,5 +25,55 @@ window.LESSON_BODIES["hard-2"] = {
       "cause": "Triangulation artifacts created by Blender connecting vertices arbitrarily to the cut.",
       "solution": "Add a 'Weighted Normal' modifier at the bottom of the stack and check 'Keep Sharp'."
     }
+  ],
+  "tutorial": [
+    {
+      "heading": "What booleans do",
+      "steps": [
+        "A boolean combines two meshes. Add a Boolean modifier to the main object and choose a cutter object.",
+        "Difference cuts the cutter's shape out. Union joins both into one shape. Intersect keeps only where they overlap.",
+        "Because it is a modifier, you can still move and edit the cutter afterwards."
+      ]
+    },
+    {
+      "heading": "Set up a cutter",
+      "steps": [
+        "Add a simple shape, such as a cylinder for a hole or a cube for a slot, and place it through the main object.",
+        "Select the main object, add Generate ‣ Boolean, set the operation to Difference and pick the cutter in the Object field.",
+        "In the cutter's Object Properties ‣ Viewport Display, set Display As to Wire so you can see through it, and turn off rendering for it."
+      ],
+      "tip": "Keep all cutters in their own collection so they are easy to find and hide."
+    },
+    {
+      "heading": "Exact and Fast solvers",
+      "steps": [
+        "Exact is accurate and handles most cases, including overlapping faces.",
+        "Fast is quicker on heavy scenes but fails more easily.",
+        "If a boolean gives holes or missing faces, try the other solver and check both objects for flipped normals (Shift + N in Edit Mode)."
+      ]
+    },
+    {
+      "heading": "Clean bevels after booleans",
+      "steps": [
+        "Add a Bevel modifier below the Boolean, so the cut edges get beveled too.",
+        "Set the Bevel's Limit Method to Angle so only sharp edges are rounded.",
+        "Turn on Clamp Overlap if the bevel tears at small parts."
+      ]
+    },
+    {
+      "heading": "Smooth shading on hard surface",
+      "steps": [
+        "Right-click and use Shade Smooth by Angle (or Shade Auto Smooth) so flat areas stay flat and curves stay smooth.",
+        "Add a Weighted Normal modifier at the bottom of the stack to clean up shading on large flat faces around cuts."
+      ]
+    },
+    {
+      "heading": "Build complex shapes step by step",
+      "steps": [
+        "Stack several Boolean modifiers, one per cutter, to cut panels, vents and holes.",
+        "Use Union to add pieces and Difference to remove them.",
+        "Apply booleans only when the design is final, because live booleans keep everything editable."
+      ]
+    }
   ]
 };

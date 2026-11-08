@@ -25,5 +25,38 @@ window.LESSON_BODIES["light-1"] = {
       "cause": "View Transform is set to 'Standard', which clips high-dynamic-range highlights to pure white.",
       "solution": "Go to Render Properties -> Color Management and choose a view transform such as AgX. Follow the linked Blender 5.2 manual for current names and controls."
     }
+  ],
+  "tutorial": [
+    {
+      "heading": "Two render engines",
+      "steps": [
+        "Blender has two main render engines: Cycles and Eevee.",
+        "Cycles is a path tracer: it follows light rays to get realistic light, shadows and reflections, but takes longer.",
+        "Eevee is real-time: it is very fast and good for previews, animation and stylized looks, but it uses shortcuts that are less accurate."
+      ]
+    },
+    {
+      "heading": "Switch engine",
+      "steps": [
+        "Open Render Properties (the camera-back icon) and change Render Engine.",
+        "Press Z ‣ Rendered in the viewport to preview the result live."
+      ]
+    },
+    {
+      "heading": "Compare them on the same scene",
+      "steps": [
+        "Render the same scene in both engines and compare light bouncing, soft shadows, glass and reflections.",
+        "Newer Eevee (shown as Eevee Next in some older videos) adds ray tracing options and better shadows, so the gap is smaller than it used to be."
+      ]
+    },
+    {
+      "heading": "When to use which",
+      "steps": [
+        "Use Cycles for realistic stills, product shots and anything with glass or complex light.",
+        "Use Eevee for fast previews, motion graphics, stylized looks and long animations on weaker computers.",
+        "Many artists set up the scene in Eevee and do the final render in Cycles."
+      ],
+      "tip": "In Cycles, use the GPU if you have a supported one: Edit ‣ Preferences ‣ System ‣ Cycles Render Devices."
+    }
   ]
 };

@@ -25,5 +25,61 @@ window.LESSON_BODIES["sculpt-3"] = {
       "cause": "Loop counts between two merging branches don't match.",
       "solution": "Use a standard topology step-down redirect (converting 3 edge loops into 1 quad) to maintain pure quad flow."
     }
+  ],
+  "tutorial": [
+    {
+      "heading": "Why retopology",
+      "steps": [
+        "High-detail sculpts have millions of messy polygons. They are hard to animate, UV unwrap or use in games.",
+        "Retopology means building a new, clean, low-poly mesh on top of the sculpt, following its shape."
+      ]
+    },
+    {
+      "heading": "Set up the objects",
+      "steps": [
+        "Keep your sculpt as the high-poly reference.",
+        "Add a new plane and move it in front of the sculpt. This will become the new mesh.",
+        "In the plane's Object Properties ‣ Viewport Display, turn on In Front so it is always visible over the sculpt."
+      ]
+    },
+    {
+      "heading": "Snapping",
+      "steps": [
+        "Turn on snapping (magnet icon) and set it to snap to Face Project so new vertices stick to the sculpt's surface.",
+        "Moving and extruding vertices now places them on the sculpt."
+      ]
+    },
+    {
+      "heading": "Shrinkwrap modifier",
+      "steps": [
+        "Add a Shrinkwrap modifier to the new mesh and choose the sculpt as the Target.",
+        "Give it a small Offset so the new mesh sits just above the surface.",
+        "Place a Mirror modifier above it if the model is symmetrical."
+      ]
+    },
+    {
+      "heading": "Retopology workflow",
+      "steps": [
+        "Start with the important loops: around the eyes, the mouth and the main joints.",
+        "Extrude edges (E) and connect them into quads, following the flow of the form.",
+        "Fill gaps with F, and keep the faces evenly sized.",
+        "Use G G to slide vertices along edges and keep the spacing even."
+      ],
+      "tip": "Aim for quads and good edge loops where the model bends."
+    },
+    {
+      "heading": "Apply modifiers",
+      "steps": [
+        "When the new mesh is finished, apply the Mirror and Shrinkwrap modifiers so the shape becomes real geometry.",
+        "Check for holes and fix any faces that point the wrong way (Shift + N)."
+      ]
+    },
+    {
+      "heading": "Bake the high-poly details",
+      "steps": [
+        "The clean mesh has less detail than the sculpt. Bake the sculpt's details into a normal map to get them back as a texture.",
+        "See the Baking Textures lesson for the full steps."
+      ]
+    }
   ]
 };

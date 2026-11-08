@@ -25,5 +25,64 @@ window.LESSON_BODIES["anim-2"] = {
       "cause": "Separate eye/teeth meshes were not weighted 100% to the head bone.",
       "solution": "Select the eyes mesh, go to Vertex Groups, select 'Head', and click 'Assign' with Weight = 1.0."
     }
+  ],
+  "tutorial": [
+    {
+      "heading": "The error",
+      "steps": [
+        "When you parent with Automatic Weights, Blender may show 'Bone Heat Weighting: failed to find solution for one or more bones'.",
+        "Some or all of the mesh then does not move with the bones."
+      ]
+    },
+    {
+      "heading": "Why it happens",
+      "steps": [
+        "Automatic weights need a clean, closed mesh.",
+        "Duplicate vertices, overlapping separate parts, holes and very small object sizes are the usual causes."
+      ]
+    },
+    {
+      "heading": "Solution 1: Merge by Distance",
+      "steps": [
+        "Select the mesh, press Tab, select all (A), and use M ‣ By Distance to remove duplicate vertices.",
+        "Return to Object Mode and parent again with Ctrl + P ‣ With Automatic Weights."
+      ]
+    },
+    {
+      "heading": "Solution 2: scale the object up",
+      "steps": [
+        "Very small models often fail. Select both the mesh and the armature and scale them up 100 times (S, 100, Enter).",
+        "Apply the scale (Ctrl + A ‣ Scale), parent with automatic weights, then scale both back down."
+      ]
+    },
+    {
+      "heading": "Solution 3: split loose parts",
+      "steps": [
+        "Models made of many overlapping pieces (eyes, teeth, clothes) often fail together.",
+        "In Edit Mode use P ‣ By Loose Parts to split them into separate objects, then parent each one separately or join only the clean parts."
+      ]
+    },
+    {
+      "heading": "Add-on options",
+      "steps": [
+        "Free and paid add-ons such as Surface Heat Diffuse Skinning and Voxel Heat Diffuse Skinning calculate weights in a different way that fails less often.",
+        "Install them only if the built-in fixes do not work."
+      ]
+    },
+    {
+      "heading": "Solution 4: transfer weights",
+      "steps": [
+        "Make a simple, clean copy of the mesh, parent it with automatic weights, then copy its weights to the real mesh.",
+        "Use a Data Transfer modifier (Vertex Data ‣ Vertex Groups) or Weight Paint ‣ Transfer Weights."
+      ]
+    },
+    {
+      "heading": "Solution 5: paint the weights",
+      "steps": [
+        "When automatic weights still fail, paint them yourself in Weight Paint mode.",
+        "Create a vertex group per bone (named exactly like the bone) and paint where each bone should have influence.",
+        "Test often in Pose Mode by rotating the bones."
+      ]
+    }
   ]
 };

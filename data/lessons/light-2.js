@@ -25,5 +25,50 @@ window.LESSON_BODIES["light-2"] = {
       "cause": "Contact Shadows not enabled in Eevee, or thin single-sided geometry without thickness.",
       "solution": "Add a Solidify modifier to the wall geometry, and in Eevee Light settings, check 'Contact Shadows'."
     }
+  ],
+  "tutorial": [
+    {
+      "heading": "Positioning",
+      "steps": [
+        "Light direction shapes how the viewer reads a form. A light from the side shows texture and volume; a light from the front makes things flat.",
+        "A classic start is a key light about 45 degrees to the side and a little above the subject."
+      ]
+    },
+    {
+      "heading": "Staging",
+      "steps": [
+        "Use light to lead the eye to what matters. The brightest area attracts attention first.",
+        "Keep backgrounds a little darker so the subject stands out, and use a rim light from behind to separate it from the background."
+      ]
+    },
+    {
+      "heading": "Falloff",
+      "steps": [
+        "Light gets weaker with distance. A light close to the subject fades quickly across the scene; a far light is more even.",
+        "Move lights closer or farther to control how fast the light fades, not only the power."
+      ]
+    },
+    {
+      "heading": "Size",
+      "steps": [
+        "The size of a light controls shadow softness. Big lights give soft shadows; small lights give sharp ones.",
+        "Change Radius (point and spot lights) or Size (area lights) in Light Properties."
+      ]
+    },
+    {
+      "heading": "Color",
+      "steps": [
+        "Light color sets mood. Warm (orange) light feels cozy or sunny; cool (blue) light feels calm, cold or nighttime.",
+        "Combining a warm key light with a cool fill light adds depth and contrast."
+      ]
+    },
+    {
+      "heading": "Polish",
+      "steps": [
+        "Add small fill lights to lift dark areas, but keep some shadow for shape.",
+        "Check the overall balance in the render, adjust exposure in Color Management, and compare before and after."
+      ],
+      "tip": "Change one light at a time, and render to see the effect."
+    }
   ]
 };

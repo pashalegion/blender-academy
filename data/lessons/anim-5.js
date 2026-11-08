@@ -25,5 +25,73 @@ window.LESSON_BODIES["anim-5"] = {
       "cause": "The sculpted shape isn't split or mirrored.",
       "solution": "Use a Vertex Group to limit the key to one side, or use the mirror option in the Shape Keys menu to flip it."
     }
+  ],
+  "tutorial": [
+    {
+      "heading": "What shape keys are",
+      "steps": [
+        "Shape keys store different shapes of the same mesh and blend between them, for example a closed and open mouth.",
+        "Other programs call them morph targets or blend shapes."
+      ]
+    },
+    {
+      "heading": "Add shape keys",
+      "steps": [
+        "Select the mesh and open Object Data Properties ‣ Shape Keys. Click + to create Basis, the resting shape.",
+        "Click + again for a new key. Select it, press Tab, and move vertices to make the new shape.",
+        "Return to Object Mode and drag the key's Value between 0 and 1 to blend."
+      ],
+      "tip": "Never edit while Basis is selected unless you want to change the base shape."
+    },
+    {
+      "heading": "Shapes from a new mesh",
+      "steps": [
+        "You can also make the new shape as a separate copy of the mesh, then join it as a shape key.",
+        "The copy must have exactly the same number and order of vertices."
+      ]
+    },
+    {
+      "heading": "Animate shape keys",
+      "steps": [
+        "Hover over a key's Value and press I to add a keyframe.",
+        "Change the frame, change the Value, and key it again. The shape now animates."
+      ]
+    },
+    {
+      "heading": "Sculpt shape keys",
+      "steps": [
+        "Select a shape key and switch to Sculpt Mode to sculpt it with brushes.",
+        "This is handy for organic shapes such as smiles and frowns."
+      ]
+    },
+    {
+      "heading": "Other settings",
+      "steps": [
+        "Range Min and Max let values go below 0 or above 1 for exaggeration.",
+        "Mute (the checkbox) turns a key off. The pin icon shows only the selected key.",
+        "Use the menu next to the list for options such as New Shape from Mix."
+      ]
+    },
+    {
+      "heading": "Mirror a shape key",
+      "steps": [
+        "Make a shape on one side, then use the shape key menu's mirror option to flip it.",
+        "Use a Vertex Group to limit a key to one side of the face."
+      ]
+    },
+    {
+      "heading": "Copy to another object and modifiers",
+      "steps": [
+        "Shape keys can be transferred to a similar mesh with the shape key menu options (the meshes must match).",
+        "Modifiers usually cannot be applied while a mesh has shape keys, so apply them before making keys."
+      ]
+    },
+    {
+      "heading": "Relative and absolute",
+      "steps": [
+        "Relative keys (the default) blend from Basis and can mix together, best for faces.",
+        "Turning Relative off makes the keys play one after another along an evaluation time, useful for a sequence of shapes."
+      ]
+    }
   ]
 };

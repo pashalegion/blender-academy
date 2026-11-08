@@ -25,5 +25,84 @@ window.LESSON_BODIES["post-2"] = {
       "cause": "The render isn't using the sequencer.",
       "solution": "Enable Sequencer under Output properties ‣ Post Processing."
     }
+  ],
+  "tutorial": [
+    {
+      "heading": "The interface",
+      "steps": [
+        "Use File ‣ New ‣ Video Editing. The Sequencer shows a timeline of channels, with a preview above it.",
+        "Each piece of media becomes a strip on a channel."
+      ]
+    },
+    {
+      "heading": "Add videos",
+      "steps": [
+        "Use Add ‣ Movie (or drag a video file in). The video and its sound arrive as separate strips.",
+        "Images, sounds, color and text can be added from the same Add menu."
+      ]
+    },
+    {
+      "heading": "Frame rate and resolution",
+      "steps": [
+        "Match the project to your footage: set frame rate and resolution in Output Properties.",
+        "Blender may ask to match the scene to the video when you add it; accept it."
+      ]
+    },
+    {
+      "heading": "Navigate and select",
+      "steps": [
+        "Scroll to zoom, Ctrl + scroll to move left and right, and press Home to see everything.",
+        "Click a strip to select it; drag to box select; Shift + click adds to the selection."
+      ]
+    },
+    {
+      "heading": "Channels",
+      "steps": [
+        "Channels are rows. Strips on higher channels appear on top of lower ones.",
+        "Use channels like layers: video on one, titles above it, music below."
+      ]
+    },
+    {
+      "heading": "Move, trim, cut and delete",
+      "steps": [
+        "Drag a strip to move it. Drag its edges to trim the start or end.",
+        "Place the playhead and press K to cut selected strips there.",
+        "Select a piece and press X or Delete to remove it."
+      ]
+    },
+    {
+      "heading": "Transform and crop",
+      "steps": [
+        "Select a video strip and use the Sidebar (N) ‣ Strip panel to move, scale, rotate or crop it."
+      ]
+    },
+    {
+      "heading": "Audio",
+      "steps": [
+        "Change Volume in the sound strip settings. You can keyframe the volume for fades."
+      ]
+    },
+    {
+      "heading": "Color and text strips",
+      "steps": [
+        "Add ‣ Color creates a plain background. Add ‣ Text creates a title.",
+        "Edit the text, font size and position in the Sidebar."
+      ]
+    },
+    {
+      "heading": "Fades",
+      "steps": [
+        "Use Add ‣ Fades to fade the selected video in and out.",
+        "For audio, keyframe the Volume from 0 to 1 at the start and back at the end."
+      ]
+    },
+    {
+      "heading": "Set the end and export",
+      "steps": [
+        "Set the End frame of the scene to the last frame of your edit.",
+        "In Output Properties, choose FFmpeg Video with an MP4 container and H.264 codec, and set the output folder.",
+        "Use Render ‣ Render Animation (Ctrl + F12) to export."
+      ]
+    }
   ]
 };

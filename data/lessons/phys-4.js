@@ -25,5 +25,78 @@ window.LESSON_BODIES["phys-4"] = {
       "cause": "It hit the edge of the domain.",
       "solution": "Scale the domain up before you bake, or enable the Adaptive Domain option."
     }
+  ],
+  "tutorial": [
+    {
+      "heading": "Add the objects",
+      "steps": [
+        "Add a small object to be the fire source, such as a sphere or a log.",
+        "Fire happens inside a domain box, like liquid simulations."
+      ]
+    },
+    {
+      "heading": "Add fire physics",
+      "steps": [
+        "Select the source and open Physics Properties ‣ Fluid, and set Type to Flow.",
+        "Set Flow Type to Fire, Smoke, or Fire + Smoke."
+      ]
+    },
+    {
+      "heading": "Quick Smoke",
+      "steps": [
+        "The fastest setup: select the source and use Object ‣ Quick Effects ‣ Quick Smoke.",
+        "It creates the domain and a volume material for you. Set the Flow Type to Fire + Smoke afterwards for flames."
+      ]
+    },
+    {
+      "heading": "Play every frame",
+      "steps": [
+        "In the Timeline's Playback menu, set Sync to Play Every Frame so the preview doesn't skip frames.",
+        "The first playback calculates the simulation and can be slow."
+      ]
+    },
+    {
+      "heading": "Flow behavior and source",
+      "steps": [
+        "Inflow keeps emitting, like a burning log. Geometry emits only once.",
+        "Flow Source can be the mesh, its surface, or particles."
+      ]
+    },
+    {
+      "heading": "Density and fuel",
+      "steps": [
+        "Use Flow raises the amount of smoke. Absolute Density sets density instead of adding to it.",
+        "Fuel controls how much fire burns; more fuel makes bigger flames."
+      ]
+    },
+    {
+      "heading": "Shape the fire",
+      "steps": [
+        "Use a vertex group to emit only from part of the object.",
+        "Initial Velocity sends fire in a direction, and a texture on the flow makes the fire break up more naturally."
+      ]
+    },
+    {
+      "heading": "Collisions and hiding the source",
+      "steps": [
+        "Add Collision or Effector physics to objects the smoke should flow around.",
+        "Hide the flow object from the render so only the fire is visible."
+      ]
+    },
+    {
+      "heading": "Domain settings",
+      "steps": [
+        "Resolution Divisions sets the detail. Raise it for the final result, and expect longer bakes.",
+        "Time Scale changes the speed. Border Collisions decide which domain walls block smoke.",
+        "Adaptive Domain shrinks the domain around the smoke to save time."
+      ]
+    },
+    {
+      "heading": "Bake and render",
+      "steps": [
+        "Bake in the domain's Cache panel, then render. Cycles gives the most realistic fire.",
+        "Adjust the volume material's Density and Blackbody intensity to tune the look."
+      ]
+    }
   ]
 };

@@ -25,5 +25,52 @@ window.LESSON_BODIES["light-4"] = {
       "cause": "Están fuera del rango de Clip Start y Clip End de la cámara.",
       "solution": "Ajusta Clip Start y Clip End en los ajustes Lens de la cámara."
     }
+  ],
+  "tutorial": [
+    {
+      "heading": "Mira por la cámara",
+      "steps": [
+        "Pulsa Numpad 0 para ver a través de la cámara activa. Es lo que mostrará el render.",
+        "Si no hay cámara, añade una con Shift + A ‣ Camera."
+      ]
+    },
+    {
+      "heading": "Mueve la cámara",
+      "steps": [
+        "Selecciona la cámara y muévela y gírala como cualquier objeto (G, R).",
+        "Más fácil: encuadra la vista que te guste y usa View ‣ Align View ‣ Align Active Camera to View.",
+        "O abre la Sidebar (N) ‣ pestaña View, activa Lock Camera to View y navega normalmente; la cámara te sigue."
+      ]
+    },
+    {
+      "heading": "Distancia focal",
+      "steps": [
+        "En Camera Properties ‣ Lens, Focal Length define el zoom. 50 mm se ve natural, 24 mm es angular y 85–135 mm es un objetivo de retrato cerrado y favorecedor.",
+        "Las focales cortas exageran la perspectiva; las largas la aplanan."
+      ]
+    },
+    {
+      "heading": "Recorte",
+      "steps": [
+        "Clip Start y Clip End definen la distancia más cercana y la más lejana que ve la cámara.",
+        "Si desaparecen objetos, ajusta estos valores."
+      ]
+    },
+    {
+      "heading": "Profundidad de campo",
+      "steps": [
+        "Activa Depth of Field en Camera Properties.",
+        "Pon tu motivo en Focus Object para que siga nítido.",
+        "Baja F-Stop para más desenfoque del fondo (por ejemplo 1,8); súbelo para que más escena esté enfocada."
+      ]
+    },
+    {
+      "heading": "Composición",
+      "steps": [
+        "Usa las guías de la cámara (Camera Properties ‣ Viewport Display ‣ Composition Guides) para mostrar tercios u otras guías.",
+        "Coloca el motivo sobre una línea de tercios, deja espacio hacia donde mira y evita cortar objetos en puntos incómodos."
+      ],
+      "tip": "Ajusta la resolución de salida en Output Properties antes de encuadrar, porque cambia la forma del encuadre."
+    }
   ]
 };

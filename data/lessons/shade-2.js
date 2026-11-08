@@ -25,5 +25,82 @@ window.LESSON_BODIES["shade-2"] = {
       "cause": "Inconsistent Texel Density (UV island sizes don't match their real 3D proportions).",
       "solution": "In the UV Editor, select all islands and click UV -> 'Average Island Scale', then 'Pack Islands'."
     }
+  ],
+  "tutorial": [
+    {
+      "heading": "Add a texture to an object",
+      "steps": [
+        "Select an object, open the Shading workspace and add a material.",
+        "Add an Image Texture node (Shift + A ‣ Texture ‣ Image Texture) and connect its Color to Base Color.",
+        "Click New in the node and choose Generated Type: UV Grid. This test pattern shows any stretching clearly."
+      ]
+    },
+    {
+      "heading": "Default UV maps",
+      "steps": [
+        "Most new objects come with a UV map already. You can see it in Object Data Properties ‣ UV Maps.",
+        "A UV map tells Blender how to lay the 2D image onto the 3D surface."
+      ]
+    },
+    {
+      "heading": "Editing a mesh changes the UVs",
+      "steps": [
+        "When you extrude or move parts in Edit Mode, the UV map does not update by itself, so the texture can stretch.",
+        "After big changes, unwrap the mesh again."
+      ]
+    },
+    {
+      "heading": "Preview and edit UV maps",
+      "steps": [
+        "Open the UV Editing workspace. The left side is the UV Editor and the right side is the 3D Viewport in Edit Mode.",
+        "Select faces in the 3D view to see their UVs on the left.",
+        "In the UV Editor, use G, R and S to move, rotate and scale UV islands, just like objects."
+      ]
+    },
+    {
+      "heading": "Unwrap the mesh",
+      "steps": [
+        "In Edit Mode select all (A) and press U ‣ Unwrap. Blender flattens the mesh using its seams.",
+        "Without seams, Unwrap may give a strange result, so add seams first for clean results."
+      ]
+    },
+    {
+      "heading": "Smart UV Project and Project From View",
+      "steps": [
+        "U ‣ Smart UV Project cuts the mesh automatically by angle. It is fast and good for hard objects and props.",
+        "U ‣ Project From View projects the UVs exactly as you see the object in the viewport, which is handy for flat surfaces."
+      ]
+    },
+    {
+      "heading": "Add seams to a cube",
+      "steps": [
+        "Seams are edges where the surface is cut open, like the folds of a cardboard box.",
+        "Select edges and press Ctrl + E ‣ Mark Seam. They turn red.",
+        "Mark seams so the cube can unfold flat, then press U ‣ Unwrap. You get a cross-shaped layout."
+      ]
+    },
+    {
+      "heading": "Add seams to a cylinder",
+      "steps": [
+        "Mark one vertical seam down the side, plus seams around the top and bottom caps.",
+        "Unwrap: the side becomes a long rectangle and the caps become two circles.",
+        "Hide seams in places viewers will not notice, such as the back or underneath."
+      ]
+    },
+    {
+      "heading": "Separate faces in the UV Editor",
+      "steps": [
+        "Sometimes you want to move faces away from their island. Select them in the UV Editor and separate them so they can move on their own.",
+        "Then pack the islands again with UV ‣ Pack Islands."
+      ]
+    },
+    {
+      "heading": "Apply the object's scale",
+      "steps": [
+        "If the object was scaled in Object Mode, unwrapping can look stretched.",
+        "Use Object ‣ Apply ‣ Scale first, then unwrap again."
+      ],
+      "tip": "Always check the UV Grid texture after unwrapping: squares should look square everywhere."
+    }
   ]
 };

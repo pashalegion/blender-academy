@@ -25,5 +25,79 @@ window.LESSON_BODIES["phys-3"] = {
       "cause": "Ves una vista previa de baja resolución, y puede que el dominio no tenga malla.",
       "solution": "Activa Mesh en el dominio, añade un material al objeto de dominio y sube la resolución para el horneado final."
     }
+  ],
+  "tutorial": [
+    {
+      "heading": "Modela la escena",
+      "steps": [
+        "Haz un recipiente sencillo, como una taza o un vaso, y un objeto pequeño que hará de fuente de agua.",
+        "Colócalos dentro de un cubo más grande: será el dominio."
+      ]
+    },
+    {
+      "heading": "Los tres objetos de fluido",
+      "steps": [
+        "Domain: la caja donde ocurre la simulación. El líquido no puede salir de ella.",
+        "Flow: el objeto que crea (o elimina) líquido.",
+        "Effector: un objeto con el que choca el líquido, como la taza."
+      ]
+    },
+    {
+      "heading": "Añade la física de fluidos",
+      "steps": [
+        "Selecciona cada objeto y abre Physics Properties ‣ Fluid.",
+        "Pon el cubo grande como Domain, la fuente como Flow y la taza como Effector."
+      ]
+    },
+    {
+      "heading": "Cambia el tipo de simulación",
+      "steps": [
+        "En el dominio, pon Domain Type en Liquid. En el objeto Flow, pon Flow Type en Liquid."
+      ]
+    },
+    {
+      "heading": "Malla del fluido",
+      "steps": [
+        "Activa Mesh en los ajustes del dominio para que el líquido sea una superficie suave que se pueda renderizar.",
+        "Dale al dominio un material de agua (por ejemplo Principled BSDF con Transmission)."
+      ]
+    },
+    {
+      "heading": "Comportamiento del flujo",
+      "steps": [
+        "Geometry convierte el propio objeto Flow en líquido una sola vez.",
+        "Inflow añade líquido sin parar, como un grifo. Outflow lo elimina, como un desagüe."
+      ]
+    },
+    {
+      "heading": "Calidad de la simulación",
+      "steps": [
+        "Resolution Divisions define el detalle. Valores bajos son rápidos para probar; súbelos para el resultado final.",
+        "Los dominios más grandes necesitan más divisiones."
+      ]
+    },
+    {
+      "heading": "Hornea la simulación",
+      "steps": [
+        "En el panel Cache del dominio, define el rango de fotogramas y pulsa Bake (o Bake All, según el tipo de caché).",
+        "Pulsa Esc para detener un horneado. Libéralo antes de cambiar ajustes."
+      ],
+      "tip": "Fija (pin) el panel de física del dominio para poder hornear con otro objeto seleccionado."
+    },
+    {
+      "heading": "Velocidad y cantidad",
+      "steps": [
+        "Time Scale, en el dominio, cambia la velocidad de la simulación.",
+        "Agranda el objeto Flow o cambia cuándo emite para controlar cuánto líquido aparece."
+      ]
+    },
+    {
+      "heading": "Fuerzas y dirección",
+      "steps": [
+        "Usa Initial Velocity en el objeto Flow para lanzar el líquido en una dirección.",
+        "Los campos de fuerza (Shift + A ‣ Force Field), como Wind, pueden empujar el líquido. La gravedad se cambia en Scene Properties.",
+        "Los ajustes de viscosidad hacen el líquido más espeso, como la miel."
+      ]
+    }
   ]
 };

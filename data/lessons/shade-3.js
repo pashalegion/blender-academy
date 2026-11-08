@@ -25,5 +25,59 @@ window.LESSON_BODIES["shade-3"] = {
       "cause": "Viewing the final shader doesn't let you debug individual masks.",
       "solution": "With Node Wrangler active, hold Ctrl + Shift and Left-Click any node. It instantly connects a temporary Viewer node so you can isolate its output!"
     }
+  ],
+  "tutorial": [
+    {
+      "heading": "Open the Shader Editor",
+      "steps": [
+        "Click the Shading workspace tab, or change any area to the Shader Editor.",
+        "Select your object and click New to add a material."
+      ]
+    },
+    {
+      "heading": "Shader nodes basics",
+      "steps": [
+        "Each node does one job. Data flows from left to right along the connections.",
+        "The Principled BSDF decides how the surface looks, and Material Output sends it to the render.",
+        "Drag from one socket to another to connect them. Ctrl + right-click and drag cuts connections."
+      ]
+    },
+    {
+      "heading": "Add new nodes",
+      "steps": [
+        "Press Shift + A in the Shader Editor, or use the Add menu, and choose a node from a category such as Texture or Converter.",
+        "Use the search at the top of the Add menu to find nodes by name."
+      ]
+    },
+    {
+      "heading": "Image vs procedural",
+      "steps": [
+        "Image textures use pictures. They are easy, but need UVs and can look blurry up close.",
+        "Procedural textures are made by math, like Noise, Voronoi and Wave. They have no resolution limit and need no image files."
+      ]
+    },
+    {
+      "heading": "Connect a procedural texture",
+      "steps": [
+        "Add a Noise Texture and connect its Color or Fac output to Base Color.",
+        "Add a Color Ramp between them to choose your own colors and control contrast.",
+        "Add a Texture Coordinate and Mapping node before the texture (Node Wrangler: select the texture and press Ctrl + T) to control its position and scale."
+      ]
+    },
+    {
+      "heading": "Edit the texture",
+      "steps": [
+        "Change Scale to make the pattern bigger or smaller, Detail for more fine variation, and Roughness for sharper or softer noise.",
+        "Drag the Color Ramp handles closer together for harder edges."
+      ]
+    },
+    {
+      "heading": "Make a metal material",
+      "steps": [
+        "Set Metallic to 1 and choose a grey or colored Base Color.",
+        "Connect a Noise Texture through a Color Ramp into Roughness, so some areas are shinier than others.",
+        "Optionally add a Bump node fed by the same noise, connected to Normal, for small surface dents."
+      ]
+    }
   ]
 };

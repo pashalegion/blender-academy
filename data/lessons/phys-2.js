@@ -25,5 +25,59 @@ window.LESSON_BODIES["phys-2"] = {
       "cause": "Vertex density is too low or Bending stiffness is set too high.",
       "solution": "<span class=\"unverified\" title=\"Not confirmed in the Blender 5.2 manual keymap yet (cloth presets not listed in the 5.2 Cloth page)\">Subdivide the cloth plane with more edge loops. In Cloth settings, choose the 'Silk' or 'Cotton' preset from the top dropdown.</span>"
     }
+  ],
+  "tutorial": [
+    {
+      "heading": "Overview",
+      "steps": [
+        "Cloth physics makes a mesh behave like fabric: it falls, folds and drapes over objects.",
+        "Typical uses: tablecloths, flags, curtains, pillows and clothes."
+      ]
+    },
+    {
+      "heading": "Add geometry",
+      "steps": [
+        "Cloth needs enough vertices to fold. Add a plane and, in Edit Mode, subdivide it (right-click ‣ Subdivide, with about 20–30 cuts), or add a Subdivision Surface modifier before the cloth.",
+        "Apply the object's scale (Object ‣ Apply ‣ Scale)."
+      ]
+    },
+    {
+      "heading": "Set up cloth physics",
+      "steps": [
+        "Select the cloth and open Physics Properties. Click Cloth.",
+        "Press Space to play: the cloth falls with gravity."
+      ]
+    },
+    {
+      "heading": "Tweak settings and self-collision",
+      "steps": [
+        "Presets at the top (such as Cotton or Silk) give quick starting values.",
+        "Quality Steps make the simulation more accurate but slower.",
+        "Turn on Self Collisions so the fabric doesn't pass through itself when it folds."
+      ]
+    },
+    {
+      "heading": "Collisions with the scene",
+      "steps": [
+        "Select objects the cloth should land on (a table, a chair) and add Collision physics to them.",
+        "Collision distance controls how close the cloth stays to the surface."
+      ]
+    },
+    {
+      "heading": "Fixing common issues",
+      "steps": [
+        "If the cloth passes through objects, raise Quality Steps, or make the objects thicker.",
+        "If it explodes or jitters, apply scale and check for overlapping geometry.",
+        "Bake the simulation in the cloth's Cache panel once it looks right."
+      ],
+      "tip": "Pin parts of the cloth in place with a vertex group set as the Pin Group, for example the top of a curtain."
+    },
+    {
+      "heading": "Wrap-up",
+      "steps": [
+        "After the simulation, you can apply it at a good frame to keep the shape, or keep it animated.",
+        "Add a Subdivision Surface and Solidify modifier after the Cloth modifier for smoother, thicker fabric."
+      ]
+    }
   ]
 };

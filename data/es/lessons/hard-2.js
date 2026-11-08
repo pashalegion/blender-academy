@@ -25,5 +25,55 @@ window.LESSON_BODIES["hard-2"] = {
       "cause": "Blender conecta los vértices del corte de forma arbitraria y crea triángulos problemáticos.",
       "solution": "Añade un modificador 'Weighted Normal' al final de la pila y marca 'Keep Sharp'."
     }
+  ],
+  "tutorial": [
+    {
+      "heading": "Qué hacen los booleanos",
+      "steps": [
+        "Un booleano combina dos mallas. Añade un modificador Boolean al objeto principal y elige un objeto cortador.",
+        "Difference recorta la forma del cortador. Union une las dos. Intersect conserva solo la parte común.",
+        "Como es un modificador, puedes seguir moviendo y editando el cortador después."
+      ]
+    },
+    {
+      "heading": "Prepara un cortador",
+      "steps": [
+        "Añade una forma sencilla, como un cilindro para un agujero o un cubo para una ranura, y colócala atravesando el objeto principal.",
+        "Selecciona el objeto principal, añade Generate ‣ Boolean, pon la operación en Difference y elige el cortador en el campo Object.",
+        "En Object Properties ‣ Viewport Display del cortador, pon Display As en Wire para ver a través, y desactiva su render."
+      ],
+      "tip": "Guarda todos los cortadores en su propia colección para encontrarlos y ocultarlos fácilmente."
+    },
+    {
+      "heading": "Solvers Exact y Fast",
+      "steps": [
+        "Exact es preciso y resuelve la mayoría de casos, incluidas caras superpuestas.",
+        "Fast es más rápido en escenas pesadas, pero falla con más facilidad.",
+        "Si un booleano deja agujeros o caras que faltan, prueba el otro solver y revisa las normales de ambos objetos (Shift + N en Edit Mode)."
+      ]
+    },
+    {
+      "heading": "Biseles limpios tras los booleanos",
+      "steps": [
+        "Añade un modificador Bevel debajo del Boolean para que también se biselen las aristas del corte.",
+        "Pon Limit Method del Bevel en Angle para redondear solo las aristas vivas.",
+        "Activa Clamp Overlap si el bisel se rompe en partes pequeñas."
+      ]
+    },
+    {
+      "heading": "Sombreado suave en hard surface",
+      "steps": [
+        "Haz clic derecho y usa Shade Smooth by Angle (o Shade Auto Smooth) para que lo plano siga plano y lo curvo suave.",
+        "Añade un modificador Weighted Normal al final de la pila para limpiar el sombreado de las caras planas grandes alrededor de los cortes."
+      ]
+    },
+    {
+      "heading": "Construye formas complejas paso a paso",
+      "steps": [
+        "Apila varios modificadores Boolean, uno por cortador, para hacer paneles, rejillas y agujeros.",
+        "Usa Union para añadir piezas y Difference para quitarlas.",
+        "Aplica los booleanos solo cuando el diseño sea definitivo, porque mantenerlos activos lo deja todo editable."
+      ]
+    }
   ]
 };
